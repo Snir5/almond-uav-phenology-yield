@@ -13,7 +13,7 @@ yield across four seasons (2021-2024) in Plot A of the Kedma orchard, for 1,523 
 | `notebooks/` | Training and experiment notebooks behind the model and the empirical search of Chapter 3 (outputs stripped) |
 | `pipeline/01_mosaic_build` … `06_analysis` | Ordered processing stages, from mosaic assembly to the statistical analysis |
 | `Results_Analysis/` | Result figures (PNG) and the JSON files holding every reported statistic |
-| `Thesis_Writing/` | The thesis document |
+| `Thesis_Writing/` | The thesis document (`Snir_Tahasa_MSc_Thesis_Draft_2026-07.docx`) |
 
 ## Model weights
 
