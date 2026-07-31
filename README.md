@@ -8,11 +8,17 @@ yield across four seasons (2021-2024) in Plot A of the Kedma orchard, for 1,523 
 
 | Path | Contents |
 |---|---|
-| `code/` | Detection and segmentation model: training, inference, post-processing, GeoTIFF export |
+| `code/` | Detection and segmentation model: training, inference, post-processing, GeoTIFF export. Start with [`code/MODEL_USAGE.md`](code/MODEL_USAGE.md) |
 | `notebooks/` | Training and experiment notebooks behind the model and the empirical search of Chapter 3 (outputs stripped) |
 | `pipeline/01_mosaic_build` … `06_analysis` | Ordered processing stages, from mosaic assembly to the statistical analysis |
 | `Results_Analysis/` | Result figures (PNG) and the JSON files holding every reported statistic |
 | `Thesis_Writing/` | The thesis document |
+
+## Model weights
+
+The trained checkpoint is not tracked here because it exceeds GitHub's 100 MB file limit.
+It is distributed separately; see [`code/MODEL_USAGE.md`](code/MODEL_USAGE.md) for how to
+load it and run inference on new imagery.
 
 ## Method in brief
 
