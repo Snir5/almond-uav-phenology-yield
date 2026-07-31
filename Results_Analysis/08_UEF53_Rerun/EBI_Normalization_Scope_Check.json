@@ -1,0 +1,206 @@
+{
+  "note": "Sandbox-safe diagnostic (cv2 overview frames, no rasterio needed) testing whether restricting the canonical EBI extraction's radiometric-correction baseline statistics to CANOPY-only pixels (as apply_fixed_zones_yearly.py does) vs the WHOLE image (background+canopy together, the scope Oren et al. effectively use since Sentinel-2 cannot resolve individual canopies) gives materially different correction factors. Uses low-resolution pyramid overview frames (memory-safe), same frames as section 26. Does NOT require per-tree registration (the step that failed validation in section 26), only the year's own canopy mask (band 4) applied to the year's own R,G,B, within one year at a time.",
+  "reference_year": 2024,
+  "per_year_stats": {
+    "2021": {
+      "n_valid_pixels": 11917875,
+      "n_canopy_pixels": 9060409,
+      "n_background_pixels": 2857466,
+      "canopy_fraction_of_valid": 0.7602,
+      "canopy_only_stats": {
+        "mean_R": 123.055,
+        "std_R": 39.139,
+        "mean_G": 118.831,
+        "std_G": 35.362,
+        "mean_B": 106.174,
+        "std_B": 36.731,
+        "n": 9060409
+      },
+      "whole_image_stats": {
+        "mean_R": 125.521,
+        "std_R": 42.613,
+        "mean_G": 120.369,
+        "std_G": 36.944,
+        "mean_B": 105.047,
+        "std_B": 37.962,
+        "n": 11917875
+      },
+      "background_only_stats": {
+        "mean_R": 133.34,
+        "std_R": 51.342,
+        "mean_G": 125.247,
+        "std_G": 41.186,
+        "mean_B": 101.473,
+        "std_B": 41.422,
+        "n": 2857466
+      }
+    },
+    "2022": {
+      "n_valid_pixels": 8251774,
+      "n_canopy_pixels": 4572553,
+      "n_background_pixels": 3679221,
+      "canopy_fraction_of_valid": 0.5541,
+      "canopy_only_stats": {
+        "mean_R": 72.6,
+        "std_R": 30.52,
+        "mean_G": 65.306,
+        "std_G": 27.708,
+        "mean_B": 57.231,
+        "std_B": 28.086,
+        "n": 4572553
+      },
+      "whole_image_stats": {
+        "mean_R": 68.89,
+        "std_R": 33.368,
+        "mean_G": 61.272,
+        "std_G": 28.249,
+        "mean_B": 50.533,
+        "std_B": 28.186,
+        "n": 8251774
+      },
+      "background_only_stats": {
+        "mean_R": 64.279,
+        "std_R": 36.072,
+        "mean_G": 56.258,
+        "std_G": 28.113,
+        "mean_B": 42.208,
+        "std_B": 26.009,
+        "n": 3679221
+      }
+    },
+    "2023": {
+      "n_valid_pixels": 25624844,
+      "n_canopy_pixels": 9652908,
+      "n_background_pixels": 15971936,
+      "canopy_fraction_of_valid": 0.3767,
+      "canopy_only_stats": {
+        "mean_R": 136.166,
+        "std_R": 55.67,
+        "mean_G": 135.492,
+        "std_G": 54.494,
+        "mean_B": 125.578,
+        "std_B": 55.031,
+        "n": 9652908
+      },
+      "whole_image_stats": {
+        "mean_R": 112.405,
+        "std_R": 63.02,
+        "mean_G": 117.763,
+        "std_G": 56.953,
+        "mean_B": 98.599,
+        "std_B": 57.797,
+        "n": 25624844
+      },
+      "background_only_stats": {
+        "mean_R": 98.045,
+        "std_R": 62.86,
+        "mean_G": 107.048,
+        "std_G": 55.718,
+        "mean_B": 82.294,
+        "std_B": 53.135,
+        "n": 15971936
+      }
+    },
+    "2024": {
+      "n_valid_pixels": 16884369,
+      "n_canopy_pixels": 6964889,
+      "n_background_pixels": 9919480,
+      "canopy_fraction_of_valid": 0.4125,
+      "canopy_only_stats": {
+        "mean_R": 147.292,
+        "std_R": 58.235,
+        "mean_G": 143.185,
+        "std_G": 57.177,
+        "mean_B": 126.43,
+        "std_B": 58.536,
+        "n": 6964889
+      },
+      "whole_image_stats": {
+        "mean_R": 119.553,
+        "std_R": 68.029,
+        "mean_G": 121.263,
+        "std_G": 63.137,
+        "mean_B": 93.382,
+        "std_B": 64.825,
+        "n": 16884369
+      },
+      "background_only_stats": {
+        "mean_R": 100.077,
+        "std_R": 67.651,
+        "mean_G": 105.871,
+        "std_G": 62.573,
+        "mean_B": 70.178,
+        "std_B": 58.666,
+        "n": 9919480
+      }
+    }
+  },
+  "shared_scale_comparison_canopy_vs_whole_image": {
+    "2021": {
+      "shared_scale_canopy_only": 1.5638,
+      "mean_shift_R_canopy_only": 24.237,
+      "mean_shift_G_canopy_only": 24.354,
+      "mean_shift_B_canopy_only": 20.256,
+      "shared_scale_whole_image": 1.6677,
+      "mean_shift_R_whole_image": -5.968,
+      "mean_shift_G_whole_image": 0.894,
+      "mean_shift_B_whole_image": -11.665
+    },
+    "2022": {
+      "shared_scale_canopy_only": 2.0153,
+      "mean_shift_R_canopy_only": 74.692,
+      "mean_shift_G_canopy_only": 77.879,
+      "mean_shift_B_canopy_only": 69.199,
+      "shared_scale_whole_image": 2.1825,
+      "mean_shift_R_whole_image": 50.663,
+      "mean_shift_G_whole_image": 59.991,
+      "mean_shift_B_whole_image": 42.849
+    },
+    "2023": {
+      "shared_scale_canopy_only": 1.053,
+      "mean_shift_R_canopy_only": 11.126,
+      "mean_shift_G_canopy_only": 7.693,
+      "mean_shift_B_canopy_only": 0.852,
+      "shared_scale_whole_image": 1.1025,
+      "mean_shift_R_whole_image": 7.148,
+      "mean_shift_G_whole_image": 3.5,
+      "mean_shift_B_whole_image": -5.217
+    },
+    "2024": {
+      "shared_scale_canopy_only": 1.0,
+      "mean_shift_R_canopy_only": 0.0,
+      "mean_shift_G_canopy_only": 0.0,
+      "mean_shift_B_canopy_only": 0.0,
+      "shared_scale_whole_image": 1.0,
+      "mean_shift_R_whole_image": 0.0,
+      "mean_shift_G_whole_image": 0.0,
+      "mean_shift_B_whole_image": 0.0
+    }
+  },
+  "canopy_vs_whole_image_std_divergence": {
+    "2021": {
+      "canopy_std_avg": 37.077,
+      "whole_image_std_avg": 39.173,
+      "ratio_canopy_over_whole": 0.9465,
+      "canopy_fraction": 0.7602
+    },
+    "2022": {
+      "canopy_std_avg": 28.771,
+      "whole_image_std_avg": 29.934,
+      "ratio_canopy_over_whole": 0.9611,
+      "canopy_fraction": 0.5541
+    },
+    "2023": {
+      "canopy_std_avg": 55.065,
+      "whole_image_std_avg": 59.257,
+      "ratio_canopy_over_whole": 0.9293,
+      "canopy_fraction": 0.3767
+    },
+    "2024": {
+      "canopy_std_avg": 57.983,
+      "whole_image_std_avg": 65.33,
+      "ratio_canopy_over_whole": 0.8875,
+      "canopy_fraction": 0.4125
+    }
+  }
+}

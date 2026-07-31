@@ -1,0 +1,140 @@
+{
+  "note": "Forward-selected additions to the yield model from all four GPKG files, selection criterion is 5-fold CV R^2 (out-of-sample), not in-sample fit, to guard against overfitting with 7 correlated physiology candidates.",
+  "A_within_2023_physiology": {
+    "n": 149,
+    "baseline_features": [
+      "cultivar",
+      "EBI",
+      "EBIxcultivar"
+    ],
+    "baseline_cvR2": 0.116,
+    "baseline_R2": 0.151,
+    "candidates_tested": [
+      "SWP_April",
+      "Growth_April",
+      "SWP_MayJune",
+      "Growth_MayJune",
+      "CNC_June",
+      "SWP_June",
+      "Growth_June",
+      "SWP_April_x_cultivar",
+      "Growth_April_x_cultivar",
+      "SWP_MayJune_x_cultivar",
+      "Growth_MayJune_x_cultivar",
+      "CNC_June_x_cultivar",
+      "SWP_June_x_cultivar",
+      "Growth_June_x_cultivar"
+    ],
+    "forward_selection_history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.116
+      },
+      {
+        "step": 1,
+        "added": "Growth_MayJune_x_cultivar",
+        "cvR2": 0.121
+      }
+    ],
+    "selected_features": [
+      "Growth_MayJune_x_cultivar"
+    ],
+    "final_cvR2": 0.121,
+    "final_R2": 0.157,
+    "improvement_cvR2": 0.005
+  },
+  "B_2024_new_spectral_fields": {
+    "n": 5,
+    "n_spectral_matched_total": 551,
+    "note": "too few matched trees to fit any model, skipped. The 2024 measured-yield panel is only 18-20 specific trees, and this spectral file's ~48% coverage of Plot A UEF/53 trees (551/1145) happens not to overlap that small panel well; not a registration problem, just an unlucky intersection of two small samples."
+  },
+  "C_pooled_2022_2023_with_climate_and_physiology": {
+    "n": 167,
+    "baseline_features": [
+      "cultivar",
+      "EBI",
+      "EBIxcultivar",
+      "climate"
+    ],
+    "baseline_cvR2": 0.419,
+    "baseline_R2": 0.494,
+    "forward_selection_history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.419
+      },
+      {
+        "step": 1,
+        "added": "Growth_April",
+        "cvR2": 0.456
+      },
+      {
+        "step": 2,
+        "added": "SWP_MayJune",
+        "cvR2": 0.462
+      }
+    ],
+    "selected_features": [
+      "Growth_April",
+      "SWP_MayJune"
+    ],
+    "final_cvR2": 0.462,
+    "final_R2": 0.534,
+    "improvement_cvR2": 0.043
+  },
+  "C_robustness_across_5_independent_CV_fold_splits": {
+    "per_seed": [
+      {
+        "seed": 1,
+        "selected": [
+          "Growth_April",
+          "SWP_MayJune"
+        ],
+        "baseline_cvR2": 0.42,
+        "final_cvR2": 0.476
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "Growth_April"
+        ],
+        "baseline_cvR2": 0.431,
+        "final_cvR2": 0.457
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "Growth_April"
+        ],
+        "baseline_cvR2": 0.407,
+        "final_cvR2": 0.448
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "Growth_April",
+          "SWP_June_x_cultivar"
+        ],
+        "baseline_cvR2": 0.448,
+        "final_cvR2": 0.491
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "Growth_April"
+        ],
+        "baseline_cvR2": 0.456,
+        "final_cvR2": 0.472
+      }
+    ],
+    "how_often_each_feature_selected_of_5": {
+      "Growth_April": 5,
+      "SWP_MayJune": 1,
+      "SWP_June_x_cultivar": 1
+    },
+    "note": "Forward selection reuses one fixed fold split to score every candidate, so the winner can partly fit those specific folds. Re-running under 5 independent fold splits (seeds 1,7,13,99,2024) checks whether the same features keep winning."
+  },
+  "verdict": "Selected"
+}

@@ -1,0 +1,26 @@
+{
+  "note": "Direct demonstration: forcing in the top-ranked near-miss features from section 43 together (not re-searching) does raise CV R2 (up to ~0.49-0.50 with 4 terms forced in), but this is not evidence they should be adopted, because (1) these specific terms were chosen BECAUSE they scored highest among 74 candidates already tried, so even a joint significance test on them is contaminated by that prior search, and (2) the underlying forward-selection runs (sections 38-41) show a DIFFERENT combination of features winning under each independent seed, meaning there is no single stable joint signal to force in, only individual features with varying, mostly sub-5-of-6 robustness.",
+  "n": 167,
+  "baseline": {
+    "R2": 0.5285,
+    "cvR2": 0.4563
+  },
+  "forced_combinations": [
+    {
+      "label": "+ EBI_Norm_P90 x cultivar",
+      "cvR2": 0.4769
+    },
+    {
+      "label": "+ EBI_Norm_std x cultivar",
+      "cvR2": 0.4734
+    },
+    {
+      "label": "+ EBI_Norm_CV x cultivar",
+      "cvR2": 0.436
+    },
+    {
+      "label": "+ ShadowFraction",
+      "cvR2": 0.4345
+    }
+  ]
+}

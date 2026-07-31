@@ -1,0 +1,13 @@
+{
+  "n": 18,
+  "k_folds": 4,
+  "cultivar_only": {
+    "R2": 0.0617,
+    "cvR2": -0.1405
+  },
+  "plus_EBIxcultivar": {
+    "R2": 0.2124,
+    "cvR2": -0.2629
+  },
+  "note": "n=20 total in the yield CSV for 2024, matched sample here is smaller after requiring EBI_Norm_2024 and UEF/53 cultivar; no Growth_April available, no Yield_with_clustering_2024.gpkg exists. Directional only given n."
+}

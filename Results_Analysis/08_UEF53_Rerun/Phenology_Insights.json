@@ -1,0 +1,100 @@
+{
+  "bloom_timing_by_cultivar_year": [
+    {
+      "y": 2021,
+      "c": "53",
+      "t10": 49.7037037037037,
+      "t50": 64.51851851851852,
+      "t90": null,
+      "dur": null
+    },
+    {
+      "y": 2021,
+      "c": "UEF",
+      "t10": 42.57142857142857,
+      "t50": 62.74418604651163,
+      "t90": null,
+      "dur": null
+    },
+    {
+      "y": 2022,
+      "c": "53",
+      "t10": 31,
+      "t50": 52.0,
+      "t90": 67.28,
+      "dur": 36.28
+    },
+    {
+      "y": 2022,
+      "c": "54",
+      "t10": 48,
+      "t50": 50.08163265306123,
+      "t90": 60.0,
+      "dur": 12.0
+    },
+    {
+      "y": 2022,
+      "c": "UEF",
+      "t10": 31,
+      "t50": 52.0,
+      "t90": 63.96153846153847,
+      "dur": 32.96153846153847
+    },
+    {
+      "y": 2023,
+      "c": "53",
+      "t10": 37,
+      "t50": 60.76674364896074,
+      "t90": null,
+      "dur": null
+    },
+    {
+      "y": 2023,
+      "c": "54",
+      "t10": 44,
+      "t50": 54.0,
+      "t90": 61.5,
+      "dur": 17.5
+    },
+    {
+      "y": 2023,
+      "c": "UEF",
+      "t10": 37,
+      "t50": 56.2,
+      "t90": null,
+      "dur": null
+    },
+    {
+      "y": 2024,
+      "c": "54",
+      "t10": 45.875,
+      "t50": 53.375,
+      "t90": 61.5,
+      "dur": 15.625
+    },
+    {
+      "y": 2024,
+      "c": "UEF",
+      "t10": 56.6,
+      "t50": 59.0,
+      "t90": 63.0,
+      "dur": 6.399999999999999
+    }
+  ],
+  "cultivar_mean_t50_bloom_order": {
+    "54": 52.5,
+    "UEF": 57.5,
+    "53": 59.1
+  },
+  "t50_vs_ChillPortions": {
+    "r": -0.567,
+    "p": 0.087,
+    "n": 10
+  },
+  "t50_vs_GDD": {
+    "r": 0.692,
+    "p": 0.027,
+    "n": 10
+  },
+  "interpretation": "More chill -> earlier bloom (t50 vs CP r=-0.57); low-chill/high-heat years bloom significantly later (t50 vs GDD r=+0.69, p=0.03): the insufficient-chilling delay. Cultivar bloom order: 54 earliest, then UEF, then 53. Field bloom TIMING shows the climate signal that EBI does not."
+}

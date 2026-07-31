@@ -1,0 +1,506 @@
+{
+  "note": "TARGET IS MODELLED/PREDICTED YIELD (predicted_Yield_2022/2023), NOT measured yield. Extends section 27 by offering EVERY base feature used anywhere in this thesis (12, identical set to section 30) PLUS all 66 pairwise interactions (78 candidates total) to one exhaustive forward selection. The point is the CONTRAST with section 30: the exact same kind of exhaustive search against MEASURED yield found nothing beyond the existing model (CV R^2 stayed at 0.456); here it should climb much higher, because it mechanically reconstructs the clustering model's own generating formula, not a real predictive gain.",
+  "n": 1530,
+  "measured_yield_for_comparison": {
+    "recommended_model_cvR2": 0.4563,
+    "exhaustive_pairwise_search_cvR2": 0.4563,
+    "note": "section 22/25 and section 30 respectively -- the real, honest, non-circular results; the exhaustive search of every feature and interaction found ZERO additional gain."
+  },
+  "floor_cultivar_climate_only": {
+    "R2": 0.8222,
+    "cvR2": 0.8215
+  },
+  "n_candidates_offered": 78,
+  "n_main_effects": 12,
+  "n_pairwise_interactions": 66,
+  "forward_selection_main_seed42": {
+    "selected_features": [
+      "CNC_June",
+      "SWP_April",
+      "climate_x_SWP_April",
+      "cultivar",
+      "Growth_April",
+      "Growth_MayJune",
+      "cultivar_x_Growth_June",
+      "climate_x_Growth_MayJune",
+      "Growth_MayJune_x_CNC_June",
+      "climate",
+      "SWP_April_x_CNC_June",
+      "CNC_June_x_NGRDI",
+      "EBI_x_NGRDI",
+      "DEM_x_SWP_June",
+      "DEM_x_CNC_June",
+      "DEM_x_Growth_MayJune",
+      "climate_x_CNC_June",
+      "Growth_June_x_SWP_June",
+      "Growth_June",
+      "EBI_x_DEM",
+      "cultivar_x_DEM",
+      "EBI",
+      "cultivar_x_SWP_MayJune",
+      "DEM_x_Growth_April",
+      "cultivar_x_CNC_June",
+      "cultivar_x_climate",
+      "SWP_MayJune",
+      "climate_x_NGRDI",
+      "DEM_x_Growth_June",
+      "DEM_x_SWP_MayJune",
+      "climate_x_DEM",
+      "Growth_June_x_CNC_June",
+      "Growth_MayJune_x_Growth_June",
+      "Growth_April_x_CNC_June",
+      "SWP_June",
+      "cultivar_x_SWP_June",
+      "Growth_MayJune_x_SWP_MayJune",
+      "SWP_April_x_SWP_MayJune",
+      "Growth_April_x_Growth_June",
+      "climate_x_Growth_April",
+      "Growth_April_x_SWP_April",
+      "Growth_June_x_SWP_April",
+      "EBI_x_Growth_June"
+    ],
+    "history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": -0.0009
+      },
+      {
+        "step": 1,
+        "added": "CNC_June",
+        "cvR2": 0.8978
+      },
+      {
+        "step": 2,
+        "added": "SWP_April",
+        "cvR2": 0.918
+      },
+      {
+        "step": 3,
+        "added": "climate_x_SWP_April",
+        "cvR2": 0.9263
+      },
+      {
+        "step": 4,
+        "added": "cultivar",
+        "cvR2": 0.9322
+      },
+      {
+        "step": 5,
+        "added": "Growth_April",
+        "cvR2": 0.9349
+      },
+      {
+        "step": 6,
+        "added": "Growth_MayJune",
+        "cvR2": 0.9365
+      },
+      {
+        "step": 7,
+        "added": "cultivar_x_Growth_June",
+        "cvR2": 0.9386
+      },
+      {
+        "step": 8,
+        "added": "climate_x_Growth_MayJune",
+        "cvR2": 0.94
+      },
+      {
+        "step": 9,
+        "added": "Growth_MayJune_x_CNC_June",
+        "cvR2": 0.9442
+      },
+      {
+        "step": 10,
+        "added": "climate",
+        "cvR2": 0.9452
+      },
+      {
+        "step": 11,
+        "added": "SWP_April_x_CNC_June",
+        "cvR2": 0.9459
+      },
+      {
+        "step": 12,
+        "added": "CNC_June_x_NGRDI",
+        "cvR2": 0.9466
+      },
+      {
+        "step": 13,
+        "added": "EBI_x_NGRDI",
+        "cvR2": 0.9471
+      },
+      {
+        "step": 14,
+        "added": "DEM_x_SWP_June",
+        "cvR2": 0.9474
+      },
+      {
+        "step": 15,
+        "added": "DEM_x_CNC_June",
+        "cvR2": 0.9482
+      },
+      {
+        "step": 16,
+        "added": "DEM_x_Growth_MayJune",
+        "cvR2": 0.9489
+      },
+      {
+        "step": 17,
+        "added": "climate_x_CNC_June",
+        "cvR2": 0.9493
+      },
+      {
+        "step": 18,
+        "added": "Growth_June_x_SWP_June",
+        "cvR2": 0.9497
+      },
+      {
+        "step": 19,
+        "added": "Growth_June",
+        "cvR2": 0.95
+      },
+      {
+        "step": 20,
+        "added": "EBI_x_DEM",
+        "cvR2": 0.9502
+      },
+      {
+        "step": 21,
+        "added": "cultivar_x_DEM",
+        "cvR2": 0.9503
+      },
+      {
+        "step": 22,
+        "added": "EBI",
+        "cvR2": 0.9504
+      },
+      {
+        "step": 23,
+        "added": "cultivar_x_SWP_MayJune",
+        "cvR2": 0.9505
+      },
+      {
+        "step": 24,
+        "added": "DEM_x_Growth_April",
+        "cvR2": 0.9506
+      },
+      {
+        "step": 25,
+        "added": "cultivar_x_CNC_June",
+        "cvR2": 0.9507
+      },
+      {
+        "step": 26,
+        "added": "cultivar_x_climate",
+        "cvR2": 0.9524
+      },
+      {
+        "step": 27,
+        "added": "SWP_MayJune",
+        "cvR2": 0.9526
+      },
+      {
+        "step": 28,
+        "added": "climate_x_NGRDI",
+        "cvR2": 0.9529
+      },
+      {
+        "step": 29,
+        "added": "DEM_x_Growth_June",
+        "cvR2": 0.953
+      },
+      {
+        "step": 30,
+        "added": "DEM_x_SWP_MayJune",
+        "cvR2": 0.9531
+      },
+      {
+        "step": 31,
+        "added": "climate_x_DEM",
+        "cvR2": 0.9532
+      },
+      {
+        "step": 32,
+        "added": "Growth_June_x_CNC_June",
+        "cvR2": 0.9534
+      },
+      {
+        "step": 33,
+        "added": "Growth_MayJune_x_Growth_June",
+        "cvR2": 0.9536
+      },
+      {
+        "step": 34,
+        "added": "Growth_April_x_CNC_June",
+        "cvR2": 0.9538
+      },
+      {
+        "step": 35,
+        "added": "SWP_June",
+        "cvR2": 0.9539
+      },
+      {
+        "step": 36,
+        "added": "cultivar_x_SWP_June",
+        "cvR2": 0.9542
+      },
+      {
+        "step": 37,
+        "added": "Growth_MayJune_x_SWP_MayJune",
+        "cvR2": 0.9543
+      },
+      {
+        "step": 38,
+        "added": "SWP_April_x_SWP_MayJune",
+        "cvR2": 0.9545
+      },
+      {
+        "step": 39,
+        "added": "Growth_April_x_Growth_June",
+        "cvR2": 0.9546
+      },
+      {
+        "step": 40,
+        "added": "climate_x_Growth_April",
+        "cvR2": 0.9547
+      },
+      {
+        "step": 41,
+        "added": "Growth_April_x_SWP_April",
+        "cvR2": 0.9552
+      },
+      {
+        "step": 42,
+        "added": "Growth_June_x_SWP_April",
+        "cvR2": 0.9554
+      },
+      {
+        "step": 43,
+        "added": "EBI_x_Growth_June",
+        "cvR2": 0.9555
+      }
+    ],
+    "final_R2": 0.9586,
+    "final_cvR2": 0.9555
+  },
+  "robustness_across_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [
+        "CNC_June",
+        "SWP_April",
+        "climate_x_SWP_April",
+        "cultivar",
+        "Growth_April",
+        "Growth_MayJune",
+        "cultivar_x_Growth_June",
+        "climate_x_Growth_MayJune",
+        "Growth_MayJune_x_CNC_June",
+        "climate",
+        "Growth_April_x_CNC_June",
+        "CNC_June_x_NGRDI",
+        "EBI_x_NGRDI",
+        "Growth_June_x_SWP_June",
+        "Growth_June",
+        "cultivar_x_DEM",
+        "cultivar_x_SWP_April",
+        "cultivar_x_CNC_June",
+        "cultivar_x_climate",
+        "climate_x_CNC_June",
+        "DEM_x_Growth_June",
+        "SWP_April_x_NGRDI",
+        "EBI_x_DEM",
+        "cultivar_x_SWP_June",
+        "SWP_June",
+        "climate_x_DEM",
+        "DEM_x_CNC_June",
+        "DEM_x_Growth_MayJune",
+        "SWP_MayJune",
+        "cultivar_x_SWP_MayJune",
+        "Growth_June_x_SWP_April",
+        "Growth_June_x_CNC_June",
+        "Growth_April_x_Growth_June",
+        "climate_x_Growth_April",
+        "Growth_April_x_SWP_April",
+        "DEM_x_Growth_April",
+        "Growth_MayJune_x_Growth_June",
+        "DEM_x_SWP_MayJune"
+      ],
+      "final_cvR2": 0.955
+    },
+    {
+      "seed": 7,
+      "selected": [
+        "CNC_June",
+        "SWP_April",
+        "climate_x_SWP_April",
+        "cultivar",
+        "Growth_April",
+        "Growth_MayJune",
+        "cultivar_x_Growth_June",
+        "climate_x_Growth_MayJune",
+        "Growth_MayJune_x_CNC_June",
+        "climate",
+        "SWP_April_x_CNC_June",
+        "CNC_June_x_NGRDI",
+        "EBI_x_NGRDI",
+        "Growth_June_x_SWP_June",
+        "DEM_x_Growth_June",
+        "EBI_x_DEM",
+        "Growth_April_x_NGRDI",
+        "NGRDI",
+        "DEM_x_SWP_June",
+        "DEM_x_CNC_June",
+        "DEM_x_Growth_MayJune",
+        "climate_x_CNC_June",
+        "Growth_June",
+        "cultivar_x_Growth_April",
+        "cultivar_x_CNC_June",
+        "cultivar_x_climate",
+        "SWP_MayJune",
+        "climate_x_NGRDI",
+        "DEM_x_Growth_April",
+        "SWP_MayJune_x_CNC_June",
+        "SWP_April_x_SWP_MayJune",
+        "cultivar_x_SWP_April",
+        "climate_x_DEM"
+      ],
+      "final_cvR2": 0.954
+    },
+    {
+      "seed": 13,
+      "selected": [
+        "CNC_June",
+        "SWP_April",
+        "climate_x_SWP_April",
+        "cultivar",
+        "Growth_April",
+        "Growth_MayJune",
+        "cultivar_x_Growth_June",
+        "climate_x_Growth_MayJune",
+        "Growth_MayJune_x_CNC_June",
+        "climate",
+        "SWP_April_x_CNC_June",
+        "CNC_June_x_NGRDI",
+        "Growth_June_x_SWP_June",
+        "EBI_x_DEM",
+        "cultivar_x_DEM",
+        "EBI_x_NGRDI",
+        "climate_x_CNC_June",
+        "Growth_June_x_CNC_June",
+        "DEM",
+        "DEM_x_Growth_June",
+        "DEM_x_Growth_MayJune",
+        "DEM_x_CNC_June",
+        "climate_x_DEM",
+        "EBI",
+        "Growth_June",
+        "SWP_MayJune",
+        "cultivar_x_SWP_April",
+        "cultivar_x_CNC_June",
+        "cultivar_x_climate",
+        "climate_x_NGRDI",
+        "Growth_April_x_SWP_April",
+        "DEM_x_Growth_April",
+        "climate_x_Growth_June",
+        "Growth_April_x_Growth_June",
+        "SWP_MayJune_x_CNC_June",
+        "SWP_April_x_SWP_MayJune",
+        "SWP_June",
+        "cultivar_x_SWP_June",
+        "Growth_June_x_NGRDI"
+      ],
+      "final_cvR2": 0.9549
+    },
+    {
+      "seed": 99,
+      "selected": [
+        "CNC_June",
+        "SWP_April",
+        "climate_x_SWP_April",
+        "cultivar",
+        "Growth_April",
+        "Growth_MayJune",
+        "cultivar_x_Growth_June",
+        "climate_x_Growth_MayJune",
+        "Growth_MayJune_x_CNC_June",
+        "climate",
+        "SWP_April_x_CNC_June",
+        "CNC_June_x_NGRDI",
+        "EBI_x_NGRDI",
+        "Growth_June_x_SWP_June",
+        "Growth_April_x_NGRDI",
+        "Growth_June",
+        "DEM_x_SWP_June",
+        "DEM_x_CNC_June",
+        "climate_x_CNC_June",
+        "DEM_x_Growth_MayJune",
+        "EBI",
+        "cultivar_x_Growth_April",
+        "cultivar_x_CNC_June",
+        "cultivar_x_climate",
+        "SWP_MayJune",
+        "Growth_June_x_CNC_June",
+        "climate_x_Growth_June",
+        "Growth_April_x_CNC_June",
+        "climate_x_NGRDI",
+        "EBI_x_Growth_June",
+        "Growth_June_x_SWP_MayJune",
+        "SWP_MayJune_x_CNC_June",
+        "SWP_April_x_SWP_MayJune",
+        "DEM_x_Growth_April",
+        "cultivar_x_SWP_April",
+        "Growth_MayJune_x_Growth_June"
+      ],
+      "final_cvR2": 0.9542
+    },
+    {
+      "seed": 2024,
+      "selected": [
+        "CNC_June",
+        "SWP_April",
+        "climate_x_SWP_April",
+        "cultivar",
+        "Growth_April",
+        "Growth_MayJune",
+        "cultivar_x_Growth_June",
+        "climate_x_Growth_MayJune",
+        "Growth_MayJune_x_CNC_June",
+        "climate",
+        "Growth_April_x_CNC_June",
+        "CNC_June_x_NGRDI",
+        "EBI_x_NGRDI",
+        "climate_x_Growth_April",
+        "EBI_x_DEM",
+        "Growth_June_x_SWP_June",
+        "Growth_April_x_Growth_June",
+        "Growth_April_x_SWP_April",
+        "Growth_April_x_NGRDI",
+        "DEM_x_Growth_June",
+        "Growth_MayJune_x_Growth_June",
+        "Growth_June",
+        "cultivar_x_DEM",
+        "DEM",
+        "EBI",
+        "DEM_x_Growth_April",
+        "DEM_x_SWP_MayJune",
+        "SWP_June",
+        "DEM_x_SWP_June",
+        "DEM_x_CNC_June",
+        "DEM_x_Growth_MayJune",
+        "cultivar_x_CNC_June",
+        "cultivar_x_climate",
+        "cultivar_x_SWP_June",
+        "climate_x_CNC_June",
+        "climate_x_SWP_June",
+        "SWP_April_x_SWP_June",
+        "climate_x_NGRDI",
+        "SWP_MayJune",
+        "cultivar_x_SWP_MayJune",
+        "Growth_June_x_CNC_June"
+      ],
+      "final_cvR2": 0.9548
+    }
+  ]
+}

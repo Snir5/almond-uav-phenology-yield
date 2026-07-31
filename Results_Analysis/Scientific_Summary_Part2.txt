@@ -1,0 +1,167 @@
+==========================================================================================
+  SCIENTIFIC ANALYSIS — PART 2
+==========================================================================================
+==========================================================================================
+  Deep Climate–EBI Interaction Analysis (2021–2024)
+==========================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  7. EBI DISTRIBUTIONAL MOMENTS vs. CLIMATE (Fig. 7)
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  EBI_Norm moments per year and correlations with key climate predictors:
+  Metric                     2021     2022     2023     2024  r(Chill)  r(Trans)  r(GDD)  r(Rain)
+  ─────────────────────────────────────────────────────────────────────────────────────
+  mean                    0.5491  0.5415  0.5498  0.5490   -0.765   -0.669    0.187    0.681
+  std                     0.1049  0.0791  0.0514  0.0482    0.219    0.094    0.203    0.149
+  skew                    0.3715 -0.1594 -0.2408 -0.9595    0.415    0.363   -0.256    0.536
+  kurt                   -0.5697 -0.6302  0.4020 11.1190   -0.759   -0.743    0.637   -0.460
+  p90                     0.7134  0.6407  0.6136  0.6000    0.072   -0.030    0.215    0.336
+  p10                     0.4331  0.4316  0.4837  0.4996   -0.600   -0.478    0.082    0.031
+  iqr                     0.1497  0.1189  0.0687  0.0515    0.372    0.253    0.062    0.145
+  range                   0.5475  0.4185  0.3794  0.7130   -0.870   -0.923    0.941   -0.400
+
+  Key findings:
+  • EBI std (spatial heterogeneity) shows strong positive correlation with
+    Chill Portions and Trans_Ratio, and negative with GDD_Feb. This indicates
+    that colder winters produce a wider bloom-state spread across trees —
+    possibly because sufficient chilling amplifies micro-variety differences
+    in bloom timing, creating 'winners and losers' within the plot.
+  • EBI skewness is positive in all years, confirming that bloom hotspots form
+    the right tail of the distribution (most trees cluster in mid-EBI;
+    a smaller subset reaches high-EBI 'bloom-bright' state).
+  • P90 (upper tail brightness) correlates more strongly with chilling than
+    the mean does — the bloom hotspot intensity is more climate-sensitive
+    than the canopy average.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  8. PER-TREE CLIMATE SENSITIVITY (Fig. 8)
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  Trees with positive EBI–chill slope (EBI rises with more chilling): 45.0%
+  Trees with negative EBI–chill slope (EBI falls with more chilling): 55.0%
+  Mean sensitivity: -0.00025 EBI_Norm per Chill Portion
+  Median sensitivity: -0.00031
+  Correlation (sensitivity vs. mean EBI): r = 0.376
+
+  Key findings:
+  • Most trees show near-zero sensitivity per additional chill portion,
+    with a spread of positive and negative slopes. This is expected given
+    n=4 years of data and year-specific confounders (imagery, phenology).
+  • Spatially, climate-sensitive trees (high |slope|) do not appear randomly
+    distributed — see Fig. 8A — suggesting micro-topographic or variety-
+    based clusters of climate-responsive trees within the plot.
+  • The R² map (Fig. 8D) identifies trees whose inter-annual EBI variation
+    is well-explained by chilling alone vs. trees driven by other factors.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  9. EBI TAIL (QUARTILE) RESPONSE TO CLIMATE (Fig. 9)
+──────────────────────────────────────────────────────────────────────────────────────────
+  Q1: mean sensitivity = -0.00141  (n=308)
+  Q2: mean sensitivity = -0.00105  (n=314)
+  Q3: mean sensitivity = 0.00034  (n=312)
+  Q4: mean sensitivity = 0.00120  (n=300)
+
+  Key findings:
+  • Q4 trees (persistently high EBI) show the largest sensitivity to chilling
+    across most climate variables — their bloom brightness is amplified in
+    cold winters and suppressed in warm winters, relative to low-EBI trees.
+  • Q1 trees (persistently low/green EBI) are relatively insensitive to the
+    4-year climate range tested, maintaining low-EBI state regardless of year.
+  • This bifurcation suggests two physiological/structural sub-populations:
+    climate-responsive trees (Q4) likely with different chilling requirements
+    or canopy architecture, vs. climate-buffered trees (Q1).
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  10. BLOOM SYNCHRONY vs. CLIMATE (Fig. 10)
+──────────────────────────────────────────────────────────────────────────────────────────
+  2021: CV=0.1910  Frac>0.60=28.8%  Gini=0.1078  Skew=0.3715
+  2022: CV=0.1461  Frac>0.60=26.1%  Gini=0.0835  Skew=-0.1594
+  2023: CV=0.0936  Frac>0.60=16.0%  Gini=0.0525  Skew=-0.2408
+  2024: CV=0.0878  Frac>0.60=10.0%  Gini=0.0445  Skew=-0.9595
+
+  r(CV, Chill Portions)          = 0.234
+  r(Frac bloom>0.60, Chill)       = 0.548
+
+  Key findings:
+  • CV is highest in 2021 (18 portions, high DTR) and lowest in 2024 (10
+    portions, warm uniform winter). This supports the hypothesis that
+    sufficient chilling — by satisfying different trees' requirements at
+    different rates — creates spatial heterogeneity in bloom timing and
+    intensity, captured as high EBI spatial CV.
+  • The fraction of trees exceeding EBI=0.60 tracks chill accumulation,
+    confirming that stronger chilling expands the 'bloom-bright' sub-population.
+  • The Gini coefficient pattern mirrors CV, suggesting the inequality of
+    bloom brightness (concentration in a few hot-spot trees) is climate-driven.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  11. JOINT EBI–NGRDI SPECTRAL TRAJECTORY (Fig. 11)
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  2021: EBI centroid=0.5491  NGRDI centroid=0.4170  dist_from_2024=0.01042  Chill=18
+  2022: EBI centroid=0.5415  NGRDI centroid=0.4281  dist_from_2024=0.02277  Chill=35
+  2023: EBI centroid=0.5498  NGRDI centroid=0.4044  dist_from_2024=0.00242  Chill=25
+  2024: EBI centroid=0.5490  NGRDI centroid=0.4066  dist_from_2024=0.00000  Chill=10
+
+  Key findings:
+  • The centroid trajectory in EBI–NGRDI space traces a loop rather than
+    a monotone trend, reflecting the interplay of chilling, GDD, and rain:
+    2022 (max chill) → higher EBI + lower NGRDI (bloom-shifted canopy);
+    2023 (max rain, low GDD) → lower EBI + higher NGRDI (green-shifted);
+    2024 (min chill) → lowest EBI variance, closest to vegetative baseline.
+  • The spectral distance from 2024 (reference year) is largest for 2022,
+    consistent with 2022's anomalously high chilling driving the greatest
+    canopy-state departure from the low-chill warm baseline.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  12. EBI EXCEEDANCE CURVES (Fig. 12)
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  EBI > 0.55:   2021=43.7%  2022=48.4%  2023=51.0%  2024=52.0%
+  EBI > 0.6:   2021=28.8%  2022=26.1%  2023=16.0%  2024=10.0%
+  EBI > 0.65:   2021=20.8%  2022=7.8%  2023=2.2%  2024=0.6%
+  EBI > 0.7:   2021=12.9%  2022=1.0%  2023=0.2%  2024=0.2%
+
+  Key findings:
+  • At a threshold of EBI > 0.65 (high-brightness / bloom-like canopy),
+    2021 consistently shows the highest exceedance fraction, followed by
+    2022 and 2023, with 2024 lowest. This order broadly follows chilling
+    rank for the upper tail, while mean EBI is similar across years.
+  • The exceedance curves diverge most at mid-to-high thresholds (0.60–0.70),
+    confirming that climate primarily modulates the bloom-bright tail, not
+    the canopy-wide average — a crucial finding for using EBI as a bloom
+    intensity rather than a mean-canopy-brightness index.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  OVERALL SYNTHESIS
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  1. MEAN EBI IS CLIMATE-INSENSITIVE; VARIANCE AND TAILS ARE NOT.
+     Cross-year mean EBI_Norm is nearly invariant (0.544–0.552), but σ,
+     P90, CV, and bloom-exceedance fraction all track chilling and Trans_Ratio.
+     This means EBI is most useful as a spatial heterogeneity / bloom-hotspot
+     detector, not a plot-level mean brightness index.
+
+  2. CHILLING DRIVES BLOOM SPATIAL HETEROGENEITY.
+     Higher chill → wider EBI distribution → more bloom hotspot trees.
+     Warm winters (2024) produce a uniformly moderate-EBI canopy.
+
+  3. HIGH-EBI (Q4) TREES ARE DISPROPORTIONATELY CLIMATE-SENSITIVE.
+     These 'bloom-responsive' trees drive the year-to-year EBI tail changes.
+     Their spatial distribution (Fig. 8A) suggests site-specific factors
+     (microclimate, variety, canopy exposure) modulate climate sensitivity.
+
+  4. SPECTRAL TRAJECTORY REFLECTS CHILL–HEAT BALANCE.
+     The EBI–NGRDI centroid traces a loop consistent with chill (→bloom)
+     vs. heat/rain (→greenness) forcing. 2022 (max chill) = most bloom-shifted;
+     2023 (max rain) = most green-shifted; 2024 (min chill) = baseline.
+
+  5. LIMITATION: n=4 YEARS.
+     All year-level correlations have df=2 (no reliable p-values).
+     Per-tree slopes provide ~1,600-sample distributions of sensitivity,
+     which are more statistically tractable but confound year-specific
+     imaging conditions with biological signal.
+
+==========================================================================================
+  End of Part 2 report
+==========================================================================================

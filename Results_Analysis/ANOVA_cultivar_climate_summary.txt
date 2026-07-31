@@ -1,0 +1,33 @@
+==========================================================================================
+  ANOVA: CULTIVAR x CLIMATE EFFECTS ON EBI_Norm (Plot 1, 2021-2024)
+==========================================================================================
+
+Trees analysed: 1219 (UEF=810, 53=197, 54=212)
+Design: mixed/split-plot two-way ANOVA - Cultivar (between-subjects) x Year (within-subjects)
+
+Effect                        F  df1    df2             p    eta2
+Cultivar (between)       524.69    2   1216    5.166e-165  0.2256  ***
+Year (within)             10.14    3   3648     1.199e-06  0.0022  ***
+Cultivar x Year          585.98    6   3648     0.000e+00  0.2507  ***
+
+One-way ANOVA per year (cultivar effect):
+  2021: F=1325.62  p=3.162e-306  eta2=0.6856  ***
+  2022: F=344.95  p=2.183e-119  eta2=0.3620  ***
+  2023: F=204.22  p=3.400e-77  eta2=0.2514  ***
+  2024: F=4.56  p=1.067e-02  eta2=0.0074  *
+
+Per-cultivar climate sensitivity (Pearson r, n=4 yrs, sorted by cross-cultivar spread):
+cultivar            53     54    UEF  spread
+climate_var                                 
+Avg_DTR_Feb      0.430  0.955 -0.741   1.696
+Max_Dry_Hrs     -0.611 -0.709  0.819   1.528
+High_Wind_Hrs   -0.817 -0.087  0.458   1.275
+Heat_Stress_Feb -0.125  0.688 -0.338   1.026
+Chill_Hrs        0.219  0.414 -0.477   0.891
+Rain_Feb        -0.395  0.463 -0.041   0.857
+GDD_Feb          0.454  0.019 -0.138   0.591
+Chill_Portions   0.201  0.195 -0.353   0.554
+Late_Chill       0.086  0.175 -0.282   0.457
+Trans_Ratio      0.032  0.116 -0.221   0.337
+GDD_Jan_Feb     -0.088  0.027  0.168   0.256
+Frost_Hrs          NaN    NaN    NaN     NaN

@@ -1,0 +1,303 @@
+{
+  "note": "Complete audit of all 13 station-level agro-climate fields, per request 'check all the climate fields / think about more data to improve the model'.",
+  "partA_climate_vs_EBI_all_13_fields_n4": {
+    "Chill_Portions": {
+      "values_by_year": {
+        "2021": 18,
+        "2022": 35,
+        "2023": 25,
+        "2024": 10
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": -0.404,
+      "p_vs_EBI_mean": 0.5963,
+      "r_vs_EBI_sd": 0.431,
+      "p_vs_EBI_sd": 0.5688
+    },
+    "Late_Chill": {
+      "values_by_year": {
+        "2021": 16,
+        "2022": 28,
+        "2023": 23,
+        "2024": 10
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": -0.359,
+      "p_vs_EBI_mean": 0.6412,
+      "r_vs_EBI_sd": 0.339,
+      "p_vs_EBI_sd": 0.6606
+    },
+    "Chill_Hrs": {
+      "values_by_year": {
+        "2021": 87,
+        "2022": 151,
+        "2023": 114,
+        "2024": 6
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": true,
+      "r_vs_EBI_mean": -0.568,
+      "p_vs_EBI_mean": 0.4322,
+      "r_vs_EBI_sd": 0.494,
+      "p_vs_EBI_sd": 0.5063
+    },
+    "GDD_Feb": {
+      "values_by_year": {
+        "2021": 270.53,
+        "2022": 236.71,
+        "2023": 209.72,
+        "2024": 286.05
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": 0.028,
+      "p_vs_EBI_mean": 0.9716,
+      "r_vs_EBI_sd": 0.166,
+      "p_vs_EBI_sd": 0.8337
+    },
+    "GDD_Jan_Feb": {
+      "values_by_year": {
+        "2021": 579.12,
+        "2022": 448.22,
+        "2023": 512.68,
+        "2024": 593.28
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": 0.201,
+      "p_vs_EBI_mean": 0.7994,
+      "r_vs_EBI_sd": -0.283,
+      "p_vs_EBI_sd": 0.7175
+    },
+    "Avg_DTR_Feb": {
+      "values_by_year": {
+        "2021": 11.22,
+        "2022": 9.75,
+        "2023": 10.04,
+        "2024": 9.4
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": -0.828,
+      "p_vs_EBI_mean": 0.1722,
+      "r_vs_EBI_sd": 0.562,
+      "p_vs_EBI_sd": 0.4381
+    },
+    "Rad_Feb": {
+      "values_by_year": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "no_variance_across_years": true,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": null,
+      "r_vs_EBI_sd": null,
+      "note": "identical in all 4 years, zero cross-year variance, cannot correlate with anything"
+    },
+    "Max_Dry_Hrs": {
+      "values_by_year": {
+        "2021": 5,
+        "2022": 1,
+        "2023": 11,
+        "2024": 21
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": 0.858,
+      "p_vs_EBI_mean": 0.1421,
+      "r_vs_EBI_sd": -0.825,
+      "p_vs_EBI_sd": 0.1747
+    },
+    "Trans_Ratio": {
+      "values_by_year": {
+        "2021": 0.067,
+        "2022": 0.148,
+        "2023": 0.119,
+        "2024": 0.035
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": -0.299,
+      "p_vs_EBI_mean": 0.7007,
+      "r_vs_EBI_sd": 0.283,
+      "p_vs_EBI_sd": 0.7174
+    },
+    "Frost_Hrs": {
+      "values_by_year": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0
+      },
+      "no_variance_across_years": true,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": null,
+      "r_vs_EBI_sd": null,
+      "note": "identical in all 4 years, zero cross-year variance, cannot correlate with anything"
+    },
+    "Heat_Stress_Feb": {
+      "values_by_year": {
+        "2021": 7,
+        "2022": 2,
+        "2023": 7,
+        "2024": 0
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": -0.531,
+      "p_vs_EBI_mean": 0.469,
+      "r_vs_EBI_sd": 0.13,
+      "p_vs_EBI_sd": 0.8697
+    },
+    "Rain_Feb": {
+      "values_by_year": {
+        "2021": 117.8,
+        "2022": 61,
+        "2023": 131.3,
+        "2024": 67.2
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": -0.242,
+      "p_vs_EBI_mean": 0.7575,
+      "r_vs_EBI_sd": -0.185,
+      "p_vs_EBI_sd": 0.815
+    },
+    "High_Wind_Hrs": {
+      "values_by_year": {
+        "2021": 47,
+        "2022": 39,
+        "2023": 76,
+        "2024": 43
+      },
+      "no_variance_across_years": false,
+      "legacy_metric": false,
+      "r_vs_EBI_mean": 0.252,
+      "p_vs_EBI_mean": 0.7483,
+      "r_vs_EBI_sd": -0.609,
+      "p_vs_EBI_sd": 0.3913
+    }
+  },
+  "partB_climate_swap_invariance": {
+    "n": 167,
+    "swap_results": {
+      "Chill_Portions": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      },
+      "GDD_Feb": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      },
+      "Heat_Stress_Feb": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      },
+      "Rain_Feb": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      },
+      "High_Wind_Hrs": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      },
+      "Avg_DTR_Feb": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      },
+      "Max_Dry_Hrs": {
+        "R2": 0.5285,
+        "cvR2": 0.4563
+      }
+    },
+    "all_identical_cvR2": true,
+    "two_climate_features_simultaneously": {
+      "R2": 0.5285,
+      "cvR2": 0.4563,
+      "design_matrix_rank": 6,
+      "design_matrix_cols": 7,
+      "note": "rank < columns confirms the two climate columns carry no independent information at n=2 distinct years; cvR2 should match the single-climate-field result above"
+    }
+  },
+  "partC_DEM_x_climate_interaction": {
+    "n": 167,
+    "dem_missing_imputed": 15,
+    "baseline_features": [
+      "intercept",
+      "cultivar",
+      "EBI",
+      "EBIxcultivar",
+      "climate",
+      "Growth_April"
+    ],
+    "baseline_R2": 0.5285,
+    "baseline_cvR2": 0.4563,
+    "candidates_tested": [
+      "DEM_x_Chill_Portions",
+      "DEM_x_GDD_Feb",
+      "DEM_x_Heat_Stress_Feb",
+      "DEM_x_Rain_Feb",
+      "DEM_x_High_Wind_Hrs",
+      "DEM_x_Avg_DTR_Feb",
+      "DEM_x_Max_Dry_Hrs",
+      "DEM_x_Trans_Ratio",
+      "DEM"
+    ],
+    "forward_selection_history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.4563
+      }
+    ],
+    "selected_features": [],
+    "final_R2": 0.5285,
+    "final_cvR2": 0.4563,
+    "improvement_cvR2": 0.0,
+    "robustness_across_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "DEM_x_Chill_Portions"
+        ],
+        "baseline_cvR2": 0.4736,
+        "final_cvR2": 0.4778
+      },
+      {
+        "seed": 7,
+        "selected": [],
+        "baseline_cvR2": 0.4567,
+        "final_cvR2": 0.4567
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "DEM"
+        ],
+        "baseline_cvR2": 0.4478,
+        "final_cvR2": 0.448
+      },
+      {
+        "seed": 99,
+        "selected": [],
+        "baseline_cvR2": 0.488,
+        "final_cvR2": 0.488
+      },
+      {
+        "seed": 2024,
+        "selected": [],
+        "baseline_cvR2": 0.4724,
+        "final_cvR2": 0.4724
+      }
+    ],
+    "how_often_selected_of_5": {
+      "DEM_x_Chill_Portions": 1,
+      "DEM": 1
+    }
+  },
+  "raw_climate_data_date_range": "mid-October (prior year) through 31 March each year; NO April-August coverage, so no fruit-development/growing-season climate feature can be engineered from existing raw station data"
+}

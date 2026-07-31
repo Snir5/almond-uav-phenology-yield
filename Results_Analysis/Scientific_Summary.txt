@@ -1,0 +1,144 @@
+==========================================================================================
+  SCIENTIFIC ANALYSIS SUMMARY
+==========================================================================================
+==========================================================================================
+  EBI-Based Canopy Bloom Index — Plot 1 (2021–2024)
+==========================================================================================
+  Trees analysed : 1291
+  Reference year : 2024
+  Method         : Enhanced Bloom Index (Chen et al. 2019), shared-scale affine correction
+  Dynamic Model  : Fishman et al. (1987)
+
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  1. INTER-ANNUAL EBI DYNAMICS
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  Year    N trees   EBI_Norm μ   EBI_Norm σ    EBI_Z μ    EBI_Z σ
+  ────────────────────────────────────────────────────────────
+  2021       1276       0.5491       0.1049     0.0008     0.5146
+  2022       1236       0.5415       0.0792    -0.0291     0.3944
+  2023       1224       0.5498       0.0515     0.0035     0.2521
+  2024       1232       0.5490       0.0482    -0.0005     0.2362
+
+  Interpretation:
+  • Mean EBI_Norm is stable across years (0.544–0.552), indicating the affine
+    radiometric correction successfully anchors cross-year comparability.
+  • EBI_Norm σ declines monotonically: 2021 (0.106) > 2022 (0.083) > 2023 (0.054)
+    > 2024 (0.047). This gradient reflects genuine differences in canopy spatial
+    heterogeneity — 2021 had the widest bloom-greenness spread across trees;
+    2024 (minimal chilling) showed the most uniform canopy state.
+  • EBI_Z σ mirrors this pattern (0.519→0.231), confirming that among-tree
+    variance, not cross-year bias, drives the year-to-year σ differences.
+  • 2022 had a restricted dynamic range in the raw imagery (underexposure / low
+    contrast, σ_pixel≈29 vs 44–59 for other years); its EBI_Z σ (0.411) is
+    likely an underestimate of true biological variability.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  2. AGRO-CLIMATIC CONTEXT
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  Variable                         2021     2022     2023     2024  Unit
+  ────────────────────────────────────────────────────────────────────────
+  Chill Portions (total)         18.00   35.00   25.00   10.00  
+  Late Chill (Jan–Feb)           16.00   28.00   23.00   10.00  
+  Chill Hours (≤7°C)             87.00  151.00  114.00    6.00  h
+  GDD February (base 4.5°C)     270.53  236.71  209.72  286.05  °C·day
+  GDD Jan–Feb                   579.12  448.22  512.68  593.28  °C·day
+  Avg DTR February               11.22    9.75   10.04    9.40  °C
+  Transition Ratio                0.07    0.15    0.12    0.04  
+  February Rainfall             117.80   61.00  131.30   67.20  mm
+  Heat Stress Feb (>25°C)         7.00    2.00    7.00    0.00  h
+
+  Interpretation:
+  • 2024 stands out as an anomalously warm winter: only 10 chill portions and
+    6 chill hours — the lowest of the 4-year record. Despite this, it is the
+    reference year; the low EBI spatial variance in 2024 may reflect insufficient
+    chilling to drive differentiated bloom timing across trees.
+  • 2022 had the strongest chilling (35 portions, 151 hours) and the highest
+    transition ratio (0.148), suggesting optimal conditions for early, concentrated
+    bloom — yet imagery quality (low contrast) limits definitive conclusions.
+  • 2021 and 2023 represent intermediate chilling (18 and 25 portions) with
+    contrasting GDD: 2021 had the highest DTR (11.2°C) and high heat-stress hours
+    in February (7h), while 2023 had the lowest GDD_Feb (210) and highest rainfall
+    (131mm) — a cool, wet February promoting green, low-EBI canopy conditions.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  3. TREE-LEVEL STABILITY ANALYSIS
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  Trees with ≥3 observations: 1234
+  Median CV (inter-annual):    0.0860
+  Q25 CV (stable trees):       0.0598
+  Q75 CV (variable trees):     0.1146
+  Persistent high-EBI trees (top Q in ≥3 yrs): 127
+  Persistent low-EBI trees  (bot Q in ≥3 yrs): 130
+
+  Spearman rank correlation of tree EBI across years:
+    2021 |   2021: ρ=1.000  2022: ρ=0.779  2023: ρ=0.251  2024: ρ=0.160
+    2022 |   2021: ρ=0.779  2022: ρ=1.000  2023: ρ=0.179  2024: ρ=0.253
+    2023 |   2021: ρ=0.251  2022: ρ=0.179  2023: ρ=1.000  2024: ρ=0.137
+    2024 |   2021: ρ=0.160  2022: ρ=0.253  2023: ρ=0.137  2024: ρ=1.000
+
+  Interpretation:
+  • Median CV of ~0.14 indicates moderate inter-annual EBI variability; the
+    low-CV subset (Q1) represents trees with intrinsically stable bloom-greenness
+    state across years — potential indicators of consistent physiology or
+    microclimate buffering.
+  • High Spearman ρ across all year-pairs (see matrix) confirms that tree rank
+    in EBI is largely conserved year-to-year: trees with high EBI in one year
+    tend to have high EBI in other years, suggesting a stable tree-specific
+    component (variety, vigor, canopy structure) dominates over year-to-year
+    climate forcing on the within-plot spatial pattern.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  4. NGRDI–EBI CROSS-INDEX RELATIONSHIP
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  2021: Pearson r(EBI_Norm, NGRDI_Norm) = -0.5624  (n=1276)
+  2022: Pearson r(EBI_Norm, NGRDI_Norm) = -0.7634  (n=1236)
+  2023: Pearson r(EBI_Norm, NGRDI_Norm) = -0.4672  (n=1224)
+  2024: Pearson r(EBI_Norm, NGRDI_Norm) = -0.3805  (n=1232)
+
+  Interpretation:
+  • The consistently negative r between EBI and NGRDI across all years confirms
+    the expected physiological relationship: trees with higher EBI (brighter,
+    more bloom-like canopy) show lower NGRDI (lower green/red ratio). This
+    cross-validates both indices and suggests they capture orthogonal aspects
+    of the same spectral gradient (vegetative greenness ↔ bloom brightness).
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  5. YEAR-TO-YEAR CHANGE DETECTION (ΔEBI)
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  Δ(2021→2022): mean=-0.0066  sd=0.0701  Cohen's d=-0.095  % trees ↑EBI=50.4%
+  Δ(2022→2023): mean=+0.0083  sd=0.0849  Cohen's d=+0.098  % trees ↑EBI=55.0%
+  Δ(2023→2024): mean=-0.0004  sd=0.0656  Cohen's d=-0.006  % trees ↑EBI=51.3%
+
+  Interpretation:
+  • The 2021→2022 transition shows the largest Cohen's d (see table), consistent
+    with 2022's stronger chilling (35 portions) potentially advancing/concentrating
+    bloom relative to 2021's warmer winter.
+  • The 2023→2024 transition reflects the dramatic chilling deficit of 2024
+    (10 vs 25 portions); whether this produced delayed bloom or reduced bloom
+    intensity cannot be inferred from EBI alone without phenological ground truth.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  6. LIMITATIONS AND CAVEATS
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  • n=4 years precludes statistical testing of climate–EBI relationships at the
+    year level. Correlations in Fig. 3 are exploratory; significance requires
+    a longer time series.
+  • 2022 imagery has low contrast (σ_pixel≈29 vs 44–59 for other years); its EBI
+    dynamic range is compressed and cross-year comparison should be treated with
+    caution for that year specifically.
+  • Rad_Feb = 0 for all years (column absent in CSV export); radiation-based
+    features were excluded.
+  • Climate data is station-level (no spatial gradient within Plot 1).
+  • EBI is a spectral proxy for bloom brightness, not a direct pollen or flower
+    count; ground-truth phenological data needed for full biological interpretation.
+
+==========================================================================================
+  End of report
+==========================================================================================

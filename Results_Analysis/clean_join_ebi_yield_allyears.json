@@ -1,0 +1,137 @@
+{
+  "cleaning_rule": "drop trees whose master cultivar != nearest GPKG crown cultivar",
+  "n_matched_total": 161,
+  "n_dropped_mismatch": 2,
+  "n_clean": 159,
+  "per_year_clean": {
+    "2022": {
+      "dropped_this_year": 0,
+      "UEF": {
+        "r": 0.518,
+        "p": 0.1534,
+        "n": 9,
+        "sig": "ns"
+      },
+      "53": {
+        "r": 0.17,
+        "p": 0.6618,
+        "n": 9,
+        "sig": "ns"
+      }
+    },
+    "2023": {
+      "dropped_this_year": 2,
+      "UEF": {
+        "r": 0.28,
+        "p": 0.0094,
+        "n": 85,
+        "sig": "**"
+      },
+      "53": {
+        "r": -0.256,
+        "p": 0.0415,
+        "n": 64,
+        "sig": "*"
+      }
+    },
+    "2024": {
+      "dropped_this_year": 0,
+      "UEF": {
+        "r": 0.418,
+        "p": 0.2627,
+        "n": 9,
+        "sig": "ns"
+      },
+      "53": {
+        "r": -0.387,
+        "p": 0.3031,
+        "n": 9,
+        "sig": "ns"
+      }
+    }
+  },
+  "per_year_original": {
+    "2022": {
+      "UEF": {
+        "r": 0.518,
+        "p": 0.1534,
+        "n": 9,
+        "sig": "ns"
+      },
+      "53": {
+        "r": 0.17,
+        "p": 0.6618,
+        "n": 9,
+        "sig": "ns"
+      }
+    },
+    "2023": {
+      "UEF": {
+        "r": 0.287,
+        "p": 0.0071,
+        "n": 87,
+        "sig": "**"
+      },
+      "53": {
+        "r": -0.256,
+        "p": 0.0415,
+        "n": 64,
+        "sig": "*"
+      }
+    },
+    "2024": {
+      "UEF": {
+        "r": 0.418,
+        "p": 0.2627,
+        "n": 9,
+        "sig": "ns"
+      },
+      "53": {
+        "r": -0.387,
+        "p": 0.3031,
+        "n": 9,
+        "sig": "ns"
+      }
+    }
+  },
+  "pooled_all_years_clean": {
+    "n": 185,
+    "UEF": {
+      "r_within_year_centered": 0.333,
+      "p": 0.0006,
+      "n": 103,
+      "sig": "***"
+    },
+    "53": {
+      "r_within_year_centered": -0.189,
+      "p": 0.0895,
+      "n": 82,
+      "sig": "ns"
+    },
+    "interaction_EBIxcultivar": {
+      "F": 12.68,
+      "p": 0.0005,
+      "sig": "***"
+    }
+  },
+  "pooled_all_years_original": {
+    "n": 187,
+    "UEF": {
+      "r_within_year_centered": 0.336,
+      "p": 0.0005,
+      "n": 105,
+      "sig": "***"
+    },
+    "53": {
+      "r_within_year_centered": -0.189,
+      "p": 0.0895,
+      "n": 82,
+      "sig": "ns"
+    },
+    "interaction_EBIxcultivar": {
+      "F": 13.1,
+      "p": 0.0004,
+      "sig": "***"
+    }
+  }
+}

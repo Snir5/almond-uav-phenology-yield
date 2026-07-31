@@ -1,0 +1,424 @@
+{
+  "scope": {
+    "design": "all analyses computed within each cultivar; no pooling; same-year bloom-yield only",
+    "chilling": "Chill Portions (Dynamic Model)",
+    "chill_portions_by_year": {
+      "2021": 18.0,
+      "2022": 35.0,
+      "2023": 25.0,
+      "2024": 10.0
+    }
+  },
+  "UEF": {
+    "n_trees": 1045,
+    "H1_climate_EBI": {
+      "note": "n=4 year-level, directional",
+      "EBI_mean_by_year": {
+        "2021": 0.4914,
+        "2022": 0.5079,
+        "2023": 0.5482,
+        "2024": 0.5512
+      },
+      "EBI_sd_by_year": {
+        "2021": 0.0616,
+        "2022": 0.0682,
+        "2023": 0.0456,
+        "2024": 0.0537
+      },
+      "CP_vs_meanEBI": {
+        "r": -0.352,
+        "p": 0.6479,
+        "n": 4,
+        "sig": "ns"
+      },
+      "CP_vs_sdEBI": {
+        "r": 0.424,
+        "p": 0.5757,
+        "n": 4,
+        "sig": "ns"
+      }
+    },
+    "H2_climate_yield": {
+      "measured_by_year": {
+        "2022": {
+          "n": 10,
+          "mean": 7.127,
+          "sd": 4.09,
+          "CP": 35.0
+        },
+        "2023": {
+          "n": 90,
+          "mean": 2.943,
+          "sd": 1.143,
+          "CP": 25.0
+        },
+        "2024": {
+          "n": 10,
+          "mean": 2.838,
+          "sd": 1.314,
+          "CP": 10.0
+        }
+      },
+      "predicted_by_year": {
+        "2022": {
+          "n": 739,
+          "mean": 5.446
+        },
+        "2023": {
+          "n": 739,
+          "mean": 2.98
+        }
+      },
+      "note": "n<=3 measured years -> descriptive, not inferential"
+    },
+    "H3_EBI_yield_sameyear": {
+      "measured": {
+        "EBI2022_vs_measY2022": {
+          "r": 0.518,
+          "p": 0.1534,
+          "n": 9,
+          "sig": "ns",
+          "spearman": {
+            "rho": 0.483,
+            "p": 0.1875,
+            "n": 9
+          },
+          "linreg": {
+            "slope": 35.442,
+            "R2": 0.268,
+            "t": 1.6,
+            "p": 0.1534,
+            "n": 9,
+            "sig": "ns"
+          }
+        },
+        "EBI2023_vs_measY2023": {
+          "r": 0.287,
+          "p": 0.0071,
+          "n": 87,
+          "sig": "**",
+          "spearman": {
+            "rho": 0.303,
+            "p": 0.0043,
+            "n": 87
+          },
+          "linreg": {
+            "slope": 7.618,
+            "R2": 0.082,
+            "t": 2.76,
+            "p": 0.0071,
+            "n": 87,
+            "sig": "**"
+          }
+        },
+        "EBI2024_vs_measY2024": {
+          "r": 0.418,
+          "p": 0.2627,
+          "n": 9,
+          "sig": "ns",
+          "spearman": {
+            "rho": 0.367,
+            "p": 0.3317,
+            "n": 9
+          },
+          "linreg": {
+            "slope": 8.826,
+            "R2": 0.175,
+            "t": 1.22,
+            "p": 0.2627,
+            "n": 9,
+            "sig": "ns"
+          }
+        }
+      },
+      "predicted_CIRCULAR": {
+        "EBI2022_vs_predY2022": {
+          "r": -0.13,
+          "p": 0.0005,
+          "n": 721,
+          "sig": "***",
+          "note": "predicted is modelled/circular"
+        },
+        "EBI2023_vs_predY2023": {
+          "r": -0.02,
+          "p": 0.5864,
+          "n": 717,
+          "sig": "ns",
+          "note": "predicted is modelled/circular"
+        }
+      }
+    },
+    "V_predicted_vs_measured": {
+      "validation_2022": {
+        "n": 9,
+        "pearson_r": -0.127,
+        "r_p": 0.7455,
+        "RMSE": 4.574,
+        "MAE": 3.53,
+        "bias_pred_minus_meas": -1.455,
+        "Lin_CCC": -0.054,
+        "meas_mean": 7.193,
+        "pred_mean": 5.737
+      },
+      "validation_2023": {
+        "n": 87,
+        "pearson_r": 0.173,
+        "r_p": 0.1099,
+        "RMSE": 1.095,
+        "MAE": 0.747,
+        "bias_pred_minus_meas": 0.052,
+        "Lin_CCC": 0.062,
+        "meas_mean": 2.99,
+        "pred_mean": 3.042
+      },
+      "validation_2024": "no predicted_Yield_2024"
+    },
+    "P_phenology": {
+      "levene_EBI_var_across_years": {
+        "F": 56.17,
+        "df1": 3,
+        "df2": 3291,
+        "p": 0.0,
+        "sig": "***"
+      },
+      "EBI_cv_by_year": {
+        "2021": 0.1253,
+        "2022": 0.1343,
+        "2023": 0.0831,
+        "2024": 0.0975
+      },
+      "EBI_vs_NGRDI_2023": {
+        "r": -0.575,
+        "p": 0.0,
+        "n": 814,
+        "sig": "***"
+      },
+      "NGRDI_vs_measured_yield_sameyear": {
+        "NGRDI2022_vs_measY2022": {
+          "r": -0.229,
+          "p": 0.5526,
+          "n": 9,
+          "sig": "ns"
+        },
+        "NGRDI2023_vs_measY2023": {
+          "r": -0.087,
+          "p": 0.4229,
+          "n": 87,
+          "sig": "ns"
+        },
+        "NGRDI2024_vs_measY2024": {
+          "r": -0.224,
+          "p": 0.5616,
+          "n": 9,
+          "sig": "ns"
+        }
+      }
+    }
+  },
+  "53": {
+    "n_trees": 249,
+    "H1_climate_EBI": {
+      "note": "n=4 year-level, directional",
+      "EBI_mean_by_year": {
+        "2021": 0.6026,
+        "2022": 0.597,
+        "2023": 0.5069,
+        "2024": 0.5485
+      },
+      "EBI_sd_by_year": {
+        "2021": 0.0648,
+        "2022": 0.0573,
+        "2023": 0.0414,
+        "2024": 0.0304
+      },
+      "CP_vs_meanEBI": {
+        "r": 0.201,
+        "p": 0.7988,
+        "n": 4,
+        "sig": "ns"
+      },
+      "CP_vs_sdEBI": {
+        "r": 0.495,
+        "p": 0.5046,
+        "n": 4,
+        "sig": "ns"
+      }
+    },
+    "H2_climate_yield": {
+      "measured_by_year": {
+        "2022": {
+          "n": 10,
+          "mean": 6.23,
+          "sd": 2.078,
+          "CP": 35.0
+        },
+        "2023": {
+          "n": 71,
+          "mean": 2.277,
+          "sd": 1.147,
+          "CP": 25.0
+        },
+        "2024": {
+          "n": 10,
+          "mean": 2.269,
+          "sd": 1.436,
+          "CP": 10.0
+        }
+      },
+      "predicted_by_year": {
+        "2022": {
+          "n": 183,
+          "mean": 5.558
+        },
+        "2023": {
+          "n": 183,
+          "mean": 3.284
+        }
+      },
+      "note": "n<=3 measured years -> descriptive, not inferential"
+    },
+    "H3_EBI_yield_sameyear": {
+      "measured": {
+        "EBI2022_vs_measY2022": {
+          "r": 0.17,
+          "p": 0.6618,
+          "n": 9,
+          "sig": "ns",
+          "spearman": {
+            "rho": 0.167,
+            "p": 0.6682,
+            "n": 9
+          },
+          "linreg": {
+            "slope": 6.089,
+            "R2": 0.029,
+            "t": 0.46,
+            "p": 0.6618,
+            "n": 9,
+            "sig": "ns"
+          }
+        },
+        "EBI2023_vs_measY2023": {
+          "r": -0.256,
+          "p": 0.0415,
+          "n": 64,
+          "sig": "*",
+          "spearman": {
+            "rho": -0.241,
+            "p": 0.0554,
+            "n": 64
+          },
+          "linreg": {
+            "slope": -6.795,
+            "R2": 0.065,
+            "t": -2.08,
+            "p": 0.0415,
+            "n": 64,
+            "sig": "*"
+          }
+        },
+        "EBI2024_vs_measY2024": {
+          "r": -0.387,
+          "p": 0.3031,
+          "n": 9,
+          "sig": "ns",
+          "spearman": {
+            "rho": -0.467,
+            "p": 0.2054,
+            "n": 9
+          },
+          "linreg": {
+            "slope": -22.937,
+            "R2": 0.15,
+            "t": -1.11,
+            "p": 0.3031,
+            "n": 9,
+            "sig": "ns"
+          }
+        }
+      },
+      "predicted_CIRCULAR": {
+        "EBI2022_vs_predY2022": {
+          "r": -0.35,
+          "p": 0.0,
+          "n": 178,
+          "sig": "***",
+          "note": "predicted is modelled/circular"
+        },
+        "EBI2023_vs_predY2023": {
+          "r": 0.207,
+          "p": 0.0058,
+          "n": 177,
+          "sig": "**",
+          "note": "predicted is modelled/circular"
+        }
+      }
+    },
+    "V_predicted_vs_measured": {
+      "validation_2022": {
+        "n": 9,
+        "pearson_r": -0.136,
+        "r_p": 0.727,
+        "RMSE": 1.995,
+        "MAE": 1.741,
+        "bias_pred_minus_meas": -0.525,
+        "Lin_CCC": -0.086,
+        "meas_mean": 6.602,
+        "pred_mean": 6.077
+      },
+      "validation_2023": {
+        "n": 64,
+        "pearson_r": -0.06,
+        "r_p": 0.6397,
+        "RMSE": 1.622,
+        "MAE": 1.371,
+        "bias_pred_minus_meas": 1.04,
+        "Lin_CCC": -0.018,
+        "meas_mean": 2.32,
+        "pred_mean": 3.361
+      },
+      "validation_2024": "no predicted_Yield_2024"
+    },
+    "P_phenology": {
+      "levene_EBI_var_across_years": {
+        "F": 28.08,
+        "df1": 3,
+        "df2": 796,
+        "p": 0.0,
+        "sig": "***"
+      },
+      "EBI_cv_by_year": {
+        "2021": 0.1075,
+        "2022": 0.0959,
+        "2023": 0.0817,
+        "2024": 0.0555
+      },
+      "EBI_vs_NGRDI_2023": {
+        "r": -0.446,
+        "p": 0.0,
+        "n": 198,
+        "sig": "***"
+      },
+      "NGRDI_vs_measured_yield_sameyear": {
+        "NGRDI2022_vs_measY2022": {
+          "r": -0.143,
+          "p": 0.7129,
+          "n": 9,
+          "sig": "ns"
+        },
+        "NGRDI2023_vs_measY2023": {
+          "r": 0.062,
+          "p": 0.6259,
+          "n": 64,
+          "sig": "ns"
+        },
+        "NGRDI2024_vs_measY2024": {
+          "r": -0.015,
+          "p": 0.9692,
+          "n": 9,
+          "sig": "ns"
+        }
+      }
+    }
+  }
+}

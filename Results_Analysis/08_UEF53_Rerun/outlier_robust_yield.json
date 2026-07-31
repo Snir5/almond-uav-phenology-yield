@@ -1,0 +1,211 @@
+{
+  "note": "Per-canopy outlier removal (method A: modified Z-score |z|>3.5 any channel; method B: brightness 5-95 percentile trim), applied before averaging R,G,B per crown, then EBI recomputed from the cleaned means. Compares to the existing (non-robust) EBI_ofMeans already validated in section 13.5.",
+  "Q1_how_much_does_it_move_EBI": {
+    "2021": {
+      "mean_pct_pixels_flagged_outlier_A": 0.06,
+      "mean_pct_pixels_trimmed_B": 9.9,
+      "plain_vs_robust_EBI": {
+        "r": 1.0,
+        "p": 0.0,
+        "n": 1424,
+        "sig": "***"
+      },
+      "mean_abs_shift_robust": 0.0005,
+      "mean_abs_shift_trim": 0.0208
+    },
+    "2022": {
+      "mean_pct_pixels_flagged_outlier_A": 1.09,
+      "mean_pct_pixels_trimmed_B": 9.86,
+      "plain_vs_robust_EBI": {
+        "r": 0.998,
+        "p": 0.0,
+        "n": 1255,
+        "sig": "***"
+      },
+      "mean_abs_shift_robust": 0.024,
+      "mean_abs_shift_trim": 0.0489
+    },
+    "2023": {
+      "mean_pct_pixels_flagged_outlier_A": 0.0,
+      "mean_pct_pixels_trimmed_B": 9.94,
+      "plain_vs_robust_EBI": {
+        "r": 1.0,
+        "p": 0.0,
+        "n": 1240,
+        "sig": "***"
+      },
+      "mean_abs_shift_robust": 0.0001,
+      "mean_abs_shift_trim": 0.0102
+    },
+    "2024": {
+      "mean_pct_pixels_flagged_outlier_A": 0.06,
+      "mean_pct_pixels_trimmed_B": 9.91,
+      "plain_vs_robust_EBI": {
+        "r": 0.987,
+        "p": 0.0,
+        "n": 1247,
+        "sig": "***"
+      },
+      "mean_abs_shift_robust": 0.0018,
+      "mean_abs_shift_trim": 0.01
+    }
+  },
+  "Q2_yield_battery_plain_vs_robust_vs_trim": {
+    "UEF": {
+      "2022": {
+        "plain": {
+          "r": 0.537,
+          "p": 0.1096,
+          "n": 10,
+          "sig": "ns"
+        },
+        "robust": {
+          "r": 0.526,
+          "p": 0.1187,
+          "n": 10,
+          "sig": "ns"
+        },
+        "trim": {
+          "r": 0.515,
+          "p": 0.128,
+          "n": 10,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "plain": {
+          "r": 0.269,
+          "p": 0.0114,
+          "n": 88,
+          "sig": "*"
+        },
+        "robust": {
+          "r": 0.268,
+          "p": 0.0114,
+          "n": 88,
+          "sig": "*"
+        },
+        "trim": {
+          "r": 0.27,
+          "p": 0.011,
+          "n": 88,
+          "sig": "*"
+        }
+      },
+      "2024": {
+        "plain": {
+          "r": 0.428,
+          "p": 0.2168,
+          "n": 10,
+          "sig": "ns"
+        },
+        "robust": {
+          "r": 0.428,
+          "p": 0.2168,
+          "n": 10,
+          "sig": "ns"
+        },
+        "trim": {
+          "r": 0.433,
+          "p": 0.2113,
+          "n": 10,
+          "sig": "ns"
+        }
+      }
+    },
+    "53": {
+      "2022": {
+        "plain": {
+          "r": 0.183,
+          "p": 0.6375,
+          "n": 9,
+          "sig": "ns"
+        },
+        "robust": {
+          "r": 0.166,
+          "p": 0.6698,
+          "n": 9,
+          "sig": "ns"
+        },
+        "trim": {
+          "r": 0.168,
+          "p": 0.6665,
+          "n": 9,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "plain": {
+          "r": -0.257,
+          "p": 0.0405,
+          "n": 64,
+          "sig": "*"
+        },
+        "robust": {
+          "r": -0.257,
+          "p": 0.0404,
+          "n": 64,
+          "sig": "*"
+        },
+        "trim": {
+          "r": -0.257,
+          "p": 0.0407,
+          "n": 64,
+          "sig": "*"
+        }
+      },
+      "2024": {
+        "plain": {
+          "r": -0.419,
+          "p": 0.2619,
+          "n": 9,
+          "sig": "ns"
+        },
+        "robust": {
+          "r": -0.419,
+          "p": 0.2619,
+          "n": 9,
+          "sig": "ns"
+        },
+        "trim": {
+          "r": -0.433,
+          "p": 0.2438,
+          "n": 9,
+          "sig": "ns"
+        }
+      }
+    }
+  },
+  "ANCOVA_2023": {
+    "plain": {
+      "n": 152,
+      "EBIxcultivar_interaction": {
+        "F": 10.87,
+        "p": 0.0012,
+        "sig": "**"
+      },
+      "R2": 0.071,
+      "R2_with_interaction": 0.135
+    },
+    "robust": {
+      "n": 152,
+      "EBIxcultivar_interaction": {
+        "F": 10.87,
+        "p": 0.0012,
+        "sig": "**"
+      },
+      "R2": 0.071,
+      "R2_with_interaction": 0.135
+    },
+    "trim": {
+      "n": 152,
+      "EBIxcultivar_interaction": {
+        "F": 10.9,
+        "p": 0.0012,
+        "sig": "**"
+      },
+      "R2": 0.071,
+      "R2_with_interaction": 0.135
+    }
+  }
+}

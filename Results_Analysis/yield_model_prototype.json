@@ -1,0 +1,57 @@
+{
+  "within_2023": {
+    "n": 151,
+    "models": {
+      "M1 cultivar": {
+        "R2": 0.078,
+        "adjR2": 0.072,
+        "cvR2": 0.051
+      },
+      "M2 +EBI": {
+        "R2": 0.079,
+        "adjR2": 0.067,
+        "cvR2": 0.059
+      },
+      "M3 +EBI\u00d7cultivar": {
+        "R2": 0.147,
+        "adjR2": 0.129,
+        "cvR2": 0.088
+      },
+      "M4 +spatial (X,Y)": {
+        "R2": 0.154,
+        "adjR2": 0.124,
+        "cvR2": 0.049
+      },
+      "M5 +NGRDI": {
+        "R2": 0.154,
+        "adjR2": 0.118,
+        "cvR2": 0.073
+      }
+    }
+  },
+  "pooled_2022_2024": {
+    "n": 187,
+    "models": {
+      "cultivar only": {
+        "R2": 0.02,
+        "adjR2": 0.015,
+        "cvR2": -0.0
+      },
+      "+EBI\u00d7cultivar": {
+        "R2": 0.092,
+        "adjR2": 0.077,
+        "cvR2": 0.035
+      },
+      "+climate (Chill Portions)": {
+        "R2": 0.243,
+        "adjR2": 0.226,
+        "cvR2": 0.168
+      }
+    },
+    "seasonal_ceiling_year_factor": {
+      "R2": 0.479,
+      "cvR2": 0.354,
+      "note": "year factor is a benchmark of how much yield is seasonal, NOT a usable feature"
+    }
+  }
+}

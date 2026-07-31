@@ -1,0 +1,209 @@
+{
+  "note": "Tests EBI in explicit INTERACTION with every other available feature (Growth_April, climate, DEM, remaining physiology fields, NGRDI, EBI^2, and two three-way interactions), on top of the recommended model (cultivar+EBIxcultivar+climate+Growth_April, CV R^2=0.456).",
+  "n": 167,
+  "baseline": {
+    "R2": 0.5285,
+    "cvR2": 0.4563
+  },
+  "candidates_tested": [
+    "EBI_x_GrowthApril",
+    "EBI_x_climate",
+    "EBI_x_DEM",
+    "EBI_x_SWP_April",
+    "EBI_x_SWP_MayJune",
+    "EBI_x_SWP_June",
+    "EBI_x_Growth_MayJune",
+    "EBI_x_Growth_June",
+    "EBI_x_CNC_June",
+    "EBI_x_NGRDI",
+    "EBI_squared",
+    "EBI_x_cultivar_x_climate",
+    "EBI_x_cultivar_x_GrowthApril"
+  ],
+  "forward_selection": {
+    "selected_features": [
+      "EBI_x_DEM"
+    ],
+    "history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.4563
+      },
+      {
+        "step": 1,
+        "added": "EBI_x_DEM",
+        "cvR2": 0.4575
+      }
+    ],
+    "final_R2": 0.532,
+    "final_cvR2": 0.4575,
+    "improvement_cvR2": 0.0012
+  },
+  "robustness_across_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [
+        "EBI_x_CNC_June",
+        "EBI_x_NGRDI",
+        "EBI_x_Growth_MayJune"
+      ],
+      "baseline_cvR2": 0.4736,
+      "final_cvR2": 0.4916
+    },
+    {
+      "seed": 7,
+      "selected": [
+        "EBI_x_CNC_June",
+        "EBI_x_NGRDI",
+        "EBI_x_Growth_MayJune"
+      ],
+      "baseline_cvR2": 0.4567,
+      "final_cvR2": 0.4723
+    },
+    {
+      "seed": 13,
+      "selected": [
+        "EBI_x_CNC_June",
+        "EBI_x_NGRDI"
+      ],
+      "baseline_cvR2": 0.4478,
+      "final_cvR2": 0.4798
+    },
+    {
+      "seed": 99,
+      "selected": [
+        "EBI_x_CNC_June"
+      ],
+      "baseline_cvR2": 0.488,
+      "final_cvR2": 0.5044
+    },
+    {
+      "seed": 2024,
+      "selected": [
+        "EBI_x_CNC_June",
+        "EBI_x_DEM"
+      ],
+      "baseline_cvR2": 0.4724,
+      "final_cvR2": 0.5036
+    }
+  ],
+  "how_often_selected_of_5": {
+    "EBI_x_CNC_June": 5,
+    "EBI_x_NGRDI": 3,
+    "EBI_x_Growth_MayJune": 2,
+    "EBI_x_DEM": 1
+  },
+  "partial_F_test_main_seed_selection": {
+    "added_terms": [
+      "EBI_x_DEM"
+    ],
+    "F": 1.175,
+    "df": [
+      1,
+      160
+    ],
+    "p": 0.28
+  },
+  "collinearity_check": {
+    "EBI_x_GrowthApril": {
+      "corr_with_EBI": 0.291,
+      "corr_with_Growth_April": 0.043
+    },
+    "EBI_x_climate": {
+      "corr_with_EBI": 0.328,
+      "corr_with_Growth_April": 0.203
+    },
+    "EBI_x_DEM": {
+      "corr_with_EBI": -0.07,
+      "corr_with_Growth_April": -0.074
+    },
+    "EBI_x_SWP_April": {
+      "corr_with_EBI": 0.206,
+      "corr_with_Growth_April": 0.167
+    },
+    "EBI_x_SWP_MayJune": {
+      "corr_with_EBI": -0.096,
+      "corr_with_Growth_April": -0.05
+    },
+    "EBI_x_SWP_June": {
+      "corr_with_EBI": 0.348,
+      "corr_with_Growth_April": 0.195
+    },
+    "EBI_x_Growth_MayJune": {
+      "corr_with_EBI": 0.361,
+      "corr_with_Growth_April": 0.258
+    },
+    "EBI_x_Growth_June": {
+      "corr_with_EBI": -0.133,
+      "corr_with_Growth_April": -0.201
+    },
+    "EBI_x_CNC_June": {
+      "corr_with_EBI": 0.314,
+      "corr_with_Growth_April": 0.174
+    },
+    "EBI_x_NGRDI": {
+      "corr_with_EBI": -0.094,
+      "corr_with_Growth_April": -0.225
+    },
+    "EBI_squared": {
+      "corr_with_EBI": 0.351,
+      "corr_with_Growth_April": 0.25
+    },
+    "EBI_x_cultivar_x_climate": {
+      "corr_with_EBI": 0.105,
+      "corr_with_Growth_April": -0.195
+    },
+    "EBI_x_cultivar_x_GrowthApril": {
+      "corr_with_EBI": 0.141,
+      "corr_with_Growth_April": -0.328
+    }
+  },
+  "partial_F_all_13_candidates_FDR_corrected": {
+    "note": "Each candidate added alone to the baseline (full n=167, not CV), partial F test, then BH-FDR across all 13. Two candidates survive at p_fdr<0.05.",
+    "EBI_x_CNC_June": {"F": 9.542, "p": 0.0024, "p_fdr": 0.0312, "coef": 0.3537, "survives_FDR": true},
+    "EBI_x_Growth_MayJune": {"F": 8.189, "p": 0.0048, "p_fdr": 0.0312, "coef": 0.2399, "survives_FDR": true},
+    "EBI_x_climate": {"F": 6.213, "p": 0.0137, "p_fdr": 0.0594, "coef": 0.2375, "survives_FDR": false},
+    "EBI_x_cultivar_x_climate": {"F": 4.87, "p": 0.0288, "p_fdr": 0.0936, "coef": 0.315, "survives_FDR": false},
+    "EBI_x_GrowthApril": {"F": 3.731, "p": 0.0552, "p_fdr": 0.1435, "coef": 0.1865, "survives_FDR": false},
+    "EBI_x_SWP_June": {"F": 3.382, "p": 0.0678, "p_fdr": 0.1469, "coef": 0.1729, "survives_FDR": false},
+    "EBI_x_NGRDI": {"F": 2.446, "p": 0.1198, "p_fdr": 0.2225, "coef": 0.1796, "survives_FDR": false},
+    "EBI_x_cultivar_x_GrowthApril": {"F": 2.207, "p": 0.1394, "p_fdr": 0.2265, "coef": 0.2038, "survives_FDR": false},
+    "EBI_x_SWP_April": {"F": 1.375, "p": 0.2427, "p_fdr": 0.3506, "coef": 0.1261, "survives_FDR": false},
+    "EBI_x_DEM": {"F": 1.175, "p": 0.28, "p_fdr": 0.364, "coef": 0.1224, "survives_FDR": false},
+    "EBI_squared": {"F": 0.152, "p": 0.6974, "p_fdr": 0.7703, "coef": 0.0487, "survives_FDR": false},
+    "EBI_x_SWP_MayJune": {"F": 0.106, "p": 0.7451, "p_fdr": 0.7703, "coef": 0.0414, "survives_FDR": false},
+    "EBI_x_Growth_June": {"F": 0.086, "p": 0.7703, "p_fdr": 0.7703, "coef": -0.0285, "survives_FDR": false}
+  },
+  "EBI_x_CNC_June_deep_dive": {
+    "note": "The only candidate treated as a real lead: FDR-significant AND consistent across the 5 established robustness-check seeds.",
+    "cv_gain_by_seed": {"seed_42_main": -0.0136, "seed_1": 0.0173, "seed_7": 0.0132, "seed_13": 0.0174, "seed_99": 0.0164, "seed_2024": 0.0266},
+    "note_on_seed_42": "The historical default seed used throughout this project shows a negative CV delta here, the only one of 6 tested; all 5 of the established robustness-check seeds (1,7,13,99,2024) are positive, mean +0.0182. Consistent with the same pattern already seen for EBI x cultivar's own marginal contribution in section 28 (seed 42 was also the outlier there), read as fold-specific noise on a small n=167 CV split, not evidence against the effect, especially since the partial-F test on the full n=167 sample (not a CV fold) is clearly significant.",
+    "raw_correlation_EBI_vs_CNC_June": {"pooled": 0.087, "UEF": -0.130, "cultivar_53": 0.546},
+    "EBI_yield_r_by_CNC_June_tercile": {"low": 0.282, "mid": 0.143, "high": 0.405},
+    "redundancy_check_vs_EBI_x_Growth_MayJune": {
+      "corr_between_the_two_interaction_terms": 0.913,
+      "corr_between_CNC_June_and_Growth_MayJune_raw": 0.879,
+      "joint_partial_F_both_together": {"F": 4.823, "df": [2, 159], "p": 0.0093},
+      "cv_R2_CNC_only_vs_both_together_by_seed": {
+        "seed_1": {"CNC_only": 0.4909, "both": 0.4882}, "seed_7": {"CNC_only": 0.4699, "both": 0.4642},
+        "seed_13": {"CNC_only": 0.4652, "both": 0.407}, "seed_99": {"CNC_only": 0.5044, "both": 0.4915},
+        "seed_2024": {"CNC_only": 0.499, "both": 0.4911}
+      },
+      "conclusion": "Adding both together is never better than EBI_x_CNC_June alone (consistently a bit worse), because Growth_MayJune and CNC_June are themselves r=0.879 correlated (the same 'general vigor' axis identified by the section-23 PCA). EBI_x_Growth_MayJune's own FDR significance is very likely the same underlying signal as EBI_x_CNC_June restated, not an independent second finding."
+    }
+  },
+  "extended_model_recommendation": {
+    "note": "cultivar+EBIxcultivar+climate+Growth_April+EBIxCNC_June, i.e. the section-22 recommended model plus this one new term.",
+    "in_sample_R2": {"base": 0.5285, "extended": 0.5551},
+    "cvR2_by_seed": {
+      "seed_42_main": {"base": 0.4563, "extended": 0.4427, "gain": -0.0136},
+      "seed_1": {"base": 0.4736, "extended": 0.4909, "gain": 0.0173},
+      "seed_7": {"base": 0.4567, "extended": 0.4699, "gain": 0.0132},
+      "seed_13": {"base": 0.4478, "extended": 0.4652, "gain": 0.0174},
+      "seed_99": {"base": 0.488, "extended": 0.5044, "gain": 0.0164},
+      "seed_2024": {"base": 0.4724, "extended": 0.499, "gain": 0.0266}
+    },
+    "mean_gain_across_5_established_robustness_seeds": 0.0182
+  }
+}

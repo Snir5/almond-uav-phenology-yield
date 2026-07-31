@@ -1,0 +1,52 @@
+{
+  "note": "Per request: does dropping to a single measured-yield year raise CV R^2, versus pooling 2022+2023? Climate is excluded from all three fits here (it is constant within a single year and cannot be fit there), so this isolates the effect of sample composition/pooling itself, holding the feature set fixed at cultivar+EBIxcultivar+Growth_April. The full recommended model (which adds climate back for the pooled case) reaches CV R^2=0.456, reported separately in section 22/29.",
+  "pooled_sample_year_breakdown": {
+    "2023": 149,
+    "2022": 18
+  },
+  "year_2023_only": {
+    "n": 149,
+    "cultivar_only": {
+      "R2": 0.0804,
+      "cvR2": 0.0498
+    },
+    "plus_EBIxcultivar": {
+      "R2": 0.151,
+      "cvR2": 0.1157
+    },
+    "plus_EBIxcultivar_plus_GrowthApril": {
+      "R2": 0.1608,
+      "cvR2": 0.113
+    }
+  },
+  "year_2022_only": {
+    "n": 18,
+    "cultivar_only": {
+      "R2": 0.0088,
+      "cvR2": -0.2163
+    },
+    "plus_EBIxcultivar": {
+      "R2": 0.239,
+      "cvR2": 0.0408
+    },
+    "plus_EBIxcultivar_plus_GrowthApril": {
+      "R2": 0.3095,
+      "cvR2": -0.2504
+    }
+  },
+  "pooled_2022_2023_no_climate": {
+    "n": 167,
+    "cultivar_only": {
+      "R2": 0.0174,
+      "cvR2": -0.0088
+    },
+    "plus_EBIxcultivar": {
+      "R2": 0.1021,
+      "cvR2": -0.0036
+    },
+    "plus_EBIxcultivar_plus_GrowthApril": {
+      "R2": 0.2187,
+      "cvR2": 0.1132
+    }
+  }
+}

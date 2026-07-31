@@ -1,0 +1,914 @@
+{
+  "note": "Tests the new true-EBI pixel-distribution feature bank (section 39, Master_Trees_EBIPixelFeatures_v6.xlsx, sanity-checked exact match to canonical EBI_Norm) standalone, for redundancy among candidates, in pairwise combination, and combined with the full recommended model, same rigor as sections 29-30/37-38.",
+  "n_2023_standalone": 151,
+  "redundancy_high_corr_pairs_gt_0.9": [
+    [
+      "EBI_Norm_std",
+      "EBI_Norm_var",
+      0.995
+    ],
+    [
+      "EBI_Norm_std",
+      "EBI_Norm_IQR",
+      0.911
+    ],
+    [
+      "EBI_Norm_var",
+      "EBI_Norm_IQR",
+      0.903
+    ],
+    [
+      "EBI_Norm_median",
+      "EBI_Norm_P25",
+      0.931
+    ],
+    [
+      "EBI_Norm_median",
+      "EBI_Norm_P75",
+      0.956
+    ],
+    [
+      "EBI_Norm_median",
+      "EBI_Norm_P90",
+      0.902
+    ],
+    [
+      "EBI_Norm_median",
+      "EBI_OtsuFrac",
+      0.988
+    ],
+    [
+      "EBI_Norm_median",
+      "HighEBI_frac_055",
+      0.989
+    ],
+    [
+      "EBI_Norm_median",
+      "HighEBI_density_055",
+      0.989
+    ],
+    [
+      "EBI_Norm_median",
+      "HighEBI_frac_065",
+      0.956
+    ],
+    [
+      "EBI_Norm_median",
+      "HighEBI_density_065",
+      0.956
+    ],
+    [
+      "EBI_Norm_median",
+      "HighEBI_frac_075",
+      0.918
+    ],
+    [
+      "EBI_Norm_median",
+      "HighEBI_density_075",
+      0.918
+    ],
+    [
+      "EBI_Norm_P10",
+      "EBI_Norm_CV",
+      -0.913
+    ],
+    [
+      "EBI_Norm_P25",
+      "HighEBI_frac_055",
+      0.9
+    ],
+    [
+      "EBI_Norm_P25",
+      "HighEBI_density_055",
+      0.9
+    ],
+    [
+      "EBI_Norm_P75",
+      "EBI_Norm_P90",
+      0.985
+    ],
+    [
+      "EBI_Norm_P75",
+      "EBI_OtsuFrac",
+      0.97
+    ],
+    [
+      "EBI_Norm_P75",
+      "HighEBI_frac_055",
+      0.967
+    ],
+    [
+      "EBI_Norm_P75",
+      "HighEBI_density_055",
+      0.967
+    ],
+    [
+      "EBI_Norm_P75",
+      "HighEBI_frac_065",
+      0.996
+    ],
+    [
+      "EBI_Norm_P75",
+      "HighEBI_density_065",
+      0.996
+    ],
+    [
+      "EBI_Norm_P75",
+      "HighEBI_frac_075",
+      0.982
+    ],
+    [
+      "EBI_Norm_P75",
+      "HighEBI_density_075",
+      0.982
+    ],
+    [
+      "EBI_Norm_P90",
+      "EBI_OtsuFrac",
+      0.932
+    ],
+    [
+      "EBI_Norm_P90",
+      "HighEBI_frac_055",
+      0.927
+    ],
+    [
+      "EBI_Norm_P90",
+      "HighEBI_density_055",
+      0.927
+    ],
+    [
+      "EBI_Norm_P90",
+      "HighEBI_frac_065",
+      0.981
+    ],
+    [
+      "EBI_Norm_P90",
+      "HighEBI_density_065",
+      0.981
+    ],
+    [
+      "EBI_Norm_P90",
+      "HighEBI_frac_075",
+      0.98
+    ],
+    [
+      "EBI_Norm_P90",
+      "HighEBI_density_075",
+      0.98
+    ],
+    [
+      "EBI_OtsuFrac",
+      "HighEBI_frac_055",
+      1.0
+    ],
+    [
+      "EBI_OtsuFrac",
+      "HighEBI_density_055",
+      1.0
+    ],
+    [
+      "EBI_OtsuFrac",
+      "HighEBI_frac_065",
+      0.974
+    ],
+    [
+      "EBI_OtsuFrac",
+      "HighEBI_density_065",
+      0.974
+    ],
+    [
+      "EBI_OtsuFrac",
+      "HighEBI_frac_075",
+      0.927
+    ],
+    [
+      "EBI_OtsuFrac",
+      "HighEBI_density_075",
+      0.927
+    ],
+    [
+      "HighEBI_frac_055",
+      "HighEBI_density_055",
+      1.0
+    ],
+    [
+      "HighEBI_frac_055",
+      "HighEBI_frac_065",
+      0.971
+    ],
+    [
+      "HighEBI_frac_055",
+      "HighEBI_density_065",
+      0.971
+    ],
+    [
+      "HighEBI_frac_055",
+      "HighEBI_frac_075",
+      0.922
+    ],
+    [
+      "HighEBI_frac_055",
+      "HighEBI_density_075",
+      0.922
+    ],
+    [
+      "HighEBI_density_055",
+      "HighEBI_frac_065",
+      0.971
+    ],
+    [
+      "HighEBI_density_055",
+      "HighEBI_density_065",
+      0.971
+    ],
+    [
+      "HighEBI_density_055",
+      "HighEBI_frac_075",
+      0.922
+    ],
+    [
+      "HighEBI_density_055",
+      "HighEBI_density_075",
+      0.922
+    ],
+    [
+      "HighEBI_frac_065",
+      "HighEBI_density_065",
+      1.0
+    ],
+    [
+      "HighEBI_frac_065",
+      "HighEBI_frac_075",
+      0.984
+    ],
+    [
+      "HighEBI_frac_065",
+      "HighEBI_density_075",
+      0.984
+    ],
+    [
+      "HighEBI_density_065",
+      "HighEBI_frac_075",
+      0.984
+    ],
+    [
+      "HighEBI_density_065",
+      "HighEBI_density_075",
+      0.984
+    ],
+    [
+      "HighEBI_frac_075",
+      "HighEBI_density_075",
+      1.0
+    ]
+  ],
+  "standalone_correlations_2023": {
+    "EBI_Norm_std": {
+      "pooled": {
+        "r": 0.1435,
+        "p": 0.0789
+      },
+      "UEF": {
+        "r": 0.0448,
+        "p": 0.6805
+      },
+      "cv53": {
+        "r": -0.0295,
+        "p": 0.8172
+      }
+    },
+    "EBI_Norm_var": {
+      "pooled": {
+        "r": 0.135,
+        "p": 0.0983
+      },
+      "UEF": {
+        "r": 0.0373,
+        "p": 0.7314
+      },
+      "cv53": {
+        "r": -0.0383,
+        "p": 0.7641
+      }
+    },
+    "EBI_Norm_median": {
+      "pooled": {
+        "r": 0.1298,
+        "p": 0.1121
+      },
+      "UEF": {
+        "r": 0.2787,
+        "p": 0.009
+      },
+      "cv53": {
+        "r": -0.2653,
+        "p": 0.0341
+      }
+    },
+    "EBI_Norm_P10": {
+      "pooled": {
+        "r": 0.0421,
+        "p": 0.608
+      },
+      "UEF": {
+        "r": 0.188,
+        "p": 0.0812
+      },
+      "cv53": {
+        "r": -0.1916,
+        "p": 0.1293
+      }
+    },
+    "EBI_Norm_P25": {
+      "pooled": {
+        "r": 0.0727,
+        "p": 0.3749
+      },
+      "UEF": {
+        "r": 0.2307,
+        "p": 0.0316
+      },
+      "cv53": {
+        "r": -0.2364,
+        "p": 0.06
+      }
+    },
+    "EBI_Norm_P75": {
+      "pooled": {
+        "r": 0.1754,
+        "p": 0.0312
+      },
+      "UEF": {
+        "r": 0.2979,
+        "p": 0.0051
+      },
+      "cv53": {
+        "r": -0.2584,
+        "p": 0.0392
+      }
+    },
+    "EBI_Norm_P90": {
+      "pooled": {
+        "r": 0.191,
+        "p": 0.0188
+      },
+      "UEF": {
+        "r": 0.3057,
+        "p": 0.004
+      },
+      "cv53": {
+        "r": -0.2328,
+        "p": 0.0641
+      }
+    },
+    "EBI_Norm_IQR": {
+      "pooled": {
+        "r": 0.2024,
+        "p": 0.0127
+      },
+      "UEF": {
+        "r": 0.1676,
+        "p": 0.1208
+      },
+      "cv53": {
+        "r": -0.1359,
+        "p": 0.2843
+      }
+    },
+    "EBI_Norm_skew": {
+      "pooled": {
+        "r": 0.0311,
+        "p": 0.7051
+      },
+      "UEF": {
+        "r": 0.042,
+        "p": 0.6995
+      },
+      "cv53": {
+        "r": 0.0113,
+        "p": 0.9291
+      }
+    },
+    "EBI_Norm_kurtosis": {
+      "pooled": {
+        "r": -0.1827,
+        "p": 0.0248
+      },
+      "UEF": {
+        "r": -0.1807,
+        "p": 0.094
+      },
+      "cv53": {
+        "r": 0.1353,
+        "p": 0.2863
+      }
+    },
+    "EBI_Norm_CV": {
+      "pooled": {
+        "r": 0.0295,
+        "p": 0.7192
+      },
+      "UEF": {
+        "r": -0.1375,
+        "p": 0.2041
+      },
+      "cv53": {
+        "r": 0.129,
+        "p": 0.3095
+      }
+    },
+    "EBI_OtsuFrac": {
+      "pooled": {
+        "r": 0.124,
+        "p": 0.1294
+      },
+      "UEF": {
+        "r": 0.2633,
+        "p": 0.0137
+      },
+      "cv53": {
+        "r": -0.2647,
+        "p": 0.0345
+      }
+    },
+    "HighEBI_frac_055": {
+      "pooled": {
+        "r": 0.1215,
+        "p": 0.1371
+      },
+      "UEF": {
+        "r": 0.2615,
+        "p": 0.0144
+      },
+      "cv53": {
+        "r": -0.2648,
+        "p": 0.0345
+      }
+    },
+    "HighEBI_density_055": {
+      "pooled": {
+        "r": 0.1215,
+        "p": 0.1372
+      },
+      "UEF": {
+        "r": 0.2615,
+        "p": 0.0144
+      },
+      "cv53": {
+        "r": -0.2648,
+        "p": 0.0344
+      }
+    },
+    "HighEBI_frac_065": {
+      "pooled": {
+        "r": 0.1689,
+        "p": 0.0381
+      },
+      "UEF": {
+        "r": 0.2925,
+        "p": 0.006
+      },
+      "cv53": {
+        "r": -0.2593,
+        "p": 0.0386
+      }
+    },
+    "HighEBI_density_065": {
+      "pooled": {
+        "r": 0.169,
+        "p": 0.0381
+      },
+      "UEF": {
+        "r": 0.2925,
+        "p": 0.006
+      },
+      "cv53": {
+        "r": -0.2592,
+        "p": 0.0386
+      }
+    },
+    "HighEBI_frac_075": {
+      "pooled": {
+        "r": 0.1979,
+        "p": 0.0149
+      },
+      "UEF": {
+        "r": 0.3162,
+        "p": 0.0028
+      },
+      "cv53": {
+        "r": -0.2496,
+        "p": 0.0467
+      }
+    },
+    "HighEBI_density_075": {
+      "pooled": {
+        "r": 0.1978,
+        "p": 0.0149
+      },
+      "UEF": {
+        "r": 0.3161,
+        "p": 0.0029
+      },
+      "cv53": {
+        "r": -0.2497,
+        "p": 0.0466
+      }
+    }
+  },
+  "standalone_fdr": {
+    "EBI_Norm_CV": 0.7192,
+    "EBI_Norm_skew": 0.7192,
+    "EBI_Norm_P10": 0.684,
+    "EBI_Norm_P25": 0.4499,
+    "HighEBI_density_055": 0.1764,
+    "HighEBI_frac_055": 0.1764,
+    "EBI_OtsuFrac": 0.1764,
+    "EBI_Norm_median": 0.1764,
+    "EBI_Norm_var": 0.1764,
+    "EBI_Norm_std": 0.1578,
+    "HighEBI_frac_065": 0.0857,
+    "HighEBI_density_065": 0.0857,
+    "EBI_Norm_P75": 0.0857,
+    "EBI_Norm_kurtosis": 0.0857,
+    "EBI_Norm_P90": 0.0846,
+    "HighEBI_frac_075": 0.0846,
+    "HighEBI_density_075": 0.0846,
+    "EBI_Norm_IQR": 0.0846
+  },
+  "n_survive_standalone_FDR": 0,
+  "pairwise_2023": {
+    "n_candidates": 171,
+    "n_survive_FDR": 0,
+    "top10": {
+      "EBI_Norm_median_x_EBI_Norm_IQR": {
+        "F": 6.375,
+        "p": 0.0126,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_IQR_x_EBI": {
+        "F": 5.824,
+        "p": 0.017,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_median_x_EBI_Norm_kurtosis": {
+        "F": 5.793,
+        "p": 0.0173,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_P75_x_EBI_Norm_IQR": {
+        "F": 4.911,
+        "p": 0.0282,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_IQR_x_HighEBI_frac_075": {
+        "F": 4.81,
+        "p": 0.0298,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_IQR_x_HighEBI_density_075": {
+        "F": 4.811,
+        "p": 0.0298,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_IQR_x_HighEBI_frac_055": {
+        "F": 4.749,
+        "p": 0.0309,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_IQR_x_HighEBI_density_055": {
+        "F": 4.75,
+        "p": 0.0309,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_IQR_x_EBI_OtsuFrac": {
+        "F": 4.731,
+        "p": 0.0312,
+        "p_fdr": 0.3246
+      },
+      "EBI_Norm_kurtosis_x_EBI": {
+        "F": 4.731,
+        "p": 0.0312,
+        "p_fdr": 0.3246
+      }
+    }
+  },
+  "combined_with_full_model": {
+    "n": 167,
+    "baseline_cvR2": 0.4563,
+    "partial_F_FDR_corrected": {
+      "EBI_Norm_std": {
+        "F": 2.411,
+        "p": 0.1225,
+        "coef": 0.1839,
+        "cvR2_with_term": 0.453,
+        "p_fdr": 0.294
+      },
+      "EBI_Norm_std_x_cultivar": {
+        "F": 4.679,
+        "p": 0.032,
+        "coef": 0.3422,
+        "cvR2_with_term": 0.4713,
+        "p_fdr": 0.217
+      },
+      "EBI_Norm_var": {
+        "F": 1.899,
+        "p": 0.1701,
+        "coef": 0.1625,
+        "cvR2_with_term": 0.4542,
+        "p_fdr": 0.3223
+      },
+      "EBI_Norm_var_x_cultivar": {
+        "F": 3.665,
+        "p": 0.0574,
+        "coef": 0.2937,
+        "cvR2_with_term": 0.468,
+        "p_fdr": 0.217
+      },
+      "EBI_Norm_median": {
+        "F": 0.044,
+        "p": 0.8346,
+        "coef": 0.1514,
+        "cvR2_with_term": 0.4545,
+        "p_fdr": 0.8837
+      },
+      "EBI_Norm_median_x_cultivar": {
+        "F": 0.233,
+        "p": 0.6301,
+        "coef": 0.413,
+        "cvR2_with_term": 0.4555,
+        "p_fdr": 0.7317
+      },
+      "EBI_Norm_P10": {
+        "F": 1.608,
+        "p": 0.2066,
+        "coef": -0.2397,
+        "cvR2_with_term": 0.4581,
+        "p_fdr": 0.3381
+      },
+      "EBI_Norm_P10_x_cultivar": {
+        "F": 2.911,
+        "p": 0.0899,
+        "coef": -0.4027,
+        "cvR2_with_term": 0.466,
+        "p_fdr": 0.249
+      },
+      "EBI_Norm_P25": {
+        "F": 3.789,
+        "p": 0.0534,
+        "coef": -0.7631,
+        "cvR2_with_term": 0.447,
+        "p_fdr": 0.217
+      },
+      "EBI_Norm_P25_x_cultivar": {
+        "F": 7.422,
+        "p": 0.0072,
+        "coef": -1.4718,
+        "cvR2_with_term": 0.4659,
+        "p_fdr": 0.1188
+      },
+      "EBI_Norm_P75": {
+        "F": 2.16,
+        "p": 0.1436,
+        "coef": 0.5785,
+        "cvR2_with_term": 0.4504,
+        "p_fdr": 0.3041
+      },
+      "EBI_Norm_P75_x_cultivar": {
+        "F": 3.442,
+        "p": 0.0654,
+        "coef": 0.9047,
+        "cvR2_with_term": 0.4574,
+        "p_fdr": 0.217
+      },
+      "EBI_Norm_P90": {
+        "F": 3.418,
+        "p": 0.0663,
+        "coef": 0.5158,
+        "cvR2_with_term": 0.4492,
+        "p_fdr": 0.217
+      },
+      "EBI_Norm_P90_x_cultivar": {
+        "F": 6.821,
+        "p": 0.0099,
+        "coef": 1.1001,
+        "cvR2_with_term": 0.4769,
+        "p_fdr": 0.1188
+      },
+      "EBI_Norm_IQR": {
+        "F": 2.985,
+        "p": 0.086,
+        "coef": 0.2317,
+        "cvR2_with_term": 0.4491,
+        "p_fdr": 0.249
+      },
+      "EBI_Norm_IQR_x_cultivar": {
+        "F": 5.201,
+        "p": 0.0239,
+        "coef": 0.3977,
+        "cvR2_with_term": 0.4619,
+        "p_fdr": 0.2151
+      },
+      "EBI_Norm_skew": {
+        "F": 0.554,
+        "p": 0.4576,
+        "coef": -0.1136,
+        "cvR2_with_term": 0.4571,
+        "p_fdr": 0.5883
+      },
+      "EBI_Norm_skew_x_cultivar": {
+        "F": 1.218,
+        "p": 0.2713,
+        "coef": -0.1811,
+        "cvR2_with_term": 0.4507,
+        "p_fdr": 0.4069
+      },
+      "EBI_Norm_kurtosis": {
+        "F": 3.498,
+        "p": 0.0633,
+        "coef": -0.2574,
+        "cvR2_with_term": 0.4627,
+        "p_fdr": 0.217
+      },
+      "EBI_Norm_kurtosis_x_cultivar": {
+        "F": 7.17,
+        "p": 0.0082,
+        "coef": -0.5155,
+        "cvR2_with_term": 0.4628,
+        "p_fdr": 0.1188
+      },
+      "EBI_Norm_CV": {
+        "F": 2.273,
+        "p": 0.1336,
+        "coef": 0.204,
+        "cvR2_with_term": 0.4545,
+        "p_fdr": 0.3006
+      },
+      "EBI_Norm_CV_x_cultivar": {
+        "F": 4.404,
+        "p": 0.0374,
+        "coef": 0.3854,
+        "cvR2_with_term": 0.4707,
+        "p_fdr": 0.217
+      },
+      "EBI_OtsuFrac": {
+        "F": 0.063,
+        "p": 0.8018,
+        "coef": -0.1507,
+        "cvR2_with_term": 0.4545,
+        "p_fdr": 0.8747
+      },
+      "EBI_OtsuFrac_x_cultivar": {
+        "F": 0.43,
+        "p": 0.5129,
+        "coef": 0.368,
+        "cvR2_with_term": 0.4502,
+        "p_fdr": 0.6367
+      },
+      "HighEBI_frac_055": {
+        "F": 0.252,
+        "p": 0.6164,
+        "coef": -0.2992,
+        "cvR2_with_term": 0.4511,
+        "p_fdr": 0.7317
+      },
+      "HighEBI_frac_055_x_cultivar": {
+        "F": 0.015,
+        "p": 0.9012,
+        "coef": 0.094,
+        "cvR2_with_term": 0.442,
+        "p_fdr": 0.9269
+      },
+      "HighEBI_density_055": {
+        "F": 1.694,
+        "p": 0.1949,
+        "coef": -0.7367,
+        "cvR2_with_term": 0.4565,
+        "p_fdr": 0.3381
+      },
+      "HighEBI_density_055_x_cultivar": {
+        "F": 0.001,
+        "p": 0.9815,
+        "coef": 0.0129,
+        "cvR2_with_term": 0.4462,
+        "p_fdr": 0.9815
+      },
+      "HighEBI_frac_065": {
+        "F": 1.024,
+        "p": 0.3132,
+        "coef": 0.4245,
+        "cvR2_with_term": 0.4461,
+        "p_fdr": 0.4463
+      },
+      "HighEBI_frac_065_x_cultivar": {
+        "F": 2.024,
+        "p": 0.1568,
+        "coef": 0.8026,
+        "cvR2_with_term": 0.4533,
+        "p_fdr": 0.3136
+      },
+      "HighEBI_density_065": {
+        "F": 0.166,
+        "p": 0.6839,
+        "coef": 0.1702,
+        "cvR2_with_term": 0.434,
+        "p_fdr": 0.7694
+      },
+      "HighEBI_density_065_x_cultivar": {
+        "F": 0.986,
+        "p": 0.3223,
+        "coef": 0.4625,
+        "cvR2_with_term": 0.4293,
+        "p_fdr": 0.4463
+      },
+      "HighEBI_frac_075": {
+        "F": 1.617,
+        "p": 0.2054,
+        "coef": 0.3829,
+        "cvR2_with_term": 0.4382,
+        "p_fdr": 0.3381
+      },
+      "HighEBI_frac_075_x_cultivar": {
+        "F": 2.543,
+        "p": 0.1128,
+        "coef": 0.6774,
+        "cvR2_with_term": 0.4455,
+        "p_fdr": 0.2901
+      },
+      "HighEBI_density_075": {
+        "F": 0.706,
+        "p": 0.4019,
+        "coef": 0.2518,
+        "cvR2_with_term": 0.4285,
+        "p_fdr": 0.5359
+      },
+      "HighEBI_density_075_x_cultivar": {
+        "F": 1.512,
+        "p": 0.2206,
+        "coef": 0.466,
+        "cvR2_with_term": 0.423,
+        "p_fdr": 0.3453
+      }
+    },
+    "n_survive_FDR": 0,
+    "forward_selection_main_seed42": {
+      "selected": [
+        "EBI_Norm_P90_x_cultivar",
+        "HighEBI_density_055"
+      ],
+      "final_cvR2": 0.4806,
+      "gain": 0.0243
+    },
+    "robustness_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "EBI_Norm_kurtosis_x_cultivar"
+        ],
+        "final_cvR2": 0.4924
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "EBI_Norm_kurtosis_x_cultivar"
+        ],
+        "final_cvR2": 0.4655
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "EBI_Norm_kurtosis_x_cultivar",
+          "EBI_Norm_skew_x_cultivar",
+          "HighEBI_frac_055_x_cultivar"
+        ],
+        "final_cvR2": 0.4849
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "EBI_Norm_kurtosis_x_cultivar",
+          "HighEBI_density_055"
+        ],
+        "final_cvR2": 0.5119
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "EBI_Norm_P90_x_cultivar",
+          "HighEBI_density_055",
+          "EBI_OtsuFrac"
+        ],
+        "final_cvR2": 0.496
+      }
+    ],
+    "how_often_selected_of_6": {
+      "EBI_Norm_P90_x_cultivar": 2,
+      "HighEBI_density_055": 3,
+      "EBI_Norm_kurtosis_x_cultivar": 4,
+      "EBI_Norm_skew_x_cultivar": 1,
+      "HighEBI_frac_055_x_cultivar": 1,
+      "EBI_OtsuFrac": 1
+    }
+  }
+}

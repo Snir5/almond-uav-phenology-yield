@@ -1,0 +1,132 @@
+{
+  "note": "Stage->coverage anchored at field-scale labels (6=10%,7=50%,8=80% PEAK); stages 9-10 are decline (petal shed), not additional bloom. Supersedes the naive stage*10 reading used in phenology_flight_timing.py (section 16.1).",
+  "peak_coverage_reference": 80.0,
+  "stable_coverage_floor": 30.0,
+  "per_cultivar_year": [
+    {
+      "year": 2021,
+      "cultivar": "53",
+      "coverage_at_flight": 54.0,
+      "stage_at_flight": null,
+      "source": "direct measurement, same-day, n=10 trees",
+      "correction_factor": 1.48,
+      "reliable": true,
+      "mean_EBI_raw": 0.6026,
+      "mean_EBI_normalized": 0.8928
+    },
+    {
+      "year": 2021,
+      "cultivar": "UEF",
+      "coverage_at_flight": 57.0,
+      "stage_at_flight": null,
+      "source": "direct measurement, same-day, n=10 trees",
+      "correction_factor": 1.4,
+      "reliable": true,
+      "mean_EBI_raw": 0.4914,
+      "mean_EBI_normalized": 0.6897
+    },
+    {
+      "year": 2022,
+      "cultivar": "53",
+      "coverage_at_flight": 72.5,
+      "stage_at_flight": 7.75,
+      "source": "interpolated field stage 7.75/10 (16 survey dates)",
+      "correction_factor": 1.1,
+      "reliable": true,
+      "mean_EBI_raw": 0.597,
+      "mean_EBI_normalized": 0.6587
+    },
+    {
+      "year": 2022,
+      "cultivar": "UEF",
+      "coverage_at_flight": 55.5,
+      "stage_at_flight": 8.49,
+      "source": "interpolated field stage 8.49/10 (16 survey dates)",
+      "correction_factor": 1.44,
+      "reliable": true,
+      "mean_EBI_raw": 0.5079,
+      "mean_EBI_normalized": 0.7321
+    },
+    {
+      "year": 2023,
+      "cultivar": "53",
+      "coverage_at_flight": 4.6,
+      "stage_at_flight": 4.53,
+      "source": "interpolated field stage 4.53/10 (8 survey dates)",
+      "correction_factor": 17.48,
+      "reliable": false,
+      "mean_EBI_raw": 0.5069,
+      "mean_EBI_normalized": null
+    },
+    {
+      "year": 2023,
+      "cultivar": "UEF",
+      "coverage_at_flight": 56.0,
+      "stage_at_flight": 7.2,
+      "source": "interpolated field stage 7.20/10 (11 survey dates)",
+      "correction_factor": 1.43,
+      "reliable": true,
+      "mean_EBI_raw": 0.5482,
+      "mean_EBI_normalized": 0.7832
+    },
+    {
+      "year": 2024,
+      "cultivar": "53",
+      "coverage_at_flight": null,
+      "stage_at_flight": null,
+      "source": "no field survey this cultivar-year",
+      "correction_factor": null,
+      "reliable": false,
+      "mean_EBI_raw": 0.5485,
+      "mean_EBI_normalized": null
+    },
+    {
+      "year": 2024,
+      "cultivar": "UEF",
+      "coverage_at_flight": 10.0,
+      "stage_at_flight": 6.0,
+      "source": "interpolated field stage 6.00/10 (7 survey dates)",
+      "correction_factor": 8.0,
+      "reliable": false,
+      "mean_EBI_raw": 0.5512,
+      "mean_EBI_normalized": null
+    }
+  ],
+  "EBI_vs_corrected_coverage_at_flight": {
+    "r": 0.328,
+    "p": 0.473,
+    "n": 7,
+    "interpretation": "corrected coverage still does not predict cultivar-mean EBI level (consistent with section 16.1's naive-coverage test, r=+0.12 ns, and the 2021 same-day per-tree test, r=-0.08 ns): no version of the field bloom-coverage estimate explains cross-year/cross-cultivar EBI level."
+  },
+  "year_level_trend_raw_vs_normalized": {
+    "2021": {
+      "mean_raw": 0.5491,
+      "sd_raw": 0.1049,
+      "mean_normalized_where_reliable": 0.7279,
+      "sd_normalized_where_reliable": 0.1196,
+      "n_trees_normalized": 1048
+    },
+    "2022": {
+      "mean_raw": 0.5415,
+      "sd_raw": 0.0792,
+      "mean_normalized_where_reliable": 0.7168,
+      "sd_normalized_where_reliable": 0.097,
+      "n_trees_normalized": 1019
+    },
+    "2023": {
+      "mean_raw": 0.5498,
+      "sd_raw": 0.0515,
+      "mean_normalized_where_reliable": 0.784,
+      "sd_normalized_where_reliable": 0.0652,
+      "n_trees_normalized": 814
+    },
+    "2024": {
+      "mean_raw": 0.549,
+      "sd_raw": 0.0482,
+      "mean_normalized_where_reliable": null,
+      "sd_normalized_where_reliable": null,
+      "n_trees_normalized": 0
+    }
+  },
+  "caveat": "Normalization applied only where coverage_at_flight>=30 (correction factor<=2.67x); cultivar-53 2023 (coverage ~4.6%, factor ~17x) and UEF 2024 (coverage ~10%, factor 8x) are flagged unreliable and left as raw EBI; cultivar-53 2024 has no field survey at all and cannot be corrected. The correction rests on an assumption (EBI scales linearly with visible bloom coverage) not supported by either direct test above; treat as an exploratory sensitivity check on the cross-year EBI trend, not a validated substitute."
+}

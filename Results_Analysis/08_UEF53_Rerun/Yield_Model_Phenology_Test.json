@@ -1,0 +1,71 @@
+{
+  "note": "Tests whether the phenology-timing-normalized EBI (section 16.3) improves the pooled multi-season yield model (yield_model_prototype.py), unlike the within-cultivar-year yield correlations, which are mathematically invariant to this correction, the pooled model z-scores EBI across cultivar-years, so cross-group comparability (what the correction targets) can genuinely matter here.",
+  "practical_swap_reliable_where_available_else_raw": {
+    "n": 187,
+    "label": "all 6 cultivar-year cells, 3 corrected + 3 left raw (practical/deployable version)",
+    "raw_EBI": {
+      "+EBI\u00d7cultivar": {
+        "R2": 0.092,
+        "adjR2": 0.077,
+        "cvR2": 0.023
+      },
+      "+EBI\u00d7cultivar+climate": {
+        "R2": 0.243,
+        "adjR2": 0.226,
+        "cvR2": 0.195
+      }
+    },
+    "phenology_normalized_EBI": {
+      "+EBI\u00d7cultivar": {
+        "R2": 0.131,
+        "adjR2": 0.117,
+        "cvR2": 0.087
+      },
+      "+EBI\u00d7cultivar+climate": {
+        "R2": 0.221,
+        "adjR2": 0.204,
+        "cvR2": 0.122
+      }
+    }
+  },
+  "clean_comparison_reliable_cells_only": {
+    "n": 105,
+    "label": "restricted to the 3 reliable cultivar-year cells only (UEF 2022, 53 2022, UEF 2023): raw vs corrected on an identical subset",
+    "raw_EBI": {
+      "+EBI\u00d7cultivar": {
+        "R2": 0.212,
+        "adjR2": 0.189,
+        "cvR2": 0.087
+      },
+      "+EBI\u00d7cultivar+climate": {
+        "R2": 0.504,
+        "adjR2": 0.484,
+        "cvR2": 0.4
+      }
+    },
+    "phenology_normalized_EBI": {
+      "+EBI\u00d7cultivar": {
+        "R2": 0.218,
+        "adjR2": 0.195,
+        "cvR2": 0.166
+      },
+      "+EBI\u00d7cultivar+climate": {
+        "R2": 0.504,
+        "adjR2": 0.484,
+        "cvR2": 0.38
+      }
+    }
+  },
+  "reliable_cells_used": [
+    "2021-53",
+    "2021-UEF",
+    "2022-53",
+    "2022-UEF",
+    "2023-UEF"
+  ],
+  "excluded_unreliable_or_missing": [
+    "2023-53 (factor 17.5x, unreliable)",
+    "2024-UEF (factor 8.0x, unreliable)",
+    "2024-53 (no field survey)"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "note": "Per request: tests field-survey 50%-bloom day-of-year (t50), used directly as a yield-model feature (not folded into an EBI correction, cf. section 16.4). 2022 and 2023 have complete 2x2 coverage (53 and UEF), so no subsetting is needed, full n=167. Adds 2 candidates (t50, t50 x cultivar) on top of the recommended model (cultivar+EBIxcultivar+climate+Growth_April).",
+  "n": 167,
+  "t50_lookup_used": {
+    "2022-53": 52.0,
+    "2022-UEF": 52.0,
+    "2023-53": 60.76674364896074,
+    "2023-UEF": 56.2
+  },
+  "corr_t50_vs_climate": -0.665,
+  "baseline_recommended_model": {
+    "R2": 0.5285,
+    "cvR2": 0.4563
+  },
+  "partial_F_test": {
+    "t50_bloom_DOY": {
+      "F": 0.561,
+      "p": 0.455,
+      "coef": -0.3751
+    },
+    "t50_bloom_DOY_x_cultivar": {
+      "F": 0.561,
+      "p": 0.455,
+      "coef": 0.4078
+    }
+  },
+  "forward_selection_main_seed42": {
+    "selected_features": [],
+    "history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.4563
+      }
+    ],
+    "final_R2": 0.5285,
+    "final_cvR2": 0.4563,
+    "improvement_cvR2": 0.0
+  },
+  "robustness_across_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [],
+      "baseline_cvR2": 0.4736,
+      "final_cvR2": 0.4736
+    },
+    {
+      "seed": 7,
+      "selected": [],
+      "baseline_cvR2": 0.4567,
+      "final_cvR2": 0.4567
+    },
+    {
+      "seed": 13,
+      "selected": [],
+      "baseline_cvR2": 0.4478,
+      "final_cvR2": 0.4478
+    },
+    {
+      "seed": 99,
+      "selected": [],
+      "baseline_cvR2": 0.488,
+      "final_cvR2": 0.488
+    },
+    {
+      "seed": 2024,
+      "selected": [],
+      "baseline_cvR2": 0.4724,
+      "final_cvR2": 0.4724
+    }
+  ],
+  "how_often_selected_of_6": {},
+  "no_climate_variant": {
+    "baseline_no_climate_cvR2": 0.1132,
+    "candidates_offered": [
+      "t50_bloom_DOY",
+      "t50_bloom_DOY_x_cultivar",
+      "climate"
+    ],
+    "selected": [
+      "climate"
+    ],
+    "final_cvR2": 0.4563,
+    "interpretation": "with climate removed and offered back alongside t50 on equal footing, whichever forward selection picks shows whether t50 can substitute for climate's season-indicator role or whether climate still wins."
+  }
+}

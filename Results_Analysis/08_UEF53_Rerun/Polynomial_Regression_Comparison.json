@@ -1,0 +1,428 @@
+{
+  "n": 167,
+  "base_names": [
+    "intercept",
+    "cultivar",
+    "EBI",
+    "EBIxcultivar",
+    "climate",
+    "Growth_April"
+  ],
+  "results": {
+    "baseline_linear": {
+      "extra_terms": [],
+      "in_sample": {
+        "AIC": 595.139,
+        "BIC": 616.965,
+        "MSE_in_sample": 1.90028,
+        "MAE_in_sample": 0.97256,
+        "R2_in_sample": 0.5285
+      },
+      "dAIC_vs_baseline": 0.0,
+      "dBIC_vs_baseline": 0.0,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.4563,
+          "cvMSE": 2.19146,
+          "cvMAE": 1.02146
+        },
+        "1": {
+          "cvR2": 0.4736,
+          "cvMSE": 2.12156,
+          "cvMAE": 1.01273
+        },
+        "7": {
+          "cvR2": 0.4567,
+          "cvMSE": 2.18993,
+          "cvMAE": 1.02509
+        },
+        "13": {
+          "cvR2": 0.4478,
+          "cvMSE": 2.22578,
+          "cvMAE": 1.01886
+        },
+        "99": {
+          "cvR2": 0.488,
+          "cvMSE": 2.0638,
+          "cvMAE": 1.00958
+        },
+        "2024": {
+          "cvR2": 0.4724,
+          "cvMSE": 2.12655,
+          "cvMAE": 1.04057
+        }
+      },
+      "cvR2_range": [
+        0.4478,
+        0.488
+      ],
+      "cvR2_mean": 0.4658
+    },
+    "quad_EBI": {
+      "extra_terms": [
+        "EBI^2"
+      ],
+      "in_sample": {
+        "AIC": 596.981,
+        "BIC": 621.925,
+        "MSE_in_sample": 1.89848,
+        "MAE_in_sample": 0.9681,
+        "R2_in_sample": 0.529
+      },
+      "dAIC_vs_baseline": 1.842,
+      "dBIC_vs_baseline": 4.96,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.454,
+          "cvMSE": 2.20082,
+          "cvMAE": 1.02266
+        },
+        "1": {
+          "cvR2": 0.4644,
+          "cvMSE": 2.15898,
+          "cvMAE": 1.02028
+        },
+        "7": {
+          "cvR2": 0.4507,
+          "cvMSE": 2.21419,
+          "cvMAE": 1.02742
+        },
+        "13": {
+          "cvR2": 0.4394,
+          "cvMSE": 2.25943,
+          "cvMAE": 1.02564
+        },
+        "99": {
+          "cvR2": 0.4791,
+          "cvMSE": 2.09944,
+          "cvMAE": 1.01636
+        },
+        "2024": {
+          "cvR2": 0.4662,
+          "cvMSE": 2.15169,
+          "cvMAE": 1.04424
+        }
+      },
+      "cvR2_range": [
+        0.4394,
+        0.4791
+      ],
+      "cvR2_mean": 0.459
+    },
+    "quad_EBI_x_cultivar": {
+      "extra_terms": [
+        "EBI^2",
+        "EBI^2 x cultivar"
+      ],
+      "in_sample": {
+        "AIC": 598.477,
+        "BIC": 626.539,
+        "MSE_in_sample": 1.89275,
+        "MAE_in_sample": 0.9731,
+        "R2_in_sample": 0.5304
+      },
+      "dAIC_vs_baseline": 3.338,
+      "dBIC_vs_baseline": 9.574,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.4494,
+          "cvMSE": 2.21942,
+          "cvMAE": 1.0371
+        },
+        "1": {
+          "cvR2": 0.4422,
+          "cvMSE": 2.2483,
+          "cvMAE": 1.04246
+        },
+        "7": {
+          "cvR2": 0.4386,
+          "cvMSE": 2.26262,
+          "cvMAE": 1.05097
+        },
+        "13": {
+          "cvR2": 0.4192,
+          "cvMSE": 2.34113,
+          "cvMAE": 1.04237
+        },
+        "99": {
+          "cvR2": 0.4784,
+          "cvMSE": 2.10232,
+          "cvMAE": 1.01583
+        },
+        "2024": {
+          "cvR2": 0.4532,
+          "cvMSE": 2.20383,
+          "cvMAE": 1.05638
+        }
+      },
+      "cvR2_range": [
+        0.4192,
+        0.4784
+      ],
+      "cvR2_mean": 0.4468
+    },
+    "quad_climate": {
+      "extra_terms": [
+        "climate^2"
+      ],
+      "in_sample": {
+        "AIC": 597.139,
+        "BIC": 622.083,
+        "MSE_in_sample": 1.90028,
+        "MAE_in_sample": 0.97256,
+        "R2_in_sample": 0.5285
+      },
+      "dAIC_vs_baseline": 2.0,
+      "dBIC_vs_baseline": 5.118,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.4563,
+          "cvMSE": 2.19146,
+          "cvMAE": 1.02146
+        },
+        "1": {
+          "cvR2": 0.4736,
+          "cvMSE": 2.12156,
+          "cvMAE": 1.01273
+        },
+        "7": {
+          "cvR2": 0.4567,
+          "cvMSE": 2.18993,
+          "cvMAE": 1.02509
+        },
+        "13": {
+          "cvR2": 0.4478,
+          "cvMSE": 2.22578,
+          "cvMAE": 1.01886
+        },
+        "99": {
+          "cvR2": 0.488,
+          "cvMSE": 2.0638,
+          "cvMAE": 1.00958
+        },
+        "2024": {
+          "cvR2": 0.4724,
+          "cvMSE": 2.12655,
+          "cvMAE": 1.04057
+        }
+      },
+      "cvR2_range": [
+        0.4478,
+        0.488
+      ],
+      "cvR2_mean": 0.4658
+    },
+    "quad_Growth_April": {
+      "extra_terms": [
+        "Growth_April^2"
+      ],
+      "in_sample": {
+        "AIC": 594.037,
+        "BIC": 618.981,
+        "MSE_in_sample": 1.8653,
+        "MAE_in_sample": 0.95885,
+        "R2_in_sample": 0.5372
+      },
+      "dAIC_vs_baseline": -1.102,
+      "dBIC_vs_baseline": 2.016,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.4535,
+          "cvMSE": 2.20255,
+          "cvMAE": 1.01405
+        },
+        "1": {
+          "cvR2": 0.4805,
+          "cvMSE": 2.09395,
+          "cvMAE": 1.0065
+        },
+        "7": {
+          "cvR2": 0.4551,
+          "cvMSE": 2.1964,
+          "cvMAE": 1.02149
+        },
+        "13": {
+          "cvR2": 0.4505,
+          "cvMSE": 2.21469,
+          "cvMAE": 1.00645
+        },
+        "99": {
+          "cvR2": 0.4775,
+          "cvMSE": 2.10588,
+          "cvMAE": 1.01319
+        },
+        "2024": {
+          "cvR2": 0.4638,
+          "cvMSE": 2.16127,
+          "cvMAE": 1.03252
+        }
+      },
+      "cvR2_range": [
+        0.4505,
+        0.4805
+      ],
+      "cvR2_mean": 0.4635
+    },
+    "quad_all_three": {
+      "extra_terms": [
+        "EBI^2",
+        "climate^2",
+        "Growth_April^2"
+      ],
+      "in_sample": {
+        "AIC": 597.973,
+        "BIC": 629.153,
+        "MSE_in_sample": 1.86459,
+        "MAE_in_sample": 0.95636,
+        "R2_in_sample": 0.5374
+      },
+      "dAIC_vs_baseline": 2.834,
+      "dBIC_vs_baseline": 12.188,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.4512,
+          "cvMSE": 2.21217,
+          "cvMAE": 1.01883
+        },
+        "1": {
+          "cvR2": 0.4701,
+          "cvMSE": 2.13572,
+          "cvMAE": 1.01592
+        },
+        "7": {
+          "cvR2": 0.4475,
+          "cvMSE": 2.22674,
+          "cvMAE": 1.02557
+        },
+        "13": {
+          "cvR2": 0.4435,
+          "cvMSE": 2.24291,
+          "cvMAE": 1.01328
+        },
+        "99": {
+          "cvR2": 0.4729,
+          "cvMSE": 2.12447,
+          "cvMAE": 1.02068
+        },
+        "2024": {
+          "cvR2": 0.4565,
+          "cvMSE": 2.19067,
+          "cvMAE": 1.03942
+        }
+      },
+      "cvR2_range": [
+        0.4435,
+        0.4729
+      ],
+      "cvR2_mean": 0.457
+    },
+    "cubic_EBI": {
+      "extra_terms": [
+        "EBI^2",
+        "EBI^3"
+      ],
+      "in_sample": {
+        "AIC": 595.125,
+        "BIC": 623.187,
+        "MSE_in_sample": 1.85514,
+        "MAE_in_sample": 0.95879,
+        "R2_in_sample": 0.5397
+      },
+      "dAIC_vs_baseline": -0.014,
+      "dBIC_vs_baseline": 6.222,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.4573,
+          "cvMSE": 2.18723,
+          "cvMAE": 1.01666
+        },
+        "1": {
+          "cvR2": 0.4413,
+          "cvMSE": 2.25183,
+          "cvMAE": 1.03908
+        },
+        "7": {
+          "cvR2": 0.4584,
+          "cvMSE": 2.18302,
+          "cvMAE": 1.01742
+        },
+        "13": {
+          "cvR2": 0.4012,
+          "cvMSE": 2.41362,
+          "cvMAE": 1.05653
+        },
+        "99": {
+          "cvR2": 0.4444,
+          "cvMSE": 2.23936,
+          "cvMAE": 1.05134
+        },
+        "2024": {
+          "cvR2": 0.4395,
+          "cvMSE": 2.25897,
+          "cvMAE": 1.0542
+        }
+      },
+      "cvR2_range": [
+        0.4012,
+        0.4584
+      ],
+      "cvR2_mean": 0.4404
+    },
+    "full_quadratic_surface": {
+      "extra_terms": [
+        "EBI^2",
+        "climate^2",
+        "Growth_April^2",
+        "EBIxclimate",
+        "EBIxGrowth_April",
+        "climatexGrowth_April"
+      ],
+      "in_sample": {
+        "AIC": 598.552,
+        "BIC": 639.086,
+        "MSE_in_sample": 1.80503,
+        "MAE_in_sample": 0.93144,
+        "R2_in_sample": 0.5522
+      },
+      "dAIC_vs_baseline": 3.413,
+      "dBIC_vs_baseline": 22.121,
+      "cv_by_seed": {
+        "42": {
+          "cvR2": 0.3896,
+          "cvMSE": 2.4602,
+          "cvMAE": 1.06318
+        },
+        "1": {
+          "cvR2": 0.3907,
+          "cvMSE": 2.45579,
+          "cvMAE": 1.06216
+        },
+        "7": {
+          "cvR2": 0.2874,
+          "cvMSE": 2.87234,
+          "cvMAE": 1.12285
+        },
+        "13": {
+          "cvR2": 0.3782,
+          "cvMSE": 2.50641,
+          "cvMAE": 1.05405
+        },
+        "99": {
+          "cvR2": 0.4325,
+          "cvMSE": 2.28736,
+          "cvMAE": 1.02381
+        },
+        "2024": {
+          "cvR2": 0.3766,
+          "cvMSE": 2.51267,
+          "cvMAE": 1.0554
+        }
+      },
+      "cvR2_range": [
+        0.2874,
+        0.4325
+      ],
+      "cvR2_mean": 0.3758
+    }
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "scope": {
+    "cultivars": [
+      "UEF",
+      "53"
+    ],
+    "chilling": "Chill Portions (Dynamic Model)",
+    "chill_portions_by_year": {
+      "2021": 18.0,
+      "2022": 35.0,
+      "2023": 25.0,
+      "2024": 10.0
+    },
+    "n_trees": 1294,
+    "n_yield_matched": 161
+  },
+  "H1_climate_EBI": {
+    "note": "CP is one value/year -> between-year test, n=4, directional.",
+    "between_year_variance_ceiling_eta2": 0.048,
+    "CP_vs_meanEBI": {
+      "r": -0.404,
+      "p": 0.5963,
+      "n": 4,
+      "sig": "ns",
+      "spearman": {
+        "rho": -0.4,
+        "p": 0.6,
+        "n": 4,
+        "sig": "ns"
+      },
+      "kendall": {
+        "tau": -0.333,
+        "p": 0.75,
+        "n": 4,
+        "note": "exact permutation"
+      },
+      "perm_p": 0.625,
+      "p_fdr": 0.5963
+    },
+    "CP_vs_sdEBI": {
+      "r": 0.431,
+      "p": 0.5688,
+      "n": 4,
+      "sig": "ns",
+      "spearman": {
+        "rho": 0.0,
+        "p": 1.0,
+        "n": 4,
+        "sig": "ns"
+      },
+      "kendall": {
+        "tau": 0.0,
+        "p": 1.0,
+        "n": 4,
+        "note": "exact permutation"
+      },
+      "perm_p": 0.625,
+      "p_fdr": 0.5963
+    },
+    "CP_vs_cvEBI": {
+      "r": 0.422,
+      "p": 0.5782,
+      "n": 4,
+      "sig": "ns",
+      "spearman": {
+        "rho": 0.0,
+        "p": 1.0,
+        "n": 4,
+        "sig": "ns"
+      },
+      "kendall": {
+        "tau": 0.0,
+        "p": 1.0,
+        "n": 4,
+        "note": "exact permutation"
+      },
+      "perm_p": 0.6667,
+      "p_fdr": 0.5963
+    }
+  },
+  "H2_climate_yield": {
+    "note": "Measured yield is essentially one year (2023); predicted only 2022/2023. Climate->yield is n<=3 between-year -> descriptive, NOT inferential.",
+    "measured_yield_by_year": {
+      "2022": {
+        "n": 20,
+        "mean": 6.679,
+        "CP": 35.0
+      },
+      "2023": {
+        "n": 161,
+        "mean": 2.649,
+        "CP": 25.0
+      },
+      "2024": {
+        "n": 20,
+        "mean": 2.553,
+        "CP": 10.0
+      }
+    },
+    "predicted_yield_by_year": {
+      "2022": 5.468,
+      "2023": 3.04,
+      "2024": "no predicted_Yield_2024 in master"
+    },
+    "CP_vs_measuredMean_n3": {
+      "r": 0.815,
+      "n": 3,
+      "inferential": false
+    }
+  },
+  "H3_EBI_yield": {
+    "measured": {
+      "EBI2023_vs_measY2023": {
+        "r": 0.137,
+        "p": 0.0927,
+        "n": 151,
+        "sig": "ns",
+        "spearman": {
+          "rho": 0.149,
+          "p": 0.0675,
+          "n": 151,
+          "sig": "ns"
+        },
+        "p_fdr": 0.2781
+      },
+      "EBI2022_vs_measY2022": {
+        "r": 0.278,
+        "p": 0.2634,
+        "n": 18,
+        "sig": "ns",
+        "spearman": {
+          "rho": 0.383,
+          "p": 0.1168,
+          "n": 18,
+          "sig": "ns"
+        },
+        "p_fdr": 0.3169
+      },
+      "EBI2024_vs_measY2024": {
+        "r": 0.132,
+        "p": 0.6022,
+        "n": 18,
+        "sig": "ns",
+        "spearman": {
+          "rho": 0.082,
+          "p": 0.7478,
+          "n": 18,
+          "sig": "ns"
+        },
+        "p_fdr": 0.6022
+      },
+      "EBI2022_lag_measY2023": {
+        "r": -0.098,
+        "p": 0.2308,
+        "n": 151,
+        "sig": "ns",
+        "spearman": {
+          "rho": -0.124,
+          "p": 0.1286,
+          "n": 151,
+          "sig": "ns"
+        },
+        "p_fdr": 0.3169
+      },
+      "EBI2023_lag_measY2024": {
+        "r": 0.412,
+        "p": 0.0889,
+        "n": 18,
+        "sig": "ns",
+        "spearman": {
+          "rho": 0.358,
+          "p": 0.1445,
+          "n": 18,
+          "sig": "ns"
+        },
+        "p_fdr": 0.2781
+      },
+      "NGRDI2023_vs_measY2023": {
+        "r": 0.091,
+        "p": 0.2641,
+        "n": 151,
+        "sig": "ns",
+        "spearman": {
+          "rho": 0.068,
+          "p": 0.4079,
+          "n": 151,
+          "sig": "ns"
+        },
+        "p_fdr": 0.3169
+      }
+    },
+    "predicted_CIRCULAR": {
+      "EBI2022_vs_predY2022": {
+        "r": -0.116,
+        "p": 0.0005,
+        "n": 899,
+        "sig": "***",
+        "spearman": {
+          "rho": -0.132,
+          "p": 0.0001,
+          "n": 899,
+          "sig": "***"
+        },
+        "note": "predicted_Yield uses canopy/growth inputs -> circular, NOT independent validation"
+      },
+      "EBI2023_vs_predY2023": {
+        "r": -0.109,
+        "p": 0.0011,
+        "n": 894,
+        "sig": "**",
+        "spearman": {
+          "rho": -0.109,
+          "p": 0.0012,
+          "n": 894,
+          "sig": "**"
+        },
+        "note": "predicted_Yield uses canopy/growth inputs -> circular, NOT independent validation"
+      }
+    },
+    "ANCOVA_measured2023": {
+      "n": 151,
+      "EBI_given_cultivar": {
+        "F": 0.25,
+        "p": 0.6155,
+        "sig": "ns"
+      },
+      "cultivar_given_EBI": {
+        "F": 9.71,
+        "p": 0.0022,
+        "sig": "**"
+      },
+      "EBIxcultivar_interaction": {
+        "F": 11.58,
+        "p": 0.0009,
+        "sig": "***"
+      },
+      "R2": 0.079,
+      "R2_with_interaction": 0.147
+    },
+    "within_cultivar_measured2023": {
+      "53": {
+        "r": -0.256,
+        "p": 0.0415,
+        "n": 64,
+        "sig": "*",
+        "linreg": {
+          "slope": -6.795,
+          "intercept": 5.81,
+          "R2": 0.065,
+          "t": -2.08,
+          "p": 0.0415,
+          "n": 64,
+          "sig": "*"
+        }
+      },
+      "UEF": {
+        "r": 0.287,
+        "p": 0.0071,
+        "n": 87,
+        "sig": "**",
+        "linreg": {
+          "slope": 7.618,
+          "intercept": -1.177,
+          "R2": 0.082,
+          "t": 2.76,
+          "p": 0.0071,
+          "n": 87,
+          "sig": "**"
+        }
+      }
+    }
+  },
+  "V_predicted_vs_measured": {
+    "note": "predicted_Yield_2024 does not exist; validation possible for 2022 & 2023 only.",
+    "validation_2022": {
+      "n": 18,
+      "pearson_r": -0.142,
+      "r_p": 0.5752,
+      "spearman_rho": -0.032,
+      "RMSE": 3.529,
+      "MAE": 2.636,
+      "bias_pred_minus_meas": -0.99,
+      "Lin_CCC": -0.068,
+      "meas_mean": 6.897,
+      "pred_mean": 5.907
+    },
+    "validation_2023": {
+      "n": 151,
+      "pearson_r": -0.106,
+      "r_p": 0.1947,
+      "spearman_rho": -0.072,
+      "RMSE": 1.344,
+      "MAE": 1.011,
+      "bias_pred_minus_meas": 0.471,
+      "Lin_CCC": -0.046,
+      "meas_mean": 2.706,
+      "pred_mean": 3.177
+    },
+    "validation_2024": "not possible (no predicted_Yield_2024)"
+  },
+  "P_phenology": {
+    "P1_bloom_synchrony": {
+      "levene_EBI_variance_across_years": {
+        "F": 139.43,
+        "df1": 3,
+        "df2": 4091,
+        "p": 0.0,
+        "sig": "***"
+      },
+      "EBI_sd_by_year": {
+        "2021": 0.0763,
+        "2022": 0.075,
+        "2023": 0.0477,
+        "2024": 0.0501
+      },
+      "EBI_cv_by_year": {
+        "2021": 0.1486,
+        "2022": 0.1428,
+        "2023": 0.0883,
+        "2024": 0.0909
+      },
+      "sd_vs_CP": {
+        "r": 0.431,
+        "p": 0.5688,
+        "n": 4,
+        "sig": "ns"
+      },
+      "sd_trend_over_years_kendall": {
+        "tau": -0.667,
+        "p": 0.3333,
+        "n": 4,
+        "note": "exact permutation"
+      },
+      "interpretation": "lower chill -> less synchronous (more heterogeneous) bloom; synchrony rises over time"
+    },
+    "P2_NGRDI_convergent": {
+      "NGRDI2023_vs_measY2023": {
+        "r": 0.091,
+        "p": 0.2641,
+        "n": 151,
+        "sig": "ns"
+      },
+      "EBI_vs_NGRDI_2023_alltrees": {
+        "r": -0.395,
+        "p": 0.0,
+        "n": 1012,
+        "sig": "***"
+      },
+      "NGRDI_within_cultivar_measY2023": {
+        "53": {
+          "r": 0.062,
+          "p": 0.6259,
+          "n": 64,
+          "sig": "ns"
+        },
+        "UEF": {
+          "r": -0.087,
+          "p": 0.4229,
+          "n": 87,
+          "sig": "ns"
+        }
+      },
+      "interpretation": "second bloom index (NGRDI) should track EBI and repeat the cultivar-split yield pattern"
+    },
+    "P3_bloom_yield_timing": {
+      "same_year_2023": {
+        "r": 0.137,
+        "p": 0.0927,
+        "n": 151,
+        "sig": "ns",
+        "spearman": {
+          "rho": 0.149,
+          "p": 0.0675,
+          "n": 151,
+          "sig": "ns"
+        },
+        "p_fdr": 0.2781
+      },
+      "lag_prevbloom_2022to2023": {
+        "r": -0.098,
+        "p": 0.2308,
+        "n": 151,
+        "sig": "ns",
+        "spearman": {
+          "rho": -0.124,
+          "p": 0.1286,
+          "n": 151,
+          "sig": "ns"
+        },
+        "p_fdr": 0.3169
+      },
+      "interpretation": "same-season bloom, not prior-season bloom, carries the (cultivar-split) yield signal"
+    },
+    "P4_cultivar_trajectory": {
+      "reference": "split-plot cultivar x year interaction (see thesis_results_uef53.json)",
+      "mean_EBI_by_cultivar_year": {
+        "53": {
+          "2021": 0.6026,
+          "2022": 0.597,
+          "2023": 0.5069,
+          "2024": 0.5485
+        },
+        "UEF": {
+          "2021": 0.4914,
+          "2022": 0.5079,
+          "2023": 0.5482,
+          "2024": 0.5512
+        }
+      },
+      "interpretation": "53 blooms earlier/brighter then converges; UEF rises; rank flips ~2023 (phenological divergence)"
+    }
+  },
+  "PANEL_3yr_2022_2024": {
+    "note": "Same 20 trees (ids 1218-1237, consecutive block) measured all three years; balanced 10 UEF + 10 cv-53. NOTE: this is a spatially clustered, non-random subset, so its year means and cultivar gap need not match the whole orchard.",
+    "n_trees": 20,
+    "yield_by_year": {
+      "2022": {
+        "mean": 6.679,
+        "sd": 3.191,
+        "mean_53": 6.23,
+        "mean_UEF": 7.127
+      },
+      "2023": {
+        "mean": 2.618,
+        "sd": 2.198,
+        "mean_53": 1.092,
+        "mean_UEF": 4.144
+      },
+      "2024": {
+        "mean": 2.553,
+        "sd": 1.371,
+        "mean_53": 2.269,
+        "mean_UEF": 2.838
+      }
+    },
+    "RM_ANOVA_year": {
+      "F": 27.13,
+      "df1": 2,
+      "df2": 38,
+      "p": 0.0,
+      "eta2_year": 0.41,
+      "sig": "***"
+    },
+    "within_tree_lag": {
+      "Y2022_vs_Y2023": {
+        "r": 0.171,
+        "p": 0.47,
+        "n": 20
+      },
+      "Y2023_vs_Y2024": {
+        "r": 0.383,
+        "p": 0.0951,
+        "n": 20
+      },
+      "Y2022_vs_Y2024": {
+        "r": 0.499,
+        "p": 0.0251,
+        "n": 20
+      }
+    },
+    "biennial_bearing_index": {
+      "Y22_23": 0.518,
+      "Y23_24": 0.323,
+      "interpretation": "positive lag correlations => productivity persists (NOT classic alternate bearing); big year effect is orchard-wide"
+    },
+    "cultivar_by_year": {
+      "2022": {
+        "UEF_minus_53_kg": 0.897,
+        "t": 0.62,
+        "p": 0.5441,
+        "sig": "ns"
+      },
+      "2023": {
+        "UEF_minus_53_kg": 3.052,
+        "t": 4.31,
+        "p": 0.0004,
+        "sig": "***"
+      },
+      "2024": {
+        "UEF_minus_53_kg": 0.569,
+        "t": 0.93,
+        "p": 0.3671,
+        "sig": "ns"
+      }
+    },
+    "EBI_yield_by_year_cultivar": {
+      "2022": {
+        "all": {
+          "r": 0.278,
+          "n": 18
+        },
+        "53": {
+          "r": 0.17,
+          "n": 9
+        },
+        "UEF": {
+          "r": 0.518,
+          "n": 9
+        }
+      },
+      "2023": {
+        "all": {
+          "r": 0.232,
+          "n": 18
+        },
+        "53": {
+          "r": -0.468,
+          "n": 9
+        },
+        "UEF": {
+          "r": 0.144,
+          "n": 9
+        }
+      },
+      "2024": {
+        "all": {
+          "r": 0.132,
+          "n": 18
+        },
+        "53": {
+          "r": -0.387,
+          "n": 9
+        },
+        "UEF": {
+          "r": 0.418,
+          "n": 9
+        }
+      }
+    }
+  }
+}

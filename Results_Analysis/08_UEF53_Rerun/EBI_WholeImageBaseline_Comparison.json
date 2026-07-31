@@ -1,0 +1,147 @@
+{
+  "note": "Compares the canonical (canopy-only radiometric baseline) EBI against the new whole-image-baseline variant (Master_Trees_WholeImageBaseline_v3.xlsx, produced by apply_fixed_zones_yearly_v3_wholeimage_baseline.py on a machine with rasterio), and a combined (average, z-scored) variant. Neither the canonical master nor v1/v2 files were modified; this only reads them.",
+  "partA_within_year_structure": {
+    "2021": {
+      "n": 1048,
+      "spearman_canonical_vs_wholeimg": 0.9843,
+      "p": 0.0,
+      "cultivar_ANOVA_canonical": {
+        "F": 527.29,
+        "p": 0.0,
+        "eta2": 0.3352
+      },
+      "cultivar_ANOVA_wholeimg": {
+        "F": 456.218,
+        "p": 0.0,
+        "eta2": 0.3037
+      }
+    },
+    "2022": {
+      "n": 1019,
+      "spearman_canonical_vs_wholeimg": 0.9971,
+      "p": 0.0,
+      "cultivar_ANOVA_canonical": {
+        "F": 298.756,
+        "p": 0.0,
+        "eta2": 0.2271
+      },
+      "cultivar_ANOVA_wholeimg": {
+        "F": 253.175,
+        "p": 0.0,
+        "eta2": 0.1993
+      }
+    },
+    "2023": {
+      "n": 1012,
+      "spearman_canonical_vs_wholeimg": 0.9999,
+      "p": 0.0,
+      "cultivar_ANOVA_canonical": {
+        "F": 135.966,
+        "p": 0.0,
+        "eta2": 0.1186
+      },
+      "cultivar_ANOVA_wholeimg": {
+        "F": 135.695,
+        "p": 0.0,
+        "eta2": 0.1184
+      }
+    },
+    "2024": {
+      "n": 1016,
+      "spearman_canonical_vs_wholeimg": 1.0,
+      "p": 0.0,
+      "cultivar_ANOVA_canonical": {
+        "F": 0.47,
+        "p": 0.493,
+        "eta2": 0.0005
+      },
+      "cultivar_ANOVA_wholeimg": {
+        "F": 0.47,
+        "p": 0.493,
+        "eta2": 0.0005
+      }
+    }
+  },
+  "partB_cross_year_trajectory": {
+    "canonical": {
+      "mean_by_year": {
+        "2021": 0.5132,
+        "2022": 0.5253,
+        "2023": 0.5402,
+        "2024": 0.5507
+      },
+      "sd_by_year": {
+        "2021": 0.0762,
+        "2022": 0.075,
+        "2023": 0.0477,
+        "2024": 0.05
+      }
+    },
+    "wholeimg": {
+      "mean_by_year": {
+        "2021": 0.3784,
+        "2022": 0.4457,
+        "2023": 0.5544,
+        "2024": 0.5508
+      },
+      "sd_by_year": {
+        "2021": 0.0869,
+        "2022": 0.0884,
+        "2023": 0.0481,
+        "2024": 0.0499
+      }
+    },
+    "combined_avg_zscored": {
+      "mean_by_year": {
+        "2021": 0.0,
+        "2022": 0.0,
+        "2023": -0.0,
+        "2024": -0.0
+      },
+      "sd_by_year": {
+        "2021": 0.9975,
+        "2022": 0.9992,
+        "2023": 1.0,
+        "2024": 1.0
+      }
+    }
+  },
+  "partC_yield_model_value": {
+    "canonical_EBI_Norm": {
+      "R2": 0.5285,
+      "cvR2_seed42": 0.4563,
+      "cvR2_5seeds": [
+        0.4736,
+        0.4567,
+        0.4478,
+        0.488,
+        0.4724
+      ],
+      "cvR2_mean_5seeds": 0.4677
+    },
+    "wholeimg_EBI_Norm": {
+      "R2": 0.5255,
+      "cvR2_seed42": 0.4581,
+      "cvR2_5seeds": [
+        0.4746,
+        0.4494,
+        0.4594,
+        0.4864,
+        0.4834
+      ],
+      "cvR2_mean_5seeds": 0.4706
+    },
+    "combined_avg": {
+      "R2": 0.5298,
+      "cvR2_seed42": 0.462,
+      "cvR2_5seeds": [
+        0.4792,
+        0.4578,
+        0.4606,
+        0.4914,
+        0.4818
+      ],
+      "cvR2_mean_5seeds": 0.4742
+    }
+  }
+}

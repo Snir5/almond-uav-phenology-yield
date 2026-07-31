@@ -1,0 +1,55 @@
+{
+  "flight_doy": {
+    "2021": 66,
+    "2022": 61,
+    "2023": 60,
+    "2024": 60
+  },
+  "percent_open_at_flight_and_EBI": [
+    {
+      "year": 2021,
+      "cultivar": "53",
+      "pct_open_at_flight": 54.0,
+      "mean_EBI": 0.603
+    },
+    {
+      "year": 2021,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 57.0,
+      "mean_EBI": 0.491
+    },
+    {
+      "year": 2022,
+      "cultivar": "53",
+      "pct_open_at_flight": 77.5,
+      "mean_EBI": 0.597
+    },
+    {
+      "year": 2022,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 84.9,
+      "mean_EBI": 0.508
+    },
+    {
+      "year": 2023,
+      "cultivar": "53",
+      "pct_open_at_flight": 45.3,
+      "mean_EBI": 0.507
+    },
+    {
+      "year": 2023,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 72.0,
+      "mean_EBI": 0.548
+    },
+    {
+      "year": 2024,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 60.0,
+      "mean_EBI": 0.551
+    }
+  ],
+  "EBI_vs_pct_open_at_flight_r": 0.117,
+  "n": 7,
+  "interpretation": "flights caught 45-85% open in different years (2022 near peak ~80%, others mid); EBI does NOT track field bloom stage (r=+0.12 ns); 2021 EBI is high at only mid-bloom -> inflated, consistent with its brightness/resolution anomaly"
+}

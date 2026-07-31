@@ -1,0 +1,152 @@
+{
+  "note": "Pixel-level BloomFraction/BrightFraction (Otsu-thresholded crown pixel fractions, apply_bloom_fraction_v3.py) vs measured yield, same season, within cultivar. Compare directly to color_indices_yield.json (crown-mean candidates, all negative).",
+  "by_cultivar_same_year": {
+    "UEF": {
+      "2022": {
+        "BloomFraction": {
+          "r": 0.374,
+          "p": 0.2866,
+          "n": 10,
+          "sig": "ns"
+        },
+        "BrightFraction": {
+          "r": 0.249,
+          "p": 0.4883,
+          "n": 10,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "BloomFraction": {
+          "r": 0.224,
+          "p": 0.0358,
+          "n": 88,
+          "sig": "*",
+          "p_fdr": 0.0666
+        },
+        "BrightFraction": {
+          "r": 0.196,
+          "p": 0.0666,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.0666
+        }
+      },
+      "2024": {
+        "BloomFraction": {
+          "r": 0.256,
+          "p": 0.4757,
+          "n": 10,
+          "sig": "ns"
+        },
+        "BrightFraction": {
+          "r": 0.168,
+          "p": 0.6429,
+          "n": 10,
+          "sig": "ns"
+        }
+      }
+    },
+    "53": {
+      "2022": {
+        "BloomFraction": {
+          "r": 0.052,
+          "p": 0.8948,
+          "n": 9,
+          "sig": "ns"
+        },
+        "BrightFraction": {
+          "r": 0.01,
+          "p": 0.9789,
+          "n": 9,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "BloomFraction": {
+          "r": -0.31,
+          "p": 0.0126,
+          "n": 64,
+          "sig": "*",
+          "p_fdr": 0.0149
+        },
+        "BrightFraction": {
+          "r": -0.303,
+          "p": 0.0149,
+          "n": 64,
+          "sig": "*",
+          "p_fdr": 0.0149
+        }
+      },
+      "2024": {
+        "BloomFraction": {
+          "r": -0.385,
+          "p": 0.3068,
+          "n": 9,
+          "sig": "ns"
+        },
+        "BrightFraction": {
+          "r": -0.309,
+          "p": 0.4182,
+          "n": 9,
+          "sig": "ns"
+        }
+      }
+    }
+  },
+  "ANCOVA_2023": {
+    "BloomFraction": {
+      "n": 152,
+      "EBIxcultivar_interaction_analog": {
+        "F": 11.18,
+        "p": 0.001,
+        "sig": "**"
+      },
+      "R2": 0.071,
+      "R2_with_interaction": 0.136
+    },
+    "BrightFraction": {
+      "n": 152,
+      "EBIxcultivar_interaction_analog": {
+        "F": 9.71,
+        "p": 0.0022,
+        "sig": "**"
+      },
+      "R2": 0.071,
+      "R2_with_interaction": 0.128
+    }
+  },
+  "ANCOVA_baseline_EBI_reference": {
+    "note": "EBIxcultivar interaction F=11.58, p=0.0009, R2 0.079->0.147."
+  },
+  "does_BloomFraction_add_to_EBI_pooled_2023": {
+    "n": 151,
+    "R2_EBI_only": 0.147,
+    "R2_EBI_plus_extra": 0.167,
+    "partial_F_extra_terms": 1.75,
+    "p": 0.1767,
+    "sig": "ns",
+    "df": [
+      2,
+      145
+    ]
+  },
+  "does_BloomFraction_add_to_EBI_within_cultivar_2023": {
+    "UEF": {
+      "n": 87,
+      "R2_EBI_only": 0.082,
+      "R2_EBI_plus_extra": 0.096,
+      "partial_F_extra_term": 1.25,
+      "p": 0.2667,
+      "sig": "ns"
+    },
+    "53": {
+      "n": 64,
+      "R2_EBI_only": 0.065,
+      "R2_EBI_plus_extra": 0.097,
+      "partial_F_extra_term": 2.16,
+      "p": 0.1465,
+      "sig": "ns"
+    }
+  }
+}

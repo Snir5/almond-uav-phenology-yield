@@ -1,0 +1,29 @@
+{
+  "2022": {
+    "measured": 20,
+    "matched": 20,
+    "used": 18,
+    "by_cultivar": {
+      "53": 9,
+      "UEF": 9
+    }
+  },
+  "2023": {
+    "measured": 162,
+    "matched": 161,
+    "used": 151,
+    "by_cultivar": {
+      "53": 64,
+      "UEF": 87
+    }
+  },
+  "2024": {
+    "measured": 20,
+    "matched": 20,
+    "used": 18,
+    "by_cultivar": {
+      "53": 9,
+      "UEF": 9
+    }
+  }
+}

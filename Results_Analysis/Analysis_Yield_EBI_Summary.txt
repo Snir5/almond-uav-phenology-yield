@@ -1,0 +1,106 @@
+======================================================================
+YIELD × EBI / NGRDI / CLIMATE — ANALYSIS SUMMARY
+Bijective (1-to-1) spatial join: 135/162 yield trees matched
+======================================================================
+
+── DESCRIPTIVE STATISTICS ──
+
+  2022:
+    Yield:    {'n': 14, 'mean': 6.534, 'std': 3.123, 'min': 2.657, 'q25': 4.034, 'median': 5.749, 'q75': 7.902, 'max': 13.455}
+    EBI_Norm (yield trees): {'n': 13, 'mean': 0.508, 'std': 0.084, 'min': 0.378, 'q25': 0.454, 'median': 0.515, 'q75': 0.545, 'max': 0.721}
+
+  2023:
+    Yield:    {'n': 135, 'mean': 2.694, 'std': 1.171, 'min': 0.543, 'q25': 1.818, 'median': 2.7, 'q75': 3.303, 'max': 7.516}
+    EBI_Norm (yield trees): {'n': 126, 'mean': 0.544, 'std': 0.06, 'min': 0.37, 'q25': 0.498, 'median': 0.545, 'q75': 0.587, 'max': 0.68}
+
+  2024:
+    Yield:    {'n': 14, 'mean': 2.652, 'std': 1.41, 'min': 0.258, 'q25': 1.736, 'median': 2.603, 'q75': 3.347, 'max': 5.528}
+    EBI_Norm (yield trees): {'n': 13, 'mean': 0.528, 'std': 0.053, 'min': 0.377, 'q25': 0.516, 'median': 0.535, 'q75': 0.55, 'max': 0.6}
+
+── SAME-YEAR CORRELATIONS vs YIELD ──
+
+  2022:
+    EBI_Norm       r=-0.043  p=0.89041ns   R²=0.002  n=13
+    EBI_Z          r=-0.030  p=0.92202ns   R²=0.001  n=13
+    EBI_Raw        r=-0.030  p=0.92203ns   R²=0.001  n=13
+    NGRDI_Norm     r=+0.234  p=0.44252ns   R²=0.054  n=13
+    NGRDI_Z        r=+0.239  p=0.43174ns   R²=0.057  n=13
+
+  2023:
+    EBI_Norm       r=-0.181  p=0.04266*    R²=0.033  n=126
+    EBI_Z          r=-0.181  p=0.04277*    R²=0.033  n=126
+    EBI_Raw        r=-0.181  p=0.04275*    R²=0.033  n=126
+    NGRDI_Norm     r=+0.128  p=0.15237ns   R²=0.016  n=126
+    NGRDI_Z        r=+0.124  p=0.16521ns   R²=0.015  n=126
+
+  2024:
+    EBI_Norm       r=+0.330  p=0.27078ns   R²=0.109  n=13
+    EBI_Z          r=+0.330  p=0.27083ns   R²=0.109  n=13
+    EBI_Raw        r=+0.330  p=0.27090ns   R²=0.109  n=13
+    NGRDI_Norm     r=-0.527  p=0.06429ns   R²=0.278  n=13
+    NGRDI_Z        r=-0.524  p=0.06632ns   R²=0.274  n=13
+
+── LAGGED EBI_{y} vs YIELD_{y+1} ──
+
+  EBI_2021→Yield_2022: r=-0.065  p=0.82598ns   R²=0.004  n=14
+  EBI_2022→Yield_2023: r=-0.009  p=0.92038ns   R²=0.000  n=125
+  EBI_2023→Yield_2024: r=-0.101  p=0.74199ns   R²=0.010  n=13
+
+── CULTIVAR ANALYSIS (2023) ──
+
+  53: n_yield=34  mean=3.21 kg  r(EBI,Yield)=-0.215  p=0.23798ns 
+  54: n_yield=16  mean=2.13 kg  r(EBI,Yield)=-0.280  p=0.33167ns 
+  UEF: n_yield=85  mean=2.59 kg  r(EBI,Yield)=+0.034  p=0.76643ns 
+
+  One-way ANOVA: F=5.73  p=0.00410**   η²=0.080
+
+  Cohen's d (pairwise 2023 yield):
+    53 vs 54: d=+1.036
+    53 vs UEF: d=+0.524
+    54 vs UEF: d=-0.402
+
+── CULTIVAR × YEAR EBI_Norm vs YIELD ──
+
+  2022 53 n=3: r=+0.132  p=0.91557ns 
+  2022 54: n=1 — insufficient
+  2022 UEF n=9: r=-0.721  p=0.02852*  
+  2023 53 n=32: r=-0.215  p=0.23798ns 
+  2023 54 n=14: r=-0.280  p=0.33167ns 
+  2023 UEF n=80: r=+0.034  p=0.76643ns 
+  2024 53 n=3: r=+0.237  p=0.84777ns 
+  2024 54: n=1 — insufficient
+  2024 UEF n=9: r=+0.282  p=0.46141ns 
+
+── CLIMATE vs YIELD/EBI  (year-level means, directional only) ──
+
+  Mean yield by year: {2022: 6.533983935285716, 2023: 2.6936997512296297, 2024: 2.652177492087412}
+
+  Climate vs Mean Annual Yield (n=3 yrs):
+    Chill_Portions         r=+0.808  (n=3 yrs)
+    Late_Chill             r=+0.721  (n=3 yrs)
+    Chill_Hrs              r=+0.704  (n=3 yrs)
+    GDD_Feb                r=-0.176  (n=3 yrs)
+    GDD_Jan_Feb            r=-0.837  (n=3 yrs)
+    Avg_DTR_Feb            r=+0.063  (n=3 yrs)
+    Rad_Feb                r=+0.000  (n=3 yrs)
+    Max_Dry_Hrs            r=-0.871  (n=3 yrs)
+    Trans_Ratio            r=+0.705  (n=3 yrs)
+    Frost_Hrs              r=+0.000  (n=3 yrs)
+    Heat_Stress_Feb        r=-0.231  (n=3 yrs)
+    Rain_Feb               r=-0.560  (n=3 yrs)
+    High_Wind_Hrs          r=-0.575  (n=3 yrs)
+
+  Climate vs Mean Annual EBI_Norm (n=4 yrs):
+    Chill_Portions         r=-0.741
+    Late_Chill             r=-0.646
+    Chill_Hrs              r=-0.622
+    GDD_Feb                r=+0.109
+    GDD_Jan_Feb            r=+0.737
+    Avg_DTR_Feb            r=+0.127
+    Rad_Feb                r=+0.000
+    Max_Dry_Hrs            r=+0.716
+    Trans_Ratio            r=-0.624
+    Frost_Hrs              r=+0.000
+    Heat_Stress_Feb        r=+0.342
+    Rain_Feb               r=+0.628
+    High_Wind_Hrs          r=+0.626

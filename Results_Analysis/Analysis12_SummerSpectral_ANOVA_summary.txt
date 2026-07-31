@@ -1,0 +1,32 @@
+CWSI_Jul2024         F(2,1043)=   8.37  p=2.467e-04  eta2=0.0158  ***  n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0038  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=+0.0199  p(Bonf)=4.286e-05  ***
+    53 vs 54: diff=+0.0161  p(Bonf)=2.756e-02  *
+NDVI_Jul2024         F(2,1043)=   0.44  p=6.462e-01  eta2=0.0008  ns   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0038  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=-0.0002  p(Bonf)=1.000e+00  ns
+    53 vs 54: diff=-0.0040  p(Bonf)=1.000e+00  ns
+NDRE_Jul2024         F(2,1043)=   6.30  p=1.899e-03  eta2=0.0119  **   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0013  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=+0.0066  p(Bonf)=2.518e-04  ***
+    53 vs 54: diff=+0.0052  p(Bonf)=6.202e-02  ns
+EVI_Jul2024          F(2,1043)=   0.32  p=7.237e-01  eta2=0.0006  ns   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0012  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=+0.0021  p(Bonf)=1.000e+00  ns
+    53 vs 54: diff=+0.0009  p(Bonf)=1.000e+00  ns
+SAVI_Jul2024         F(2,1043)=   0.18  p=8.395e-01  eta2=0.0003  ns   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0008  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=+0.0015  p(Bonf)=1.000e+00  ns
+    53 vs 54: diff=+0.0006  p(Bonf)=1.000e+00  ns
+MSAVI_Jul2024        F(2,1043)=   0.58  p=5.603e-01  eta2=0.0011  ns   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0010  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=+0.0029  p(Bonf)=8.236e-01  ns
+    53 vs 54: diff=+0.0019  p(Bonf)=1.000e+00  ns
+GNDI_Jul2024         F(2,1043)=   0.70  p=4.959e-01  eta2=0.0013  ns   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0006  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=+0.0027  p(Bonf)=6.194e-01  ns
+    53 vs 54: diff=+0.0021  p(Bonf)=1.000e+00  ns
+OSAVI_Jul2024        F(2,1043)=   0.11  p=8.965e-01  eta2=0.0002  ns   n={'UEF': 712, '53': 158, '54': 176}
+    UEF vs 53: diff=+0.0014  p(Bonf)=1.000e+00  ns
+    UEF vs 54: diff=-0.0000  p(Bonf)=1.000e+00  ns
+    53 vs 54: diff=-0.0015  p(Bonf)=1.000e+00  ns

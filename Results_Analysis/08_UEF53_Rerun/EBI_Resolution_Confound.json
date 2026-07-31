@@ -1,0 +1,47 @@
+{
+  "GSD_cm_per_px": {
+    "2021": 1.2244,
+    "2022": 1.4721,
+    "2023": 1.3307,
+    "2024": 2.2424
+  },
+  "canopy_pct_of_plot1": {
+    "2021": 51.7,
+    "2022": 37.2,
+    "2023": 27.9,
+    "2024": 30.3
+  },
+  "raw_EBI_mean_uncorrected": {
+    "2021": 3.89,
+    "2022": 3.43,
+    "2023": 4.34,
+    "2024": 3.99
+  },
+  "EBI_Norm_mean_UEF53": {
+    "2021": 0.5132,
+    "2022": 0.5253,
+    "2023": 0.5402,
+    "2024": 0.5507
+  },
+  "EBI_Norm_sd_UEF53": {
+    "2021": 0.0763,
+    "2022": 0.075,
+    "2023": 0.0477,
+    "2024": 0.0501
+  },
+  "bloom_bright_pct_gt065": {
+    "2021": 4.68,
+    "2022": 4.12,
+    "2023": 0.59,
+    "2024": 0.59
+  },
+  "n4_correlations": {
+    "GSD_vs_EBIsd": -0.504,
+    "GSD_vs_EBImean": 0.78,
+    "GSD_vs_bright065": -0.568,
+    "GSD_vs_canopyPct": -0.502,
+    "ChillPortions_vs_EBIsd": 0.431,
+    "ChillPortions_vs_bright065": 0.42
+  },
+  "verdict": "Resolution (GSD) tracks EBI spread and the bloom-bright tail at least as strongly as Chill Portions does (n=4). Cross-year EBI level/spread/tail comparisons are confounded with resolution+exposure; WITHIN-year analyses (cultivar, spatial, EBI-yield) share one GSD and are NOT affected."
+}

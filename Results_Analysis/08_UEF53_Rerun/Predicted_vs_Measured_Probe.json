@@ -1,0 +1,15 @@
+{
+  "2023": {
+    "n": 162,
+    "pearson": -0.105,
+    "cultivar_measured": {
+      "UEF": 2.95,
+      "53": 2.27
+    },
+    "cultivar_predicted": {
+      "UEF": 3.03,
+      "53": 3.36
+    },
+    "row_level_r": -0.431
+  }
+}

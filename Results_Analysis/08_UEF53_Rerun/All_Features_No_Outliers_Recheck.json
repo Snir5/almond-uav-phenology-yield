@@ -1,0 +1,818 @@
+{
+  "note": "Sections 38/39/41/43/44 re-run after removing the 15 actual-yield anomaly tree-years (9 high modZ>3.5 + 6 low <1.0kg domain trim, sections 45-46). Baseline recommended model refit fresh on this n.",
+  "n": 152,
+  "n_excluded_tree_years_in_this_join": 15,
+  "baseline": {
+    "R2": 0.3337,
+    "cvR2": 0.2355
+  },
+  "n_candidates": 70,
+  "partial_F_all_candidates_FDR_corrected": {
+    "CanopyArea": {
+      "F": 1.938,
+      "p": 0.166,
+      "coef": -0.1236,
+      "R2_with_term": 0.3425,
+      "cvR2_with_term": 0.2394,
+      "cvR2_gain": 0.0039,
+      "p_fdr": 0.7333
+    },
+    "CanopyArea_x_cultivar": {
+      "F": 0.415,
+      "p": 0.5207,
+      "coef": -0.0733,
+      "R2_with_term": 0.3356,
+      "cvR2_with_term": 0.2212,
+      "cvR2_gain": -0.0143,
+      "p_fdr": 0.8477
+    },
+    "CanopyCover": {
+      "F": 0.28,
+      "p": 0.5977,
+      "coef": -0.0474,
+      "R2_with_term": 0.335,
+      "cvR2_with_term": 0.23,
+      "cvR2_gain": -0.0055,
+      "p_fdr": 0.8681
+    },
+    "CanopyCover_x_cultivar": {
+      "F": 0.037,
+      "p": 0.8485,
+      "coef": 0.0218,
+      "R2_with_term": 0.3339,
+      "cvR2_with_term": 0.2353,
+      "cvR2_gain": -0.0002,
+      "p_fdr": 0.9476
+    },
+    "ShadowFraction": {
+      "F": 1.517,
+      "p": 0.22,
+      "coef": 0.1066,
+      "R2_with_term": 0.3406,
+      "cvR2_with_term": 0.2453,
+      "cvR2_gain": 0.0098,
+      "p_fdr": 0.7333
+    },
+    "ShadowFraction_x_cultivar": {
+      "F": 0.004,
+      "p": 0.9486,
+      "coef": -0.0069,
+      "R2_with_term": 0.3338,
+      "cvR2_with_term": 0.2289,
+      "cvR2_gain": -0.0066,
+      "p_fdr": 0.9645
+    },
+    "BloomFraction": {
+      "F": 0.563,
+      "p": 0.4544,
+      "coef": -0.1708,
+      "R2_with_term": 0.3363,
+      "cvR2_with_term": 0.2354,
+      "cvR2_gain": -0.0001,
+      "p_fdr": 0.842
+    },
+    "BloomFraction_x_cultivar": {
+      "F": 0.128,
+      "p": 0.7206,
+      "coef": 0.1027,
+      "R2_with_term": 0.3343,
+      "cvR2_with_term": 0.2274,
+      "cvR2_gain": -0.0081,
+      "p_fdr": 0.9112
+    },
+    "BrightFraction": {
+      "F": 0.39,
+      "p": 0.5333,
+      "coef": -0.1035,
+      "R2_with_term": 0.3355,
+      "cvR2_with_term": 0.228,
+      "cvR2_gain": -0.0075,
+      "p_fdr": 0.8484
+    },
+    "BrightFraction_x_cultivar": {
+      "F": 0.004,
+      "p": 0.9507,
+      "coef": -0.0134,
+      "R2_with_term": 0.3338,
+      "cvR2_with_term": 0.2234,
+      "cvR2_gain": -0.0121,
+      "p_fdr": 0.9645
+    },
+    "EBI_density": {
+      "F": 0.051,
+      "p": 0.8224,
+      "coef": 0.0187,
+      "R2_with_term": 0.334,
+      "cvR2_with_term": 0.1968,
+      "cvR2_gain": -0.0387,
+      "p_fdr": 0.9437
+    },
+    "EBI_density_x_cultivar": {
+      "F": 0.005,
+      "p": 0.9445,
+      "coef": 0.0059,
+      "R2_with_term": 0.3338,
+      "cvR2_with_term": 0.188,
+      "cvR2_gain": -0.0475,
+      "p_fdr": 0.9645
+    },
+    "BloomVolume": {
+      "F": 1.608,
+      "p": 0.2068,
+      "coef": -0.1329,
+      "R2_with_term": 0.341,
+      "cvR2_with_term": 0.2371,
+      "cvR2_gain": 0.0016,
+      "p_fdr": 0.7333
+    },
+    "BloomVolume_x_cultivar": {
+      "F": 0.334,
+      "p": 0.564,
+      "coef": -0.0767,
+      "R2_with_term": 0.3353,
+      "cvR2_with_term": 0.2223,
+      "cvR2_gain": -0.0132,
+      "p_fdr": 0.8498
+    },
+    "BloomPixelVolume": {
+      "F": 2.093,
+      "p": 0.1501,
+      "coef": -0.1747,
+      "R2_with_term": 0.3432,
+      "cvR2_with_term": 0.2459,
+      "cvR2_gain": 0.0104,
+      "p_fdr": 0.7333
+    },
+    "BloomPixelVolume_x_cultivar": {
+      "F": 0.002,
+      "p": 0.9668,
+      "coef": -0.0066,
+      "R2_with_term": 0.3337,
+      "cvR2_with_term": 0.2279,
+      "cvR2_gain": -0.0076,
+      "p_fdr": 0.9668
+    },
+    "EBI_x_BloomFraction": {
+      "F": 0.693,
+      "p": 0.4067,
+      "coef": -0.2466,
+      "R2_with_term": 0.3369,
+      "cvR2_with_term": 0.2352,
+      "cvR2_gain": -0.0003,
+      "p_fdr": 0.8134
+    },
+    "EBI_x_BloomFraction_x_cultivar": {
+      "F": 0.035,
+      "p": 0.8528,
+      "coef": 0.0729,
+      "R2_with_term": 0.3339,
+      "cvR2_with_term": 0.2273,
+      "cvR2_gain": -0.0082,
+      "p_fdr": 0.9476
+    },
+    "EBI_x_CanopyCover": {
+      "F": 0.226,
+      "p": 0.6355,
+      "coef": -0.0529,
+      "R2_with_term": 0.3348,
+      "cvR2_with_term": 0.2298,
+      "cvR2_gain": -0.0057,
+      "p_fdr": 0.8723
+    },
+    "EBI_x_CanopyCover_x_cultivar": {
+      "F": 0.053,
+      "p": 0.818,
+      "coef": 0.0323,
+      "R2_with_term": 0.334,
+      "cvR2_with_term": 0.2355,
+      "cvR2_gain": 0.0,
+      "p_fdr": 0.9437
+    },
+    "BrightFraction_x_CanopyArea": {
+      "F": 1.855,
+      "p": 0.1753,
+      "coef": -0.156,
+      "R2_with_term": 0.3422,
+      "cvR2_with_term": 0.2364,
+      "cvR2_gain": 0.0009,
+      "p_fdr": 0.7333
+    },
+    "BrightFraction_x_CanopyArea_x_cultivar": {
+      "F": 0.265,
+      "p": 0.6077,
+      "coef": -0.0772,
+      "R2_with_term": 0.335,
+      "cvR2_with_term": 0.2161,
+      "cvR2_gain": -0.0194,
+      "p_fdr": 0.8681
+    },
+    "EBI_Norm_std": {
+      "F": 0.446,
+      "p": 0.5052,
+      "coef": 0.0593,
+      "R2_with_term": 0.3358,
+      "cvR2_with_term": 0.2258,
+      "cvR2_gain": -0.0097,
+      "p_fdr": 0.842
+    },
+    "EBI_Norm_std_x_cultivar": {
+      "F": 1.536,
+      "p": 0.2172,
+      "coef": 0.1432,
+      "R2_with_term": 0.3407,
+      "cvR2_with_term": 0.2388,
+      "cvR2_gain": 0.0033,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_var": {
+      "F": 0.323,
+      "p": 0.5706,
+      "coef": 0.0501,
+      "R2_with_term": 0.3352,
+      "cvR2_with_term": 0.2239,
+      "cvR2_gain": -0.0116,
+      "p_fdr": 0.8498
+    },
+    "EBI_Norm_var_x_cultivar": {
+      "F": 1.347,
+      "p": 0.2478,
+      "coef": 0.1288,
+      "R2_with_term": 0.3399,
+      "cvR2_with_term": 0.2341,
+      "cvR2_gain": -0.0014,
+      "p_fdr": 0.7487
+    },
+    "EBI_Norm_median": {
+      "F": 0.118,
+      "p": 0.7318,
+      "coef": -0.1734,
+      "R2_with_term": 0.3343,
+      "cvR2_with_term": 0.1997,
+      "cvR2_gain": -0.0358,
+      "p_fdr": 0.9112
+    },
+    "EBI_Norm_median_x_cultivar": {
+      "F": 0.192,
+      "p": 0.6616,
+      "coef": 0.2657,
+      "R2_with_term": 0.3346,
+      "cvR2_with_term": 0.2053,
+      "cvR2_gain": -0.0302,
+      "p_fdr": 0.8738
+    },
+    "EBI_Norm_P10": {
+      "F": 0.354,
+      "p": 0.553,
+      "coef": -0.0814,
+      "R2_with_term": 0.3354,
+      "cvR2_with_term": 0.2211,
+      "cvR2_gain": -0.0144,
+      "p_fdr": 0.8498
+    },
+    "EBI_Norm_P10_x_cultivar": {
+      "F": 1.142,
+      "p": 0.2871,
+      "coef": -0.1785,
+      "R2_with_term": 0.3389,
+      "cvR2_with_term": 0.223,
+      "cvR2_gain": -0.0125,
+      "p_fdr": 0.7487
+    },
+    "EBI_Norm_P25": {
+      "F": 2.717,
+      "p": 0.1014,
+      "coef": -0.4809,
+      "R2_with_term": 0.346,
+      "cvR2_with_term": 0.2336,
+      "cvR2_gain": -0.0019,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_P25_x_cultivar": {
+      "F": 4.253,
+      "p": 0.041,
+      "coef": -0.7916,
+      "R2_with_term": 0.3527,
+      "cvR2_with_term": 0.2476,
+      "cvR2_gain": 0.0121,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_P75": {
+      "F": 0.966,
+      "p": 0.3273,
+      "coef": 0.2848,
+      "R2_with_term": 0.3381,
+      "cvR2_with_term": 0.2294,
+      "cvR2_gain": -0.0061,
+      "p_fdr": 0.79
+    },
+    "EBI_Norm_P75_x_cultivar": {
+      "F": 2.635,
+      "p": 0.1067,
+      "coef": 0.5592,
+      "R2_with_term": 0.3456,
+      "cvR2_with_term": 0.2467,
+      "cvR2_gain": 0.0112,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_P90": {
+      "F": 1.048,
+      "p": 0.3078,
+      "coef": 0.2136,
+      "R2_with_term": 0.3385,
+      "cvR2_with_term": 0.2261,
+      "cvR2_gain": -0.0094,
+      "p_fdr": 0.7695
+    },
+    "EBI_Norm_P90_x_cultivar": {
+      "F": 2.412,
+      "p": 0.1226,
+      "coef": 0.4543,
+      "R2_with_term": 0.3446,
+      "cvR2_with_term": 0.2455,
+      "cvR2_gain": 0.01,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_IQR": {
+      "F": 1.712,
+      "p": 0.1927,
+      "coef": 0.1311,
+      "R2_with_term": 0.3415,
+      "cvR2_with_term": 0.2331,
+      "cvR2_gain": -0.0024,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_IQR_x_cultivar": {
+      "F": 3.465,
+      "p": 0.0647,
+      "coef": 0.2308,
+      "R2_with_term": 0.3493,
+      "cvR2_with_term": 0.2504,
+      "cvR2_gain": 0.0149,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_skew": {
+      "F": 0.018,
+      "p": 0.8947,
+      "coef": 0.0142,
+      "R2_with_term": 0.3338,
+      "cvR2_with_term": 0.2136,
+      "cvR2_gain": -0.0219,
+      "p_fdr": 0.9645
+    },
+    "EBI_Norm_skew_x_cultivar": {
+      "F": 0.717,
+      "p": 0.3984,
+      "coef": -0.0993,
+      "R2_with_term": 0.337,
+      "cvR2_with_term": 0.2383,
+      "cvR2_gain": 0.0028,
+      "p_fdr": 0.8134
+    },
+    "EBI_Norm_kurtosis": {
+      "F": 2.732,
+      "p": 0.1005,
+      "coef": -0.1648,
+      "R2_with_term": 0.3461,
+      "cvR2_with_term": 0.2499,
+      "cvR2_gain": 0.0144,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_kurtosis_x_cultivar": {
+      "F": 3.011,
+      "p": 0.0848,
+      "coef": -0.2366,
+      "R2_with_term": 0.3473,
+      "cvR2_with_term": 0.2538,
+      "cvR2_gain": 0.0183,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_CV": {
+      "F": 0.456,
+      "p": 0.5005,
+      "coef": 0.0677,
+      "R2_with_term": 0.3358,
+      "cvR2_with_term": 0.2298,
+      "cvR2_gain": -0.0057,
+      "p_fdr": 0.842
+    },
+    "EBI_Norm_CV_x_cultivar": {
+      "F": 1.294,
+      "p": 0.2572,
+      "coef": 0.1521,
+      "R2_with_term": 0.3396,
+      "cvR2_with_term": 0.238,
+      "cvR2_gain": 0.0025,
+      "p_fdr": 0.7487
+    },
+    "EBI_OtsuFrac": {
+      "F": 0.819,
+      "p": 0.367,
+      "coef": -0.3859,
+      "R2_with_term": 0.3375,
+      "cvR2_with_term": 0.2187,
+      "cvR2_gain": -0.0168,
+      "p_fdr": 0.8134
+    },
+    "EBI_OtsuFrac_x_cultivar": {
+      "F": 0.514,
+      "p": 0.4746,
+      "coef": 0.3117,
+      "R2_with_term": 0.3361,
+      "cvR2_with_term": 0.2239,
+      "cvR2_gain": -0.0116,
+      "p_fdr": 0.842
+    },
+    "HighEBI_frac_055": {
+      "F": 1.134,
+      "p": 0.2888,
+      "coef": -0.4455,
+      "R2_with_term": 0.3389,
+      "cvR2_with_term": 0.2195,
+      "cvR2_gain": -0.016,
+      "p_fdr": 0.7487
+    },
+    "HighEBI_frac_055_x_cultivar": {
+      "F": 0.201,
+      "p": 0.6545,
+      "coef": -0.2393,
+      "R2_with_term": 0.3347,
+      "cvR2_with_term": 0.1968,
+      "cvR2_gain": -0.0387,
+      "p_fdr": 0.8738
+    },
+    "HighEBI_density_055": {
+      "F": 2.702,
+      "p": 0.1024,
+      "coef": -0.6836,
+      "R2_with_term": 0.3459,
+      "cvR2_with_term": 0.2431,
+      "cvR2_gain": 0.0076,
+      "p_fdr": 0.7333
+    },
+    "HighEBI_density_055_x_cultivar": {
+      "F": 0.568,
+      "p": 0.4522,
+      "coef": 0.338,
+      "R2_with_term": 0.3363,
+      "cvR2_with_term": 0.2242,
+      "cvR2_gain": -0.0113,
+      "p_fdr": 0.842
+    },
+    "HighEBI_frac_065": {
+      "F": 0.543,
+      "p": 0.4625,
+      "coef": 0.2209,
+      "R2_with_term": 0.3362,
+      "cvR2_with_term": 0.2206,
+      "cvR2_gain": -0.0149,
+      "p_fdr": 0.842
+    },
+    "HighEBI_frac_065_x_cultivar": {
+      "F": 1.223,
+      "p": 0.2706,
+      "coef": 0.443,
+      "R2_with_term": 0.3393,
+      "cvR2_with_term": 0.224,
+      "cvR2_gain": -0.0115,
+      "p_fdr": 0.7487
+    },
+    "HighEBI_density_065": {
+      "F": 0.109,
+      "p": 0.742,
+      "coef": 0.1,
+      "R2_with_term": 0.3342,
+      "cvR2_with_term": 0.2101,
+      "cvR2_gain": -0.0254,
+      "p_fdr": 0.9112
+    },
+    "HighEBI_density_065_x_cultivar": {
+      "F": 2.485,
+      "p": 0.1171,
+      "coef": 0.5546,
+      "R2_with_term": 0.345,
+      "cvR2_with_term": 0.2307,
+      "cvR2_gain": -0.0048,
+      "p_fdr": 0.7333
+    },
+    "HighEBI_frac_075": {
+      "F": 1.291,
+      "p": 0.2578,
+      "coef": 0.2478,
+      "R2_with_term": 0.3396,
+      "cvR2_with_term": 0.2222,
+      "cvR2_gain": -0.0133,
+      "p_fdr": 0.7487
+    },
+    "HighEBI_frac_075_x_cultivar": {
+      "F": 2.253,
+      "p": 0.1355,
+      "coef": 0.4402,
+      "R2_with_term": 0.3439,
+      "cvR2_with_term": 0.2136,
+      "cvR2_gain": -0.0219,
+      "p_fdr": 0.7333
+    },
+    "HighEBI_density_075": {
+      "F": 0.712,
+      "p": 0.4001,
+      "coef": 0.1852,
+      "R2_with_term": 0.337,
+      "cvR2_with_term": 0.2097,
+      "cvR2_gain": -0.0258,
+      "p_fdr": 0.8134
+    },
+    "HighEBI_density_075_x_cultivar": {
+      "F": 3.02,
+      "p": 0.0844,
+      "coef": 0.4732,
+      "R2_with_term": 0.3473,
+      "cvR2_with_term": 0.2175,
+      "cvR2_gain": -0.018,
+      "p_fdr": 0.7333
+    },
+    "TBL": {
+      "F": 0.122,
+      "p": 0.7271,
+      "coef": -0.0552,
+      "R2_with_term": 0.3343,
+      "cvR2_with_term": 0.2232,
+      "cvR2_gain": -0.0123,
+      "p_fdr": 0.9112
+    },
+    "TBL_x_cultivar": {
+      "F": 0.015,
+      "p": 0.9039,
+      "coef": 0.0256,
+      "R2_with_term": 0.3338,
+      "cvR2_with_term": 0.2308,
+      "cvR2_gain": -0.0047,
+      "p_fdr": 0.9645
+    },
+    "ICBI": {
+      "F": 1.931,
+      "p": 0.1668,
+      "coef": -0.1271,
+      "R2_with_term": 0.3425,
+      "cvR2_with_term": 0.2484,
+      "cvR2_gain": 0.0129,
+      "p_fdr": 0.7333
+    },
+    "ICBI_x_cultivar": {
+      "F": 0.004,
+      "p": 0.9472,
+      "coef": -0.0074,
+      "R2_with_term": 0.3338,
+      "cvR2_with_term": 0.2296,
+      "cvR2_gain": -0.0059,
+      "p_fdr": 0.9645
+    },
+    "TICBL": {
+      "F": 3.877,
+      "p": 0.0509,
+      "coef": -0.176,
+      "R2_with_term": 0.3511,
+      "cvR2_with_term": 0.2614,
+      "cvR2_gain": 0.0259,
+      "p_fdr": 0.7333
+    },
+    "TICBL_x_cultivar": {
+      "F": 0.078,
+      "p": 0.78,
+      "coef": -0.0335,
+      "R2_with_term": 0.3341,
+      "cvR2_with_term": 0.2296,
+      "cvR2_gain": -0.0059,
+      "p_fdr": 0.9254
+    },
+    "UBI": {
+      "F": 0.448,
+      "p": 0.5046,
+      "coef": -0.1416,
+      "R2_with_term": 0.3358,
+      "cvR2_with_term": 0.2259,
+      "cvR2_gain": -0.0096,
+      "p_fdr": 0.842
+    },
+    "UBI_x_cultivar": {
+      "F": 1.535,
+      "p": 0.2174,
+      "coef": -0.3414,
+      "R2_with_term": 0.3407,
+      "cvR2_with_term": 0.2388,
+      "cvR2_gain": 0.0033,
+      "p_fdr": 0.7333
+    },
+    "CCAB": {
+      "F": 0.095,
+      "p": 0.7588,
+      "coef": 0.0591,
+      "R2_with_term": 0.3342,
+      "cvR2_with_term": 0.2225,
+      "cvR2_gain": -0.013,
+      "p_fdr": 0.9158
+    },
+    "CCAB_x_cultivar": {
+      "F": 0.91,
+      "p": 0.3416,
+      "coef": 0.2425,
+      "R2_with_term": 0.3379,
+      "cvR2_with_term": 0.2355,
+      "cvR2_gain": 0.0,
+      "p_fdr": 0.7971
+    },
+    "SBS": {
+      "F": 0.752,
+      "p": 0.3874,
+      "coef": -0.0926,
+      "R2_with_term": 0.3372,
+      "cvR2_with_term": 0.2295,
+      "cvR2_gain": -0.006,
+      "p_fdr": 0.8134
+    },
+    "SBS_x_cultivar": {
+      "F": 0.241,
+      "p": 0.6242,
+      "coef": 0.0703,
+      "R2_with_term": 0.3348,
+      "cvR2_with_term": 0.2316,
+      "cvR2_gain": -0.0039,
+      "p_fdr": 0.8723
+    }
+  },
+  "n_survive_FDR": 0,
+  "top10_by_raw_p": [
+    "EBI_Norm_P25_x_cultivar",
+    "TICBL",
+    "EBI_Norm_IQR_x_cultivar",
+    "HighEBI_density_075_x_cultivar",
+    "EBI_Norm_kurtosis_x_cultivar",
+    "EBI_Norm_kurtosis",
+    "EBI_Norm_P25",
+    "HighEBI_density_055",
+    "EBI_Norm_P75_x_cultivar",
+    "HighEBI_density_065_x_cultivar"
+  ],
+  "top10_by_cvR2_gain": [
+    "TICBL",
+    "EBI_Norm_kurtosis_x_cultivar",
+    "EBI_Norm_IQR_x_cultivar",
+    "EBI_Norm_kurtosis",
+    "ICBI",
+    "EBI_Norm_P25_x_cultivar",
+    "EBI_Norm_P75_x_cultivar",
+    "BloomPixelVolume",
+    "EBI_Norm_P90_x_cultivar",
+    "ShadowFraction"
+  ],
+  "forward_selection_main_seed42": {
+    "selected": [
+      "TICBL",
+      "SBS_x_cultivar",
+      "HighEBI_density_055",
+      "EBI_Norm_kurtosis",
+      "BloomPixelVolume",
+      "EBI_x_CanopyCover_x_cultivar",
+      "EBI_Norm_median",
+      "EBI_Norm_skew_x_cultivar"
+    ],
+    "final_cvR2": 0.3103,
+    "gain": 0.0748
+  },
+  "robustness_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [
+        "EBI_Norm_P25_x_cultivar",
+        "BloomPixelVolume",
+        "CCAB",
+        "BloomPixelVolume_x_cultivar"
+      ],
+      "final_cvR2": 0.3136
+    },
+    {
+      "seed": 7,
+      "selected": [
+        "EBI_Norm_P25_x_cultivar",
+        "SBS",
+        "EBI_Norm_kurtosis",
+        "SBS_x_cultivar"
+      ],
+      "final_cvR2": 0.3123
+    },
+    {
+      "seed": 13,
+      "selected": [
+        "TICBL",
+        "EBI_Norm_IQR_x_cultivar",
+        "BloomFraction",
+        "HighEBI_frac_065_x_cultivar",
+        "HighEBI_density_065_x_cultivar",
+        "BloomFraction_x_cultivar"
+      ],
+      "final_cvR2": 0.2842
+    },
+    {
+      "seed": 99,
+      "selected": [
+        "TICBL",
+        "SBS_x_cultivar",
+        "HighEBI_density_055",
+        "EBI_Norm_kurtosis",
+        "EBI_Norm_median"
+      ],
+      "final_cvR2": 0.2872
+    },
+    {
+      "seed": 2024,
+      "selected": [
+        "TICBL",
+        "TICBL_x_cultivar",
+        "EBI_Norm_P25_x_cultivar",
+        "HighEBI_density_055",
+        "EBI_x_BloomFraction",
+        "HighEBI_frac_055",
+        "HighEBI_frac_055_x_cultivar"
+      ],
+      "final_cvR2": 0.3149
+    }
+  ],
+  "how_often_selected_of_6": {
+    "TICBL": 4,
+    "SBS_x_cultivar": 3,
+    "HighEBI_density_055": 3,
+    "EBI_Norm_kurtosis": 3,
+    "BloomPixelVolume": 2,
+    "EBI_x_CanopyCover_x_cultivar": 1,
+    "EBI_Norm_median": 2,
+    "EBI_Norm_skew_x_cultivar": 1,
+    "EBI_Norm_P25_x_cultivar": 3,
+    "CCAB": 1,
+    "BloomPixelVolume_x_cultivar": 1,
+    "SBS": 1,
+    "EBI_Norm_IQR_x_cultivar": 1,
+    "BloomFraction": 1,
+    "HighEBI_frac_065_x_cultivar": 1,
+    "HighEBI_density_065_x_cultivar": 1,
+    "BloomFraction_x_cultivar": 1,
+    "TICBL_x_cultivar": 1,
+    "EBI_x_BloomFraction": 1,
+    "HighEBI_frac_055": 1,
+    "HighEBI_frac_055_x_cultivar": 1
+  },
+  "near_miss_recheck": {
+    "ShadowFraction": {
+      "F": 1.517,
+      "p": 0.22,
+      "coef": 0.1066,
+      "R2_with_term": 0.3406,
+      "cvR2_with_term": 0.2453,
+      "cvR2_gain": 0.0098,
+      "p_fdr": 0.7333
+    },
+    "BrightFraction": {
+      "F": 0.39,
+      "p": 0.5333,
+      "coef": -0.1035,
+      "R2_with_term": 0.3355,
+      "cvR2_with_term": 0.228,
+      "cvR2_gain": -0.0075,
+      "p_fdr": 0.8484
+    },
+    "UBI_x_cultivar": {
+      "F": 1.535,
+      "p": 0.2174,
+      "coef": -0.3414,
+      "R2_with_term": 0.3407,
+      "cvR2_with_term": 0.2388,
+      "cvR2_gain": 0.0033,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_P90_x_cultivar": {
+      "F": 2.412,
+      "p": 0.1226,
+      "coef": 0.4543,
+      "R2_with_term": 0.3446,
+      "cvR2_with_term": 0.2455,
+      "cvR2_gain": 0.01,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_std_x_cultivar": {
+      "F": 1.536,
+      "p": 0.2172,
+      "coef": 0.1432,
+      "R2_with_term": 0.3407,
+      "cvR2_with_term": 0.2388,
+      "cvR2_gain": 0.0033,
+      "p_fdr": 0.7333
+    },
+    "EBI_Norm_CV_x_cultivar": {
+      "F": 1.294,
+      "p": 0.2572,
+      "coef": 0.1521,
+      "R2_with_term": 0.3396,
+      "cvR2_with_term": 0.238,
+      "cvR2_gain": 0.0025,
+      "p_fdr": 0.7487
+    }
+  }
+}

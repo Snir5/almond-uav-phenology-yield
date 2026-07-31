@@ -1,0 +1,37 @@
+{
+  "n_tree_year_rows": 187,
+  "n_trees": 151,
+  "by_year": {
+    "2022": 18,
+    "2023": 151,
+    "2024": 18
+  },
+  "models_cvR2": {
+    "cultivar": {
+      "R2": 0.02,
+      "cvR2": 0.006
+    },
+    "+ EBI x cultivar": {
+      "R2": 0.092,
+      "cvR2": 0.04
+    },
+    "+ climate (CP+GDD)": {
+      "R2": 0.479,
+      "cvR2": 0.416
+    },
+    "+ bloom timing (t50)": {
+      "R2": 0.481,
+      "cvR2": 0.411
+    },
+    "+ spatial (X,Y)": {
+      "R2": 0.493,
+      "cvR2": 0.413
+    },
+    "+ NGRDI": {
+      "R2": 0.494,
+      "cvR2": 0.296
+    }
+  },
+  "season_ceiling_year_factor_cvR2": 0.43,
+  "saved_table": "Trees_Data_Survey/Yield_AllYears_Joined.xlsx"
+}

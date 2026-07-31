@@ -1,0 +1,173 @@
+{
+  "note": "Engineered features from the same GPKG physiology data (sections 21-22): season trajectory/change, PCA composite vigor scores, SWP_clusters category, plus DEM as a bonus. TG_clusters excluded, constant across all of Plot A within each year (2022 all cluster 2, 2023 all cluster 3), carries no tree-level information here.",
+  "TG_clusters_diagnostic": {
+    "2022": [
+      2
+    ],
+    "2023": [
+      3
+    ]
+  },
+  "SWP_clusters_diagnostic": {
+    "2022": {
+      "2": 898,
+      "1": 26
+    },
+    "2023": {
+      "2": 754,
+      "1": 170
+    }
+  },
+  "PCA_explained_variance_ratio_first3": [
+    0.553,
+    0.213,
+    0.115
+  ],
+  "PCA_loadings_PC1_PC2": {
+    "SWP_April": {
+      "PC1": 0.439,
+      "PC2": -0.159
+    },
+    "Growth_April": {
+      "PC1": 0.431,
+      "PC2": -0.162
+    },
+    "SWP_MayJune": {
+      "PC1": 0.115,
+      "PC2": -0.687
+    },
+    "Growth_MayJune": {
+      "PC1": 0.455,
+      "PC2": 0.259
+    },
+    "CNC_June": {
+      "PC1": 0.424,
+      "PC2": 0.377
+    },
+    "SWP_June": {
+      "PC1": 0.461,
+      "PC2": -0.018
+    },
+    "Growth_June": {
+      "PC1": -0.099,
+      "PC2": 0.516
+    }
+  },
+  "pooled_2022_2023_with_climate": {
+    "n": 167,
+    "baseline_features": [
+      "cultivar",
+      "EBI",
+      "EBIxcultivar",
+      "climate"
+    ],
+    "baseline_cvR2": 0.419,
+    "baseline_R2": 0.494,
+    "candidates_tested": [
+      "SWP_change_JuneMinusApril",
+      "SWP_change_x_cultivar",
+      "Growth_change_JuneMinusApril",
+      "Growth_change_x_cultivar",
+      "Physiology_PC1",
+      "Physiology_PC1_x_cultivar",
+      "Physiology_PC2",
+      "Physiology_PC2_x_cultivar",
+      "SWP_cluster1_dummy",
+      "SWP_cluster1_dummy_x_cultivar",
+      "DEM",
+      "DEM_x_cultivar"
+    ],
+    "forward_selection_history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.419
+      },
+      {
+        "step": 1,
+        "added": "Growth_change_x_cultivar",
+        "cvR2": 0.438
+      }
+    ],
+    "selected_features": [
+      "Growth_change_x_cultivar"
+    ],
+    "final_cvR2": 0.438,
+    "final_R2": 0.534,
+    "improvement_cvR2": 0.019
+  },
+  "robustness_across_5_independent_CV_fold_splits": {
+    "per_seed": [
+      {
+        "seed": 1,
+        "selected": [
+          "Growth_change_x_cultivar"
+        ],
+        "baseline_cvR2": 0.42,
+        "final_cvR2": 0.48
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "Growth_change_x_cultivar"
+        ],
+        "baseline_cvR2": 0.431,
+        "final_cvR2": 0.456
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "Growth_change_x_cultivar"
+        ],
+        "baseline_cvR2": 0.407,
+        "final_cvR2": 0.448
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "Physiology_PC2_x_cultivar"
+        ],
+        "baseline_cvR2": 0.448,
+        "final_cvR2": 0.468
+      },
+      {
+        "seed": 2024,
+        "selected": [],
+        "baseline_cvR2": 0.456,
+        "final_cvR2": 0.456
+      }
+    ],
+    "how_often_each_feature_selected_of_5": {
+      "Growth_change_x_cultivar": 3,
+      "Physiology_PC2_x_cultivar": 1
+    }
+  },
+  "on_top_of_Growth_April": {
+    "n": 167,
+    "baseline_cvR2_with_GrowthApril": 0.456,
+    "forward_selection_history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.456
+      },
+      {
+        "step": 1,
+        "added": "SWP_cluster1_dummy_x_cultivar",
+        "cvR2": 0.458
+      },
+      {
+        "step": 2,
+        "added": "SWP_cluster1_dummy",
+        "cvR2": 0.459
+      }
+    ],
+    "selected_features": [
+      "SWP_cluster1_dummy_x_cultivar",
+      "SWP_cluster1_dummy"
+    ],
+    "final_cvR2": 0.459,
+    "improvement_cvR2": 0.003,
+    "note": "does any engineered feature add value ON TOP of cultivar+EBIxcultivar+climate+Growth_April (the section-22 recommended model)?"
+  }
+}

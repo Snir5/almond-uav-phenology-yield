@@ -1,0 +1,146 @@
+{
+  "note": "Tests every EBI/NGRDI scaling variant (Raw/Norm/Z) already in the master as the yield model's bloom term, not just EBI_Norm (the variant used throughout sections 11-25). Pooled 2022-2023, n=167, same sample as section 22.",
+  "n": 167,
+  "raw_norm_z_relationship_check": {
+    "EBI_2022": {
+      "corr_Raw_Norm": 0.999851,
+      "corr_Raw_Z": 1.0,
+      "Raw_mean": 3.9069,
+      "Raw_sd": 0.3061
+    },
+    "NGRDI_2022": {
+      "corr_Raw_Norm": 0.999975,
+      "corr_Raw_Z": 0.999999,
+      "Raw_mean": -0.0037,
+      "Raw_sd": 0.0236
+    },
+    "EBI_2023": {
+      "corr_Raw_Norm": 1.0,
+      "corr_Raw_Z": 1.0,
+      "Raw_mean": 3.9608,
+      "Raw_sd": 0.1914
+    },
+    "NGRDI_2023": {
+      "corr_Raw_Norm": 0.997026,
+      "corr_Raw_Z": 0.999999,
+      "Raw_mean": -0.0133,
+      "Raw_sd": 0.0177
+    }
+  },
+  "base_no_bloom_index": {
+    "R2": 0.4887,
+    "cvR2": 0.4605
+  },
+  "current_model_EBI_Norm": {
+    "R2": 0.5285,
+    "cvR2": 0.4563
+  },
+  "single_variant_swap": {
+    "EBI_Raw": {
+      "R2": 0.5288,
+      "cvR2": 0.4556
+    },
+    "EBI_Norm": {
+      "R2": 0.5285,
+      "cvR2": 0.4563
+    },
+    "EBI_Z": {
+      "R2": 0.5288,
+      "cvR2": 0.4556
+    },
+    "NGRDI_Raw": {
+      "R2": 0.4905,
+      "cvR2": 0.4457
+    },
+    "NGRDI_Norm": {
+      "R2": 0.4899,
+      "cvR2": 0.4432
+    },
+    "NGRDI_Z": {
+      "R2": 0.4905,
+      "cvR2": 0.4457
+    }
+  },
+  "forward_selection_all_12_candidates": {
+    "selected_features": [
+      "EBI_Raw_x_cultivar",
+      "NGRDI_Raw_x_cultivar",
+      "EBI_Z_x_cultivar"
+    ],
+    "history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.4605
+      },
+      {
+        "step": 1,
+        "added": "EBI_Raw_x_cultivar",
+        "cvR2": 0.4677
+      },
+      {
+        "step": 2,
+        "added": "NGRDI_Raw_x_cultivar",
+        "cvR2": 0.4705
+      },
+      {
+        "step": 3,
+        "added": "EBI_Z_x_cultivar",
+        "cvR2": 0.4709
+      }
+    ],
+    "final_R2": 0.5287,
+    "final_cvR2": 0.4709
+  },
+  "robustness_across_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [
+        "EBI_Raw_x_cultivar",
+        "EBI_Norm_x_cultivar"
+      ],
+      "baseline_cvR2": 0.4443,
+      "final_cvR2": 0.502
+    },
+    {
+      "seed": 7,
+      "selected": [
+        "EBI_Raw_x_cultivar",
+        "EBI_Norm_x_cultivar"
+      ],
+      "baseline_cvR2": 0.421,
+      "final_cvR2": 0.4998
+    },
+    {
+      "seed": 13,
+      "selected": [
+        "EBI_Raw_x_cultivar",
+        "EBI_Norm_x_cultivar"
+      ],
+      "baseline_cvR2": 0.412,
+      "final_cvR2": 0.468
+    },
+    {
+      "seed": 99,
+      "selected": [
+        "EBI_Raw_x_cultivar",
+        "EBI_Norm_x_cultivar"
+      ],
+      "baseline_cvR2": 0.4529,
+      "final_cvR2": 0.5223
+    },
+    {
+      "seed": 2024,
+      "selected": [
+        "EBI_Raw_x_cultivar",
+        "EBI_Norm_x_cultivar"
+      ],
+      "baseline_cvR2": 0.455,
+      "final_cvR2": 0.5109
+    }
+  ],
+  "how_often_selected_of_5": {
+    "EBI_Raw_x_cultivar": 5,
+    "EBI_Norm_x_cultivar": 5
+  }
+}

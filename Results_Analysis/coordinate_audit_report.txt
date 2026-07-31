@@ -1,0 +1,81 @@
+================================================================================
+COORDINATE ALIGNMENT & JOIN PROVENANCE AUDIT
+================================================================================
+
+### MASTER Extended(1523)
+  X_UTM range: (669795.1845562498, 670061.4228835178)   Y_UTM range: (3509458.820392491, 3509769.383836933)
+  Stored Lat : (31.70790740377534, 31.71072716327279)   Stored Lon : (34.79185200244811, 34.79468870330376)
+  Recomputed from UTM -> Lat (31.70790740470699, 31.710727164204545)  Lon (34.79185200246603, 34.79468870332171)
+  Stored-vs-recomputed median offset:  E=-0.00 m   N=-0.00 m
+  max |offset| E=0.00m  N=0.00m
+
+### MASTER TimeSeries(1291)
+  X_UTM range: (669795.1845562498, 670061.4228835178)   Y_UTM range: (3509470.550765638, 3509769.383836933)
+  Stored Lat : (31.70801212749905, 31.71072716327279)   Stored Lon : (34.79185200244811, 34.79468870330376)
+  Recomputed from UTM -> Lat (31.708012128430692, 31.710727164204545)  Lon (34.79185200246603, 34.79468870332171)
+  Stored-vs-recomputed median offset:  E=-0.00 m   N=-0.00 m
+  max |offset| E=0.00m  N=0.00m
+
+### GPKG Yield_with_clustering_2022  (SRS=EPSG:32636, n=2866)  plots={'C', 'B', 'A'}
+  cx range: (669795.125, 670406.625)  cy range: (3509261.75, 3509802.25)
+  -> Lat (31.70607489879791, 31.711021797619036)  Lon (34.79185519001418, 34.79829546346073)
+
+### GPKG Yield_with_clustering_2023  (SRS=EPSG:32636, n=2866)  plots={'C', 'B', 'A'}
+  cx range: (669795.125, 670406.625)  cy range: (3509261.75, 3509802.25)
+  -> Lat (31.70607489879791, 31.711021797619036)  Lon (34.79185519001418, 34.79829546346073)
+
+### GPKG spectral_data_plot_A_31072024  (SRS=EPSG:32636, n=1347)  plots={'A'}
+  cx range: (669796.84375, 670071.21875)  cy range: (3509461.875, 3509807.0)
+  -> Lat (31.70793469439757, 31.711065359940932)  Lon (34.79187379748677, 34.794798309137974)
+
+### YIELD CSV kedma_plot_a_yield.csv  (WGS84, n=202 rows, years=[2022, 2023, 2024])
+  Lat (31.708187432351075, 31.71011485664)  Lon (34.79225039582171, 34.79385378115155)  (measured net_kernel_yield_per_tree_kg)
+  rows/year: {2022: 20, 2023: 162, 2024: 20}
+  unique tree_id: 162
+
+### MOSAIC TFW FOOTPRINTS
+  2021: UL_X=669665.0 UL_Y=3509800.5  pix=0.0122m  UL_lat=31.71103 UL_lon=34.79052 | LR_X=670042.6 LR_Y=3509367.3 (30833x35384px @ 0.0122m)
+  2022: UL_X=669728.7 UL_Y=3509842.5  pix=0.0147m  UL_lat=31.71140 UL_lon=34.79120 | LR_X=670104.2 LR_Y=3509380.1 (25504x31406px @ 0.0147m)
+  2024: UL_X=669725.7 UL_Y=3509897.7  pix=0.0224m  UL_lat=31.71190 UL_lon=34.79118 | LR_X=670126.9 LR_Y=3509390.0 (17893x22643px @ 0.0224m)
+  2023(Final_Orthomosaic_RGB): UL_X=669686.5 UL_Y=3509852.5 pix=0.0133m UL_lat=31.71150 UL_lon=34.79076
+  Inter-year UL shift vs 2021:
+    2022: ΔE=+63.7m  ΔN=+42.0m
+    2023: ΔE=+21.5m  ΔN=+52.0m
+    2024: ΔE=+60.7m  ΔN=+97.2m
+
+### ALIGNMENT (UTM nearest-neighbour, Extended master as query)
+
+  [master vs Yield_with_clustering_2022 (Plot A, n=1110)]  n_query=1523 vs n_ref=1110
+    NN dist: mean=2.96 median=1.01 max=28.90 m
+    within 2m: 1043 (68.5%)
+    within 5m: 1136 (74.6%)
+    within 8m: 1413 (92.8%)
+
+  [master vs Yield_with_clustering_2023 (Plot A, n=1110)]  n_query=1523 vs n_ref=1110
+    NN dist: mean=2.96 median=1.01 max=28.90 m
+    within 2m: 1043 (68.5%)
+    within 5m: 1136 (74.6%)
+    within 8m: 1413 (92.8%)
+
+  [master vs spectral_Jul2024]  n_query=1523 vs n_ref=1347
+    NN dist: mean=4.23 median=3.44 max=28.28 m
+    within 2m: 5 (0.3%)
+    within 5m: 1370 (90.0%)
+    within 8m: 1420 (93.2%)
+
+================================================================================
+YIELD PROVENANCE INVESTIGATION
+================================================================================
+  Yield_2022               n= 1003  mean=5.429  sd=0.750  range=(2.95,7.45)
+  Yield_2023               n= 1003  mean=3.019  sd=0.308  range=(2.28,3.95)
+  Yield_2024               n=0
+  predicted_Yield_2022     n=  922  mean=5.468  sd=0.740  range=(2.95,7.45)
+  predicted_Yield_2023     n=  922  mean=3.040  sd=0.295  range=(2.39,3.95)
+  GPKG Yield_with_clustering_2022 predicted_Yield PlotA: n=1110 mean=5.503 sd=0.753 range=(2.95,7.45)
+  GPKG Yield_with_clustering_2023 predicted_Yield PlotA: n=1110 mean=3.071 sd=0.314 range=(2.39,4.20)
+  CSV measured net_kernel 2022: n=20 mean=6.679 sd=3.110 range=(2.66,13.46)
+  CSV measured net_kernel 2023: n=162 mean=2.647 sd=1.181 range=(0.54,7.52)
+  CSV measured net_kernel 2024: n=20 mean=2.553 sd=1.336 range=(0.26,5.53)
+
+  --> Compare master Yield_2022 vs predicted_Yield_2022 correlation (paired, same rows):
+     n_paired=795  r(Yield_2022, predicted_Yield_2022)=0.9924  mean_diff=-0.007

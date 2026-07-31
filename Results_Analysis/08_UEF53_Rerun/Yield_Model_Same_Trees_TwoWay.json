@@ -1,0 +1,54 @@
+{
+  "note": "Follow-up on yield_model_same_trees_by_cultivar.py: that script's within-tree test only removed each tree's OWN 3-year mean, not each YEAR's common mean across the panel, leaving a real confound (a shared season/climate effect hitting all panel trees of a cultivar in the same year would look like a within-tree correlation even with no idiosyncratic tree-level signal). This adds year-mean removal too (two-way, tree+year fixed effects), isolating genuinely tree-idiosyncratic covariation.",
+  "by_cultivar": {
+    "UEF": {
+      "n_trees": 9,
+      "n_rows": 27,
+      "panel_year_means": {
+        "yield": {
+          "2022": 7.193,
+          "2023": 4.542,
+          "2024": 2.974
+        },
+        "EBI": {
+          "2022": 0.54,
+          "2023": 0.565,
+          "2024": 0.556
+        }
+      },
+      "two_way_demeaned_tree_and_year": {
+        "r": 0.2998,
+        "naive_p": 0.1287,
+        "bootstrap_95CI": [
+          -0.3,
+          0.694
+        ]
+      }
+    },
+    "53": {
+      "n_trees": 9,
+      "n_rows": 27,
+      "panel_year_means": {
+        "yield": {
+          "2022": 6.602,
+          "2023": 1.12,
+          "2024": 2.286
+        },
+        "EBI": {
+          "2022": 0.619,
+          "2023": 0.54,
+          "2024": 0.558
+        }
+      },
+      "two_way_demeaned_tree_and_year": {
+        "r": -0.372,
+        "naive_p": 0.056,
+        "bootstrap_95CI": [
+          -0.714,
+          0.016
+        ]
+      }
+    }
+  },
+  "prior_tree_only_demeaned_result_for_comparison": "UEF r=+0.079 (ns), cv-53 r=+0.532, p=0.004 (Yield_Model_Same_Trees_By_Cultivar.json)"
+}

@@ -1,0 +1,163 @@
+{
+  "note": "Adds climate (Chill Portions) back into the GPKG-only base (cultivar+climate, still no EBI) for both targets, a middle ground between GPKG_Only_Comparison.json (no climate) and the full recommended model (which also has EBI).",
+  "real_measured_yield_gpkg_plus_climate": {
+    "n": 177,
+    "cultivar_climate_floor": {
+      "R2": 0.437,
+      "cvR2": 0.4173
+    },
+    "forward_selection_main_seed42": {
+      "selected_features": [
+        "Growth_April",
+        "SWP_MayJune"
+      ],
+      "final_R2": 0.4813,
+      "final_cvR2": 0.4522
+    },
+    "robustness_across_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "Growth_April"
+        ],
+        "final_cvR2": 0.4586
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "Growth_April"
+        ],
+        "final_cvR2": 0.4308
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "Growth_April"
+        ],
+        "final_cvR2": 0.4483
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "Growth_April"
+        ],
+        "final_cvR2": 0.4497
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "Growth_April",
+          "Growth_June_x_cultivar"
+        ],
+        "final_cvR2": 0.4075
+      }
+    ]
+  },
+  "modelled_predicted_yield_gpkg_plus_climate": {
+    "n": 1544,
+    "cultivar_climate_floor": {
+      "R2": 0.8232,
+      "cvR2": 0.8225
+    },
+    "forward_selection_main_seed42": {
+      "selected_features": [
+        "CNC_June",
+        "Growth_April",
+        "Growth_June_x_cultivar",
+        "Growth_MayJune",
+        "SWP_April",
+        "SWP_MayJune_x_cultivar",
+        "CNC_June_x_cultivar",
+        "SWP_April_x_cultivar",
+        "SWP_June",
+        "SWP_June_x_cultivar",
+        "Growth_April_x_cultivar"
+      ],
+      "final_R2": 0.94,
+      "final_cvR2": 0.9387
+    },
+    "robustness_across_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "CNC_June",
+          "Growth_April",
+          "Growth_June",
+          "SWP_April",
+          "SWP_MayJune_x_cultivar",
+          "Growth_MayJune",
+          "Growth_June_x_cultivar",
+          "CNC_June_x_cultivar",
+          "SWP_April_x_cultivar",
+          "Growth_April_x_cultivar",
+          "Growth_MayJune_x_cultivar",
+          "SWP_June",
+          "SWP_June_x_cultivar"
+        ],
+        "final_cvR2": 0.9381
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "CNC_June",
+          "Growth_April",
+          "Growth_June_x_cultivar",
+          "Growth_MayJune",
+          "SWP_MayJune_x_cultivar",
+          "SWP_April",
+          "CNC_June_x_cultivar",
+          "SWP_April_x_cultivar"
+        ],
+        "final_cvR2": 0.9378
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "CNC_June",
+          "Growth_April",
+          "Growth_June",
+          "SWP_April",
+          "Growth_June_x_cultivar",
+          "Growth_MayJune",
+          "SWP_MayJune_x_cultivar",
+          "CNC_June_x_cultivar",
+          "SWP_April_x_cultivar",
+          "Growth_MayJune_x_cultivar",
+          "SWP_June",
+          "SWP_June_x_cultivar",
+          "Growth_April_x_cultivar"
+        ],
+        "final_cvR2": 0.9393
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "CNC_June",
+          "Growth_April",
+          "Growth_June",
+          "SWP_April",
+          "Growth_June_x_cultivar",
+          "Growth_MayJune",
+          "SWP_MayJune_x_cultivar",
+          "CNC_June_x_cultivar",
+          "SWP_April_x_cultivar"
+        ],
+        "final_cvR2": 0.9379
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "CNC_June",
+          "Growth_April",
+          "Growth_June_x_cultivar",
+          "SWP_April",
+          "Growth_MayJune",
+          "SWP_MayJune_x_cultivar",
+          "CNC_June_x_cultivar",
+          "SWP_April_x_cultivar"
+        ],
+        "final_cvR2": 0.9381
+      }
+    ]
+  }
+}

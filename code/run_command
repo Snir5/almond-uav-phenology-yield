@@ -1,0 +1,37 @@
+python /Users/snirtahasa/code/main.py \
+    --mode predict \
+    --model-path /Users/snirtahasa/Almond_Research/Training/Notebooks/best_model.pth \
+    --predict-dir "/Users/snirtahasa/Desktop/Almonds - Project/kdm sharing folder/29-02-2024/Photos_2" \
+    --output-dir "/Users/snirtahasa/Desktop/Almonds - Project/kdm sharing folder/29-02-2024/Preds_2"
+
+/Users/snirtahasa/Desktop/Almonds - Project/kdm sharing folder/29-02-2024/Photos
+
+
+
+    /Users/snirtahasa/Desktop/Almonds - Project/kdm sharing folder/KDM_TEST_NEW_SPlit
+
+
+    python /Users/snirtahasa/code/main.py \
+    --mode predict \
+    --model-path /Users/snirtahasa/Almond_Research/Training/Notebooks/best_model.pth \
+    --predict-dir "/Users/snirtahasa/Desktop/Almonds - Project/kdm sharing folder/KDM_TEST_NEW_SPlit" \
+    --output-dir "/Users/snirtahasa/Desktop/Almonds - Project/kdm sharing folder/KDM_TEST_NEW_SPlit"
+
+
+
+python /Users/snirtahasa/Thesis/code/main.py\
+    --mode predict \
+    --model-path /Users/snirtahasa/Almond_Research/Training/Notebooks/best_model.pth \
+    --predict-dir "/Users/snirtahasa/2021-03-07/photos" \
+    --output-dir "/Users/snirtahasa/2021-03-07/Preds"
+
+/Users/snirtahasa/2021-03-07/photos
+
+/Users/snirtahasa/Thesis/2021-03-07/photos
+
+
+python /Users/snirtahasa/Thesis/code/main.py \
+    --mode predict \
+    --model-path /Users/snirtahasa/Almond_Research/Training/Notebooks/best_model.pth \
+    --predict-dir "/Users/snirtahasa/Thesis/2021-03-07/photos" \
+    --output-dir "/Users/snirtahasa/Thesis/2021-03-07/Preds"

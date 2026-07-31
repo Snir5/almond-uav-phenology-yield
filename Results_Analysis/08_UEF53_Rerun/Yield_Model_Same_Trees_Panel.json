@@ -1,0 +1,48 @@
+{
+  "note": "Per request: checks whether the pooled EBI-yield result is biased by 2023 contributing far more trees (149) than 2022/2024 (18-20), by isolating the exact 20 trees measured in ALL THREE years and testing the relationship WITHIN those same trees across years (each tree as its own control), which removes both the year-count imbalance and between-tree confounds (cultivar mix, vigor, position).",
+  "n_trees_measured_in_all_3_years": 20,
+  "n_trees_measured_in_only_one_year": 142,
+  "n_matched_to_master_with_EBI": 20,
+  "cultivar_composition_of_panel": {
+    "UEF": 10,
+    "53": 10
+  },
+  "within_tree_demeaned": {
+    "n_tree_years": 54,
+    "n_independent_trees": 18,
+    "r": 0.3272,
+    "naive_p_ignores_clustering": 0.0157,
+    "cluster_bootstrap_95CI": [
+      0.014,
+      0.579
+    ],
+    "n_bootstrap_resamples": 2000
+  },
+  "pooled_cross_sectional_same_panel": {
+    "n": 54,
+    "r": 0.3112,
+    "p": 0.022
+  },
+  "per_year_same_panel_only": {
+    "2022": {
+      "n": 18,
+      "r": 0.2783,
+      "p": 0.2634
+    },
+    "2023": {
+      "n": 18,
+      "r": 0.2315,
+      "p": 0.3553
+    },
+    "2024": {
+      "n": 18,
+      "r": 0.1318,
+      "p": 0.6022
+    }
+  },
+  "full_unbalanced_sample_for_context": {
+    "n": 188,
+    "r": 0.2918,
+    "p": 0.0
+  }
+}

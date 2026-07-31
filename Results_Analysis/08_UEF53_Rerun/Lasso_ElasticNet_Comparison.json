@@ -1,0 +1,180 @@
+{
+  "n": 152,
+  "n_predictor_columns": 75,
+  "note": "Combined from two separate runs (seed 42 alone, then seeds 1,7 together) due to the 45s sandbox execution limit per call; each seed's nested-CV result is independent and unaffected by which call produced it.",
+  "ols_reference_base_terms_only": {
+    "42": {
+      "cvR2": 0.2355,
+      "cvMSE": 1.07065,
+      "cvMAE": 0.81362
+    },
+    "1": {
+      "cvR2": 0.2724,
+      "cvMSE": 1.019,
+      "cvMAE": 0.79624
+    },
+    "7": {
+      "cvR2": 0.2764,
+      "cvMSE": 1.01337,
+      "cvMAE": 0.7985
+    }
+  },
+  "lasso": {
+    "cv_by_seed": {
+      "42": {
+        "cvR2": 0.1941,
+        "cvMSE": 1.12859,
+        "cvMAE": 0.83965,
+        "lambdas": [0.0658, 0.0285, 0.0658, 0.0658, 0.0658]
+      },
+      "1": {
+        "cvR2": 0.2295,
+        "cvMSE": 1.07903,
+        "cvMAE": 0.81638,
+        "lambdas": [
+          0.0658,
+          0.0658,
+          0.0285,
+          0.0285,
+          0.0658
+        ]
+      },
+      "7": {
+        "cvR2": 0.204,
+        "cvMSE": 1.11476,
+        "cvMAE": 0.83825,
+        "lambdas": [
+          0.0658,
+          0.152,
+          0.0658,
+          0.0285,
+          0.0658
+        ]
+      }
+    },
+    "cvR2_range": [
+      0.1941,
+      0.2295
+    ],
+    "cvMSE_range": [
+      1.07903,
+      1.12859
+    ],
+    "cvMAE_range": [
+      0.81638,
+      0.83965
+    ],
+    "final_lambda_full_data": 0.152,
+    "n_nonzero": 3,
+    "n_total": 75,
+    "nonzero_coefficients": [
+      [
+        "climate",
+        0.3854
+      ],
+      [
+        "HighEBI_frac_075",
+        0.1584
+      ],
+      [
+        "EBI_Norm_kurtosis",
+        -0.0376
+      ]
+    ]
+  },
+  "elastic_net": {
+    "cv_by_seed": {
+      "42": {
+        "cvR2": 0.1943,
+        "cvMSE": 1.12831,
+        "cvMAE": 0.83683,
+        "lambdas": [0.152, 0.0658, 0.152, 0.152, 0.152]
+      },
+      "1": {
+        "cvR2": 0.2279,
+        "cvMSE": 1.08133,
+        "cvMAE": 0.81593,
+        "lambdas": [
+          0.152,
+          0.152,
+          0.0658,
+          0.0658,
+          0.152
+        ]
+      },
+      "7": {
+        "cvR2": 0.2054,
+        "cvMSE": 1.11279,
+        "cvMAE": 0.83805,
+        "lambdas": [
+          0.152,
+          0.152,
+          0.152,
+          0.0658,
+          0.0658
+        ]
+      }
+    },
+    "cvR2_range": [
+      0.1943,
+      0.2279
+    ],
+    "cvMSE_range": [
+      1.08133,
+      1.12831
+    ],
+    "cvMAE_range": [
+      0.81593,
+      0.83805
+    ],
+    "final_lambda_full_data": 0.152,
+    "n_nonzero": 11,
+    "n_total": 75,
+    "nonzero_coefficients": [
+      [
+        "climate",
+        0.4311
+      ],
+      [
+        "HighEBI_frac_075",
+        0.1081
+      ],
+      [
+        "EBI_Norm_kurtosis",
+        -0.0903
+      ],
+      [
+        "CanopyArea",
+        -0.0608
+      ],
+      [
+        "HighEBI_density_075_x_cultivar",
+        0.0405
+      ],
+      [
+        "EBI_Norm_skew",
+        0.0334
+      ],
+      [
+        "EBI_Norm_P90",
+        0.0333
+      ],
+      [
+        "EBI",
+        0.0307
+      ],
+      [
+        "EBIxcultivar",
+        0.0305
+      ],
+      [
+        "EBI_x_CanopyCover_x_cultivar",
+        0.002
+      ],
+      [
+        "CCAB_x_cultivar",
+        0.0014
+      ]
+    ]
+  }
+}

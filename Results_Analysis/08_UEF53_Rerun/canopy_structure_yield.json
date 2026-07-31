@@ -1,0 +1,264 @@
+{
+  "note": "CanopyArea_m2 (structural, colour-independent), CanopyCoverFraction and ShadowFraction (light-interception proxies, Zarate-Valdez-style; ShadowFraction assumes near-solar-noon acquisition, unverified, more experimental) vs measured yield, same season, within cultivar.",
+  "Q1_same_year_by_cultivar": {
+    "UEF": {
+      "2022": {
+        "CanopyArea_m2": {
+          "r": 0.485,
+          "p": 0.1556,
+          "n": 10,
+          "sig": "ns"
+        },
+        "CanopyCoverFraction": {
+          "r": 0.234,
+          "p": 0.5155,
+          "n": 10,
+          "sig": "ns"
+        },
+        "ShadowFraction": {
+          "r": 0.1,
+          "p": 0.7828,
+          "n": 10,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "CanopyArea_m2": {
+          "r": 0.036,
+          "p": 0.7424,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.7424
+        },
+        "CanopyCoverFraction": {
+          "r": 0.186,
+          "p": 0.0826,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.2478
+        },
+        "ShadowFraction": {
+          "r": 0.11,
+          "p": 0.3055,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.4582
+        }
+      },
+      "2024": {
+        "CanopyArea_m2": {
+          "r": 0.13,
+          "p": 0.7204,
+          "n": 10,
+          "sig": "ns"
+        },
+        "CanopyCoverFraction": {
+          "r": 0.312,
+          "p": 0.3795,
+          "n": 10,
+          "sig": "ns"
+        },
+        "ShadowFraction": {
+          "r": -0.053,
+          "p": 0.8848,
+          "n": 10,
+          "sig": "ns"
+        }
+      }
+    },
+    "53": {
+      "2022": {
+        "CanopyArea_m2": {
+          "r": 0.091,
+          "p": 0.8155,
+          "n": 9,
+          "sig": "ns"
+        },
+        "CanopyCoverFraction": {
+          "r": -0.301,
+          "p": 0.432,
+          "n": 9,
+          "sig": "ns"
+        },
+        "ShadowFraction": {
+          "r": 0.37,
+          "p": 0.3267,
+          "n": 9,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "CanopyArea_m2": {
+          "r": -0.237,
+          "p": 0.0595,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.1785
+        },
+        "CanopyCoverFraction": {
+          "r": -0.111,
+          "p": 0.3806,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.3806
+        },
+        "ShadowFraction": {
+          "r": 0.141,
+          "p": 0.2669,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.3806
+        }
+      },
+      "2024": {
+        "CanopyArea_m2": {
+          "r": 0.201,
+          "p": 0.6036,
+          "n": 9,
+          "sig": "ns"
+        },
+        "CanopyCoverFraction": {
+          "r": 0.417,
+          "p": 0.2642,
+          "n": 9,
+          "sig": "ns"
+        },
+        "ShadowFraction": {
+          "r": 0.429,
+          "p": 0.2487,
+          "n": 9,
+          "sig": "ns"
+        }
+      }
+    }
+  },
+  "Q2_ANCOVA_2023": {
+    "CanopyArea_m2": {
+      "n": 152,
+      "interaction": {
+        "F": 2.77,
+        "p": 0.0981,
+        "sig": "ns"
+      },
+      "R2": 0.077,
+      "R2_with_interaction": 0.094
+    },
+    "CanopyCoverFraction": {
+      "n": 152,
+      "interaction": {
+        "F": 3.17,
+        "p": 0.077,
+        "sig": "ns"
+      },
+      "R2": 0.074,
+      "R2_with_interaction": 0.093
+    },
+    "ShadowFraction": {
+      "n": 152,
+      "interaction": {
+        "F": 0.06,
+        "p": 0.8139,
+        "sig": "ns"
+      },
+      "R2": 0.084,
+      "R2_with_interaction": 0.085
+    }
+  },
+  "Q2_ANCOVA_baseline_EBI_reference": {
+    "note": "EBIxcultivar interaction F=11.58, p=0.0009, R2 0.079->0.147."
+  },
+  "Q3_does_it_add_to_EBI_pooled_2023": {
+    "CanopyArea_m2": {
+      "n": 151,
+      "R2_EBI_only": 0.147,
+      "R2_EBI_plus_extra": 0.161,
+      "partial_F_extra_terms": 1.21,
+      "p": 0.2997,
+      "sig": "ns",
+      "df": [
+        2,
+        145
+      ]
+    },
+    "CanopyCoverFraction": {
+      "n": 151,
+      "R2_EBI_only": 0.147,
+      "R2_EBI_plus_extra": 0.151,
+      "partial_F_extra_terms": 0.36,
+      "p": 0.6993,
+      "sig": "ns",
+      "df": [
+        2,
+        145
+      ]
+    },
+    "ShadowFraction": {
+      "n": 151,
+      "R2_EBI_only": 0.147,
+      "R2_EBI_plus_extra": 0.159,
+      "partial_F_extra_terms": 1.11,
+      "p": 0.3321,
+      "sig": "ns",
+      "df": [
+        2,
+        145
+      ]
+    }
+  },
+  "Q3_does_it_add_to_EBI_within_cultivar_2023": {
+    "CanopyArea_m2": {
+      "UEF": {
+        "n": 87,
+        "R2_EBI_only": 0.082,
+        "R2_EBI_plus_extra": 0.089,
+        "partial_F_extra_term": 0.64,
+        "p": 0.4274,
+        "sig": "ns"
+      },
+      "53": {
+        "n": 64,
+        "R2_EBI_only": 0.065,
+        "R2_EBI_plus_extra": 0.091,
+        "partial_F_extra_term": 1.7,
+        "p": 0.1972,
+        "sig": "ns"
+      }
+    },
+    "CanopyCoverFraction": {
+      "UEF": {
+        "n": 87,
+        "R2_EBI_only": 0.082,
+        "R2_EBI_plus_extra": 0.088,
+        "partial_F_extra_term": 0.54,
+        "p": 0.4663,
+        "sig": "ns"
+      },
+      "53": {
+        "n": 64,
+        "R2_EBI_only": 0.065,
+        "R2_EBI_plus_extra": 0.068,
+        "partial_F_extra_term": 0.2,
+        "p": 0.6573,
+        "sig": "ns"
+      }
+    },
+    "ShadowFraction": {
+      "UEF": {
+        "n": 87,
+        "R2_EBI_only": 0.082,
+        "R2_EBI_plus_extra": 0.097,
+        "partial_F_extra_term": 1.37,
+        "p": 0.2454,
+        "sig": "ns"
+      },
+      "53": {
+        "n": 64,
+        "R2_EBI_only": 0.065,
+        "R2_EBI_plus_extra": 0.078,
+        "partial_F_extra_term": 0.86,
+        "p": 0.3562,
+        "sig": "ns"
+      }
+    }
+  }
+}

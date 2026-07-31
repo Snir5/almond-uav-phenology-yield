@@ -1,0 +1,139 @@
+{
+  "note": "Per request: tests EBI x CanopyArea_m2 ('total bloom volume', domain motivation: EBI is bloom intensity per unit canopy, absolute kg yield should scale with total canopy bloom, not just intensity) as a new candidate feature, on the FULL pooled cross-sectional n=167 sample, avoiding the small-panel demeaning problem of sections 34-36 entirely. Reuses the existing canopy-structure extraction (Master_Trees_CanopyStructure_v5.xlsx, matched to master within 1m), which was previously tested only as an ADDITIVE term (canopy_structure_yield.py, all ns, removed from the log); this tests the EBI x CanopyArea PRODUCT specifically, a genuinely different feature.",
+  "n": 169,
+  "n_canopy_matched_to_master": 1307,
+  "corr_EBI_vs_CanopyArea_same_tree_year": 0.297,
+  "direct_correlations_pooled": {
+    "EBI_Norm": {
+      "r": 0.311,
+      "p": 0.0
+    },
+    "CanopyArea_m2": {
+      "r": 0.23,
+      "p": 0.0026
+    },
+    "EBI_x_CanopyArea": {
+      "r": 0.3176,
+      "p": 0.0
+    }
+  },
+  "direct_correlations_by_cultivar": {
+    "UEF": {
+      "EBI_Norm": {
+        "r": 0.2391,
+        "p": 0.019,
+        "n": 96
+      },
+      "CanopyArea_m2": {
+        "r": 0.305,
+        "p": 0.0025,
+        "n": 96
+      },
+      "EBI_x_CanopyArea": {
+        "r": 0.368,
+        "p": 0.0002,
+        "n": 96
+      }
+    },
+    "53": {
+      "EBI_Norm": {
+        "r": 0.3619,
+        "p": 0.0017,
+        "n": 73
+      },
+      "CanopyArea_m2": {
+        "r": 0.2211,
+        "p": 0.0601,
+        "n": 73
+      },
+      "EBI_x_CanopyArea": {
+        "r": 0.3252,
+        "p": 0.005,
+        "n": 73
+      }
+    }
+  },
+  "baseline_recommended_model": {
+    "R2": 0.4931,
+    "cvR2": 0.4271
+  },
+  "partial_F_new_candidates": {
+    "CanopyArea": {
+      "F": 0.003,
+      "p": 0.953,
+      "coef": 0.0076,
+      "R2_with_term": 0.4931,
+      "cvR2_with_term": 0.4141
+    },
+    "CanopyArea_x_cultivar": {
+      "F": 0.686,
+      "p": 0.4086,
+      "coef": 0.1343,
+      "R2_with_term": 0.4952,
+      "cvR2_with_term": 0.3978
+    },
+    "EBI_x_CanopyArea": {
+      "F": 0.139,
+      "p": 0.7099,
+      "coef": 0.0577,
+      "R2_with_term": 0.4935,
+      "cvR2_with_term": 0.4127
+    },
+    "EBI_x_CanopyArea_x_cultivar": {
+      "F": 1.201,
+      "p": 0.2748,
+      "coef": 0.2103,
+      "R2_with_term": 0.4968,
+      "cvR2_with_term": 0.3991
+    }
+  },
+  "forward_selection_main_seed42": {
+    "selected_features": [],
+    "history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.4271
+      }
+    ],
+    "final_R2": 0.4931,
+    "final_cvR2": 0.4271,
+    "improvement_cvR2": 0.0
+  },
+  "robustness_across_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [],
+      "final_cvR2": 0.4317
+    },
+    {
+      "seed": 7,
+      "selected": [],
+      "final_cvR2": 0.4542
+    },
+    {
+      "seed": 13,
+      "selected": [
+        "EBI_x_CanopyArea_x_cultivar",
+        "CanopyArea",
+        "EBI_x_CanopyArea"
+      ],
+      "final_cvR2": 0.3982
+    },
+    {
+      "seed": 99,
+      "selected": [],
+      "final_cvR2": 0.4449
+    },
+    {
+      "seed": 2024,
+      "selected": [],
+      "final_cvR2": 0.4635
+    }
+  ],
+  "how_often_selected_of_6": {
+    "EBI_x_CanopyArea_x_cultivar": 1,
+    "CanopyArea": 1,
+    "EBI_x_CanopyArea": 1
+  }
+}

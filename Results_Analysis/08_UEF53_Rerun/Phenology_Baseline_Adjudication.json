@@ -1,0 +1,75 @@
+{
+  "note": "Adjudicates canonical vs whole-image-baseline EBI against INDEPENDENT ground truth (field-measured % bloom open at the UAV flight date, per cultivar-year), which does not depend on the mosaic or its radiometric correction. Reuses phenology_flight_timing.py's own field-curve loading and flight-date interpolation exactly, so ground-truth values match the already-published \u00a716 analysis; only the EBI side is extended.",
+  "n": 7,
+  "caveat": "n=7 (year x cultivar cells; cultivar 53 has no 2024 field survey). Correlations at this n have wide confidence intervals; read directionally, not as a settled verdict.",
+  "rows": [
+    {
+      "year": 2021,
+      "cultivar": "53",
+      "pct_open_at_flight": 54.0,
+      "EBI_canonical": 0.6026,
+      "EBI_wholeimg": 0.4825,
+      "EBI_combined": 0.5426
+    },
+    {
+      "year": 2021,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 57.0,
+      "EBI_canonical": 0.4914,
+      "EBI_wholeimg": 0.353,
+      "EBI_combined": 0.4222
+    },
+    {
+      "year": 2022,
+      "cultivar": "53",
+      "pct_open_at_flight": 77.5,
+      "EBI_canonical": 0.597,
+      "EBI_wholeimg": 0.5219,
+      "EBI_combined": 0.5594
+    },
+    {
+      "year": 2022,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 84.9,
+      "EBI_canonical": 0.5079,
+      "EBI_wholeimg": 0.4272,
+      "EBI_combined": 0.4675
+    },
+    {
+      "year": 2023,
+      "cultivar": "53",
+      "pct_open_at_flight": 45.3,
+      "EBI_canonical": 0.5069,
+      "EBI_wholeimg": 0.5212,
+      "EBI_combined": 0.514
+    },
+    {
+      "year": 2023,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 72.0,
+      "EBI_canonical": 0.5482,
+      "EBI_wholeimg": 0.5625,
+      "EBI_combined": 0.5554
+    },
+    {
+      "year": 2024,
+      "cultivar": "UEF",
+      "pct_open_at_flight": 60.0,
+      "EBI_canonical": 0.5512,
+      "EBI_wholeimg": 0.5513,
+      "EBI_combined": 0.5513
+    }
+  ],
+  "EBI_canonical_vs_field_r": {
+    "r": 0.118,
+    "p": 0.801
+  },
+  "EBI_wholeimg_vs_field_r": {
+    "r": -0.015,
+    "p": 0.9753
+  },
+  "EBI_combined_vs_field_r": {
+    "r": 0.039,
+    "p": 0.9336
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "note": "MDS (maximum daily shrinkage) from the newly-added RF_models_portable_package. Fixed 20-tree Plot-A panel, 2022+2023, much smaller than sections 21-23's 149-167 tree sample; every result here is n<=20/year, directional only.",
+  "provenance": "DataSet_KDM_ALL(11_09_24)_Filter_2_without_garbage.csv, Trees_Data_Survey/RF_models_portable_package/models/Noam_after_revisions/",
+  "n_unique_PlotA_TreeIDs_in_file": 20,
+  "n_matched_to_master": 20,
+  "cultivar_agreement": "20/20",
+  "Q0_MDS_vs_EBI_same_year_by_cultivar": {
+    "MDS_April_2022": {
+      "UEF": {
+        "r": -0.581,
+        "p": 0.1717,
+        "n": 7,
+        "sig": "ns"
+      },
+      "53": {
+        "r": 0.144,
+        "p": 0.7116,
+        "n": 9,
+        "sig": "ns"
+      }
+    },
+    "MDS_June_2022": {
+      "UEF": {
+        "r": -0.733,
+        "p": 0.0977,
+        "n": 6,
+        "sig": "ns"
+      },
+      "53": {
+        "r": 0.458,
+        "p": 0.215,
+        "n": 9,
+        "sig": "ns"
+      }
+    },
+    "MDS_June_2023": {
+      "UEF": {
+        "r": 0.202,
+        "p": 0.631,
+        "n": 8,
+        "sig": "ns"
+      },
+      "53": {
+        "r": -0.207,
+        "p": 0.5935,
+        "n": 9,
+        "sig": "ns"
+      }
+    }
+  },
+  "Q1_MDS_vs_measured_yield_same_year_by_cultivar": {
+    "MDS_April_2022": {
+      "UEF": {
+        "r": -0.418,
+        "p": 0.3021,
+        "n": 8,
+        "sig": "ns"
+      },
+      "53": {
+        "r": -0.148,
+        "p": 0.6839,
+        "n": 10,
+        "sig": "ns"
+      }
+    },
+    "MDS_June_2022": {
+      "UEF": {
+        "r": -0.15,
+        "p": 0.748,
+        "n": 7,
+        "sig": "ns"
+      },
+      "53": {
+        "r": -0.195,
+        "p": 0.59,
+        "n": 10,
+        "sig": "ns"
+      }
+    },
+    "MDS_June_2023": {
+      "UEF": {
+        "r": 0.271,
+        "p": 0.4809,
+        "n": 9,
+        "sig": "ns"
+      },
+      "53": {
+        "r": -0.258,
+        "p": 0.4712,
+        "n": 10,
+        "sig": "ns"
+      }
+    }
+  },
+  "Q3_pooled_MDS_June_adds_to_EBI": {
+    "n": 32,
+    "R2_EBI_only": 0.268,
+    "R2_EBI_plus_MDS": 0.269,
+    "partial_F": 0.038,
+    "p": 0.8468,
+    "df": [
+      1,
+      27
+    ]
+  }
+}

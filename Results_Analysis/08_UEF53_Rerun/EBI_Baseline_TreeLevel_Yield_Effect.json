@@ -1,0 +1,118 @@
+{
+  "note": "Per-tree-year (n=167) comparison of FITTED (in-sample) predicted yield under the canonical, whole-image, and combined EBI variants, same pooled 2022-2023 model as compare_ebi_wholeimage_baseline.py. Answers whether the choice of baseline reshuffles which specific trees look good/bad, not just the aggregate CV R^2.",
+  "n": 167,
+  "measured_yield_context": {
+    "mean_kg": 3.156,
+    "sd_kg": 2.008
+  },
+  "canonical_vs_wholeimg": {
+    "pearson_r_of_fitted_predictions": 0.9903,
+    "spearman_rho_of_fitted_predictions": 0.9905,
+    "mean_abs_diff_kg": 0.1307,
+    "max_abs_diff_kg": 0.6677,
+    "mean_abs_diff_kg_UEF": 0.1246,
+    "mean_abs_diff_kg_cultivar53": 0.139,
+    "top10pct_predicted_yield_tree_overlap": 0.941,
+    "bottom10pct_predicted_yield_tree_overlap": 0.882
+  },
+  "canonical_vs_combined": {
+    "pearson_r_of_fitted_predictions": 0.9975,
+    "spearman_rho_of_fitted_predictions": 0.9973,
+    "mean_abs_diff_kg": 0.0628,
+    "max_abs_diff_kg": 0.3714,
+    "top10pct_predicted_yield_tree_overlap": 0.941,
+    "bottom10pct_predicted_yield_tree_overlap": 0.941
+  },
+  "biggest_movers_canonical_vs_wholeimg": [
+    {
+      "tree": "1234",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 4.973,
+      "pred_wholeimg_kg": 5.641,
+      "diff_kg": 0.668,
+      "measured_kg": 4.29
+    },
+    {
+      "tree": "1237",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 6.665,
+      "pred_wholeimg_kg": 7.332,
+      "diff_kg": 0.667,
+      "measured_kg": 7.97
+    },
+    {
+      "tree": "1220",
+      "year": 2022,
+      "cultivar": "UEF",
+      "pred_canonical_kg": 8.361,
+      "pred_wholeimg_kg": 7.755,
+      "diff_kg": -0.606,
+      "measured_kg": 13.143
+    },
+    {
+      "tree": "1221",
+      "year": 2022,
+      "cultivar": "UEF",
+      "pred_canonical_kg": 9.819,
+      "pred_wholeimg_kg": 9.22,
+      "diff_kg": -0.599,
+      "measured_kg": 11.647
+    },
+    {
+      "tree": "1228",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 7.33,
+      "pred_wholeimg_kg": 7.92,
+      "diff_kg": 0.591,
+      "measured_kg": 3.681
+    },
+    {
+      "tree": "1229",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 6.673,
+      "pred_wholeimg_kg": 7.259,
+      "diff_kg": 0.585,
+      "measured_kg": 7.42
+    },
+    {
+      "tree": "1235",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 7.205,
+      "pred_wholeimg_kg": 7.783,
+      "diff_kg": 0.578,
+      "measured_kg": 9.402
+    },
+    {
+      "tree": "1223",
+      "year": 2022,
+      "cultivar": "UEF",
+      "pred_canonical_kg": 7.613,
+      "pred_wholeimg_kg": 7.048,
+      "diff_kg": -0.566,
+      "measured_kg": 13.455
+    },
+    {
+      "tree": "1233",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 5.814,
+      "pred_wholeimg_kg": 6.378,
+      "diff_kg": 0.563,
+      "measured_kg": 5.752
+    },
+    {
+      "tree": "1232",
+      "year": 2022,
+      "cultivar": "53",
+      "pred_canonical_kg": 6.958,
+      "pred_wholeimg_kg": 7.514,
+      "diff_kg": 0.556,
+      "measured_kg": 6.941
+    }
+  ]
+}

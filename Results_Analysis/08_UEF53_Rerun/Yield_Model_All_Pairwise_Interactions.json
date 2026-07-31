@@ -1,0 +1,643 @@
+{
+  "note": "Full pairwise interaction sweep across all 12 base features (not just EBI-anchored, extending section 29). C(12,2)=66 pairs, EBI x cultivar excluded as already a baseline term, 65 candidates tested, each via a full-sample partial-F test, BH-FDR corrected across all 65 as a single family.",
+  "n": 167,
+  "n_base_features": 12,
+  "base_features": [
+    "cultivar",
+    "EBI",
+    "climate",
+    "DEM",
+    "Growth_April",
+    "Growth_MayJune",
+    "Growth_June",
+    "SWP_April",
+    "SWP_MayJune",
+    "SWP_June",
+    "CNC_June",
+    "NGRDI"
+  ],
+  "n_pairs_possible": 66,
+  "already_in_baseline_model": [
+    "cultivar_x_EBI"
+  ],
+  "n_candidates_tested": 65,
+  "baseline": {
+    "R2": 0.5285,
+    "cvR2": 0.4563
+  },
+  "partial_F_all_65_candidates_FDR_corrected": {
+    "cultivar_x_climate": {
+      "F": 0.561,
+      "p": 0.455,
+      "coef": -0.1866,
+      "p_fdr": 0.7042,
+      "survives_FDR": false
+    },
+    "cultivar_x_DEM": {
+      "F": 0.245,
+      "p": 0.6213,
+      "coef": 0.0715,
+      "p_fdr": 0.8413,
+      "survives_FDR": false
+    },
+    "cultivar_x_Growth_April": {
+      "F": 0.387,
+      "p": 0.5349,
+      "coef": -0.1464,
+      "p_fdr": 0.7726,
+      "survives_FDR": false
+    },
+    "cultivar_x_Growth_MayJune": {
+      "F": 0.066,
+      "p": 0.7981,
+      "coef": 0.0607,
+      "p_fdr": 0.8944,
+      "survives_FDR": false
+    },
+    "cultivar_x_Growth_June": {
+      "F": 6.751,
+      "p": 0.0102,
+      "coef": 0.4942,
+      "p_fdr": 0.0947,
+      "survives_FDR": false
+    },
+    "cultivar_x_SWP_April": {
+      "F": 0.111,
+      "p": 0.7399,
+      "coef": -0.0681,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "cultivar_x_SWP_MayJune": {
+      "F": 0.121,
+      "p": 0.7285,
+      "coef": 0.0829,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "cultivar_x_SWP_June": {
+      "F": 1.189,
+      "p": 0.2771,
+      "coef": -0.2462,
+      "p_fdr": 0.5051,
+      "survives_FDR": false
+    },
+    "cultivar_x_CNC_June": {
+      "F": 0.011,
+      "p": 0.9168,
+      "coef": 0.0234,
+      "p_fdr": 0.9595,
+      "survives_FDR": false
+    },
+    "cultivar_x_NGRDI": {
+      "F": 1.25,
+      "p": 0.2651,
+      "coef": 0.2203,
+      "p_fdr": 0.5051,
+      "survives_FDR": false
+    },
+    "EBI_x_climate": {
+      "F": 6.213,
+      "p": 0.0137,
+      "coef": 0.2375,
+      "p_fdr": 0.1058,
+      "survives_FDR": false
+    },
+    "EBI_x_DEM": {
+      "F": 1.175,
+      "p": 0.28,
+      "coef": 0.1224,
+      "p_fdr": 0.5051,
+      "survives_FDR": false
+    },
+    "EBI_x_Growth_April": {
+      "F": 3.731,
+      "p": 0.0552,
+      "coef": 0.1865,
+      "p_fdr": 0.2164,
+      "survives_FDR": false
+    },
+    "EBI_x_Growth_MayJune": {
+      "F": 8.189,
+      "p": 0.0048,
+      "coef": 0.2399,
+      "p_fdr": 0.0624,
+      "survives_FDR": false
+    },
+    "EBI_x_Growth_June": {
+      "F": 0.086,
+      "p": 0.7703,
+      "coef": -0.0285,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "EBI_x_SWP_April": {
+      "F": 1.375,
+      "p": 0.2427,
+      "coef": 0.1261,
+      "p_fdr": 0.478,
+      "survives_FDR": false
+    },
+    "EBI_x_SWP_MayJune": {
+      "F": 0.106,
+      "p": 0.7451,
+      "coef": 0.0414,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "EBI_x_SWP_June": {
+      "F": 3.382,
+      "p": 0.0678,
+      "coef": 0.1729,
+      "p_fdr": 0.2448,
+      "survives_FDR": false
+    },
+    "EBI_x_CNC_June": {
+      "F": 9.542,
+      "p": 0.0024,
+      "coef": 0.3537,
+      "p_fdr": 0.0624,
+      "survives_FDR": false
+    },
+    "EBI_x_NGRDI": {
+      "F": 2.446,
+      "p": 0.1198,
+      "coef": 0.1796,
+      "p_fdr": 0.3526,
+      "survives_FDR": false
+    },
+    "climate_x_DEM": {
+      "F": 9.021,
+      "p": 0.0031,
+      "coef": 0.2907,
+      "p_fdr": 0.0624,
+      "survives_FDR": false
+    },
+    "climate_x_Growth_April": {
+      "F": 4.245,
+      "p": 0.041,
+      "coef": -0.2143,
+      "p_fdr": 0.1777,
+      "survives_FDR": false
+    },
+    "climate_x_Growth_MayJune": {
+      "F": 3.086,
+      "p": 0.0809,
+      "coef": 0.2517,
+      "p_fdr": 0.2629,
+      "survives_FDR": false
+    },
+    "climate_x_Growth_June": {
+      "F": 5.302,
+      "p": 0.0226,
+      "coef": 0.1735,
+      "p_fdr": 0.1224,
+      "survives_FDR": false
+    },
+    "climate_x_SWP_April": {
+      "F": 1.691,
+      "p": 0.1953,
+      "coef": -0.2336,
+      "p_fdr": 0.4377,
+      "survives_FDR": false
+    },
+    "climate_x_SWP_MayJune": {
+      "F": 0.286,
+      "p": 0.5934,
+      "coef": 0.0966,
+      "p_fdr": 0.8207,
+      "survives_FDR": false
+    },
+    "climate_x_SWP_June": {
+      "F": 2.128,
+      "p": 0.1466,
+      "coef": -0.26,
+      "p_fdr": 0.3592,
+      "survives_FDR": false
+    },
+    "climate_x_CNC_June": {
+      "F": 1.531,
+      "p": 0.2178,
+      "coef": 0.2501,
+      "p_fdr": 0.4567,
+      "survives_FDR": false
+    },
+    "climate_x_NGRDI": {
+      "F": 0.724,
+      "p": 0.3962,
+      "coef": -0.0903,
+      "p_fdr": 0.6603,
+      "survives_FDR": false
+    },
+    "DEM_x_Growth_April": {
+      "F": 2.579,
+      "p": 0.1103,
+      "coef": 0.1675,
+      "p_fdr": 0.3414,
+      "survives_FDR": false
+    },
+    "DEM_x_Growth_MayJune": {
+      "F": 8.532,
+      "p": 0.004,
+      "coef": 0.3027,
+      "p_fdr": 0.0624,
+      "survives_FDR": false
+    },
+    "DEM_x_Growth_June": {
+      "F": 0.016,
+      "p": 0.8995,
+      "coef": 0.0149,
+      "p_fdr": 0.9585,
+      "survives_FDR": false
+    },
+    "DEM_x_SWP_April": {
+      "F": 4.777,
+      "p": 0.0303,
+      "coef": 0.2312,
+      "p_fdr": 0.1515,
+      "survives_FDR": false
+    },
+    "DEM_x_SWP_MayJune": {
+      "F": 0.191,
+      "p": 0.6627,
+      "coef": -0.0519,
+      "p_fdr": 0.8735,
+      "survives_FDR": false
+    },
+    "DEM_x_SWP_June": {
+      "F": 5.721,
+      "p": 0.0179,
+      "coef": 0.2363,
+      "p_fdr": 0.1058,
+      "survives_FDR": false
+    },
+    "DEM_x_CNC_June": {
+      "F": 5.719,
+      "p": 0.0179,
+      "coef": 0.25,
+      "p_fdr": 0.1058,
+      "survives_FDR": false
+    },
+    "DEM_x_NGRDI": {
+      "F": 0.005,
+      "p": 0.9447,
+      "coef": 0.0075,
+      "p_fdr": 0.9595,
+      "survives_FDR": false
+    },
+    "Growth_April_x_Growth_MayJune": {
+      "F": 0.032,
+      "p": 0.8593,
+      "coef": -0.0177,
+      "p_fdr": 0.9467,
+      "survives_FDR": false
+    },
+    "Growth_April_x_Growth_June": {
+      "F": 9.674,
+      "p": 0.0022,
+      "coef": 0.2831,
+      "p_fdr": 0.0624,
+      "survives_FDR": false
+    },
+    "Growth_April_x_SWP_April": {
+      "F": 2.332,
+      "p": 0.1287,
+      "coef": -0.1417,
+      "p_fdr": 0.3526,
+      "survives_FDR": false
+    },
+    "Growth_April_x_SWP_MayJune": {
+      "F": 0.0,
+      "p": 0.9954,
+      "coef": -0.0008,
+      "p_fdr": 0.9954,
+      "survives_FDR": false
+    },
+    "Growth_April_x_SWP_June": {
+      "F": 6.986,
+      "p": 0.009,
+      "coef": -0.2636,
+      "p_fdr": 0.0947,
+      "survives_FDR": false
+    },
+    "Growth_April_x_CNC_June": {
+      "F": 0.41,
+      "p": 0.5231,
+      "coef": -0.0629,
+      "p_fdr": 0.7726,
+      "survives_FDR": false
+    },
+    "Growth_April_x_NGRDI": {
+      "F": 1.139,
+      "p": 0.2875,
+      "coef": -0.1066,
+      "p_fdr": 0.5051,
+      "survives_FDR": false
+    },
+    "Growth_MayJune_x_Growth_June": {
+      "F": 0.18,
+      "p": 0.6719,
+      "coef": 0.0428,
+      "p_fdr": 0.8735,
+      "survives_FDR": false
+    },
+    "Growth_MayJune_x_SWP_April": {
+      "F": 0.088,
+      "p": 0.7668,
+      "coef": 0.0397,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "Growth_MayJune_x_SWP_MayJune": {
+      "F": 2.313,
+      "p": 0.1302,
+      "coef": 0.3018,
+      "p_fdr": 0.3526,
+      "survives_FDR": false
+    },
+    "Growth_MayJune_x_SWP_June": {
+      "F": 0.149,
+      "p": 0.7002,
+      "coef": 0.0501,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "Growth_MayJune_x_CNC_June": {
+      "F": 2.101,
+      "p": 0.1492,
+      "coef": 0.1943,
+      "p_fdr": 0.3592,
+      "survives_FDR": false
+    },
+    "Growth_MayJune_x_NGRDI": {
+      "F": 0.672,
+      "p": 0.4136,
+      "coef": -0.0868,
+      "p_fdr": 0.6721,
+      "survives_FDR": false
+    },
+    "Growth_June_x_SWP_April": {
+      "F": 5.831,
+      "p": 0.0169,
+      "coef": 0.189,
+      "p_fdr": 0.1058,
+      "survives_FDR": false
+    },
+    "Growth_June_x_SWP_MayJune": {
+      "F": 4.609,
+      "p": 0.0333,
+      "coef": 0.1751,
+      "p_fdr": 0.1546,
+      "survives_FDR": false
+    },
+    "Growth_June_x_SWP_June": {
+      "F": 3.687,
+      "p": 0.0566,
+      "coef": 0.1827,
+      "p_fdr": 0.2164,
+      "survives_FDR": false
+    },
+    "Growth_June_x_CNC_June": {
+      "F": 0.606,
+      "p": 0.4374,
+      "coef": 0.0664,
+      "p_fdr": 0.6934,
+      "survives_FDR": false
+    },
+    "Growth_June_x_NGRDI": {
+      "F": 1.622,
+      "p": 0.2047,
+      "coef": 0.1418,
+      "p_fdr": 0.4435,
+      "survives_FDR": false
+    },
+    "SWP_April_x_SWP_MayJune": {
+      "F": 0.388,
+      "p": 0.534,
+      "coef": 0.0941,
+      "p_fdr": 0.7726,
+      "survives_FDR": false
+    },
+    "SWP_April_x_SWP_June": {
+      "F": 3.165,
+      "p": 0.0771,
+      "coef": -0.261,
+      "p_fdr": 0.2629,
+      "survives_FDR": false
+    },
+    "SWP_April_x_CNC_June": {
+      "F": 0.007,
+      "p": 0.9353,
+      "coef": 0.0105,
+      "p_fdr": 0.9595,
+      "survives_FDR": false
+    },
+    "SWP_April_x_NGRDI": {
+      "F": 0.344,
+      "p": 0.5586,
+      "coef": -0.0596,
+      "p_fdr": 0.7893,
+      "survives_FDR": false
+    },
+    "SWP_MayJune_x_SWP_June": {
+      "F": 0.882,
+      "p": 0.349,
+      "coef": -0.1551,
+      "p_fdr": 0.597,
+      "survives_FDR": false
+    },
+    "SWP_MayJune_x_CNC_June": {
+      "F": 1.726,
+      "p": 0.1908,
+      "coef": 0.1958,
+      "p_fdr": 0.4377,
+      "survives_FDR": false
+    },
+    "SWP_MayJune_x_NGRDI": {
+      "F": 0.11,
+      "p": 0.7404,
+      "coef": -0.0378,
+      "p_fdr": 0.8784,
+      "survives_FDR": false
+    },
+    "SWP_June_x_CNC_June": {
+      "F": 0.019,
+      "p": 0.8905,
+      "coef": -0.0211,
+      "p_fdr": 0.9585,
+      "survives_FDR": false
+    },
+    "SWP_June_x_NGRDI": {
+      "F": 2.216,
+      "p": 0.1386,
+      "coef": -0.1541,
+      "p_fdr": 0.3592,
+      "survives_FDR": false
+    },
+    "CNC_June_x_NGRDI": {
+      "F": 1.469,
+      "p": 0.2274,
+      "coef": -0.1318,
+      "p_fdr": 0.4619,
+      "survives_FDR": false
+    }
+  },
+  "survivors_FDR_lt_0.05": [],
+  "forward_selection_main_seed42": {
+    "selected_features": [
+      "Growth_April_x_SWP_June",
+      "DEM_x_CNC_June",
+      "Growth_April_x_Growth_MayJune",
+      "Growth_MayJune_x_SWP_April",
+      "EBI_x_NGRDI",
+      "cultivar_x_NGRDI"
+    ],
+    "history": [
+      {
+        "step": 0,
+        "added": null,
+        "cvR2": 0.4563
+      },
+      {
+        "step": 1,
+        "added": "Growth_April_x_SWP_June",
+        "cvR2": 0.4672
+      },
+      {
+        "step": 2,
+        "added": "DEM_x_CNC_June",
+        "cvR2": 0.4818
+      },
+      {
+        "step": 3,
+        "added": "Growth_April_x_Growth_MayJune",
+        "cvR2": 0.4904
+      },
+      {
+        "step": 4,
+        "added": "Growth_MayJune_x_SWP_April",
+        "cvR2": 0.5061
+      },
+      {
+        "step": 5,
+        "added": "EBI_x_NGRDI",
+        "cvR2": 0.5215
+      },
+      {
+        "step": 6,
+        "added": "cultivar_x_NGRDI",
+        "cvR2": 0.5256
+      }
+    ],
+    "final_R2": 0.6117,
+    "final_cvR2": 0.5256,
+    "improvement_cvR2": 0.0693
+  },
+  "robustness_across_5_seeds": [
+    {
+      "seed": 1,
+      "selected": [
+        "Growth_April_x_SWP_June",
+        "Growth_April_x_Growth_June",
+        "EBI_x_Growth_April",
+        "DEM_x_Growth_MayJune",
+        "DEM_x_Growth_April",
+        "EBI_x_SWP_April",
+        "cultivar_x_NGRDI",
+        "cultivar_x_SWP_June",
+        "SWP_April_x_SWP_June",
+        "EBI_x_NGRDI"
+      ],
+      "baseline_cvR2": 0.4736,
+      "final_cvR2": 0.575
+    },
+    {
+      "seed": 7,
+      "selected": [
+        "EBI_x_CNC_June",
+        "Growth_MayJune_x_SWP_MayJune",
+        "DEM_x_Growth_MayJune",
+        "SWP_April_x_SWP_MayJune",
+        "Growth_April_x_SWP_June"
+      ],
+      "baseline_cvR2": 0.4567,
+      "final_cvR2": 0.5352
+    },
+    {
+      "seed": 13,
+      "selected": [
+        "DEM_x_Growth_MayJune",
+        "SWP_June_x_NGRDI",
+        "Growth_April_x_Growth_June",
+        "climate_x_SWP_June",
+        "EBI_x_NGRDI",
+        "CNC_June_x_NGRDI",
+        "DEM_x_SWP_June",
+        "cultivar_x_Growth_June",
+        "climate_x_SWP_April",
+        "DEM_x_Growth_April",
+        "climate_x_DEM",
+        "SWP_MayJune_x_NGRDI",
+        "EBI_x_Growth_June"
+      ],
+      "baseline_cvR2": 0.4478,
+      "final_cvR2": 0.5496
+    },
+    {
+      "seed": 99,
+      "selected": [
+        "EBI_x_CNC_June",
+        "SWP_April_x_SWP_MayJune",
+        "Growth_June_x_SWP_MayJune",
+        "DEM_x_SWP_MayJune",
+        "cultivar_x_NGRDI",
+        "climate_x_SWP_April"
+      ],
+      "baseline_cvR2": 0.488,
+      "final_cvR2": 0.5363
+    },
+    {
+      "seed": 2024,
+      "selected": [
+        "EBI_x_CNC_June",
+        "Growth_April_x_SWP_June",
+        "Growth_April_x_SWP_MayJune",
+        "Growth_June_x_SWP_MayJune",
+        "DEM_x_CNC_June"
+      ],
+      "baseline_cvR2": 0.4724,
+      "final_cvR2": 0.5497
+    }
+  ],
+  "how_often_selected_of_6_incl_main": {
+    "Growth_April_x_SWP_June": 4,
+    "DEM_x_CNC_June": 2,
+    "Growth_April_x_Growth_MayJune": 1,
+    "Growth_MayJune_x_SWP_April": 1,
+    "EBI_x_NGRDI": 3,
+    "cultivar_x_NGRDI": 3,
+    "Growth_April_x_Growth_June": 2,
+    "EBI_x_Growth_April": 1,
+    "DEM_x_Growth_MayJune": 3,
+    "DEM_x_Growth_April": 2,
+    "EBI_x_SWP_April": 1,
+    "cultivar_x_SWP_June": 1,
+    "SWP_April_x_SWP_June": 1,
+    "EBI_x_CNC_June": 3,
+    "Growth_MayJune_x_SWP_MayJune": 1,
+    "SWP_April_x_SWP_MayJune": 2,
+    "SWP_June_x_NGRDI": 1,
+    "climate_x_SWP_June": 1,
+    "CNC_June_x_NGRDI": 1,
+    "DEM_x_SWP_June": 1,
+    "cultivar_x_Growth_June": 1,
+    "climate_x_SWP_April": 2,
+    "climate_x_DEM": 1,
+    "SWP_MayJune_x_NGRDI": 1,
+    "EBI_x_Growth_June": 1,
+    "Growth_June_x_SWP_MayJune": 2,
+    "DEM_x_SWP_MayJune": 1,
+    "Growth_April_x_SWP_MayJune": 1
+  },
+  "redundancy_check_survivors_vs_known_and_each_other": {}
+}

@@ -1,0 +1,566 @@
+{
+  "pls": {
+    "cv_by_seed": {
+      "42": {
+        "cvR2": 0.3632,
+        "cvMSE": 2.56674,
+        "cvMAE": 1.12388,
+        "ncomps_per_fold": [
+          6,
+          9,
+          3,
+          3,
+          5
+        ]
+      },
+      "1": {
+        "cvR2": 0.3625,
+        "cvMSE": 2.56952,
+        "cvMAE": 1.13696,
+        "ncomps_per_fold": [
+          8,
+          4,
+          9,
+          3,
+          7
+        ]
+      },
+      "7": {
+        "cvR2": 0.3595,
+        "cvMSE": 2.58154,
+        "cvMAE": 1.14293,
+        "ncomps_per_fold": [
+          7,
+          3,
+          3,
+          7,
+          2
+        ]
+      },
+      "13": {
+        "cvR2": 0.3377,
+        "cvMSE": 2.66943,
+        "cvMAE": 1.17366,
+        "ncomps_per_fold": [
+          3,
+          3,
+          3,
+          8,
+          7
+        ]
+      },
+      "99": {
+        "cvR2": 0.1102,
+        "cvMSE": 3.58637,
+        "cvMAE": 1.18495,
+        "ncomps_per_fold": [
+          3,
+          8,
+          2,
+          7,
+          7
+        ]
+      },
+      "2024": {
+        "cvR2": 0.3439,
+        "cvMSE": 2.64461,
+        "cvMAE": 1.14824,
+        "ncomps_per_fold": [
+          7,
+          7,
+          4,
+          7,
+          7
+        ]
+      }
+    }
+  },
+  "n": 167,
+  "omp": {
+    "cv_by_seed": {
+      "42": {
+        "cvR2": 0.4255,
+        "cvMSE": 2.31557,
+        "cvMAE": 1.04929,
+        "k_per_fold": [
+          4,
+          1,
+          5,
+          1,
+          5
+        ]
+      },
+      "1": {
+        "cvR2": 0.3737,
+        "cvMSE": 2.52425,
+        "cvMAE": 1.11643,
+        "k_per_fold": [
+          1,
+          5,
+          1,
+          3,
+          6
+        ]
+      },
+      "7": {
+        "cvR2": 0.3296,
+        "cvMSE": 2.70192,
+        "cvMAE": 1.10354,
+        "k_per_fold": [
+          2,
+          4,
+          2,
+          7,
+          1
+        ]
+      },
+      "13": {
+        "cvR2": 0.3494,
+        "cvMSE": 2.62229,
+        "cvMAE": 1.09794,
+        "k_per_fold": [
+          3,
+          4,
+          1,
+          3,
+          1
+        ]
+      },
+      "99": {
+        "cvR2": -0.6578,
+        "cvMSE": 6.68183,
+        "cvMAE": 1.27023,
+        "k_per_fold": [
+          1,
+          1,
+          2,
+          8,
+          9
+        ]
+      },
+      "2024": {
+        "cvR2": 0.3863,
+        "cvMSE": 2.47358,
+        "cvMAE": 1.07671,
+        "k_per_fold": [
+          1,
+          3,
+          2,
+          1,
+          9
+        ]
+      }
+    },
+    "full_data_selected_k10": [
+      "climate",
+      "EBI_Norm_kurtosis",
+      "Growth_April",
+      "cultivar",
+      "ShadowFraction",
+      "EBI_Norm_P10",
+      "BrightFraction",
+      "EBI_Norm_skew",
+      "EBI_density",
+      "BloomPixelVolume"
+    ]
+  },
+  "boost_all_screened": [
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.2,
+      "n_rounds": 100,
+      "screen_r2": 0.3918
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.2,
+      "n_rounds": 60,
+      "screen_r2": 0.3888
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.1,
+      "n_rounds": 100,
+      "screen_r2": 0.387
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.2,
+      "n_rounds": 30,
+      "screen_r2": 0.3834
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.1,
+      "n_rounds": 60,
+      "screen_r2": 0.382
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.1,
+      "n_rounds": 30,
+      "screen_r2": 0.3807
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.05,
+      "n_rounds": 100,
+      "screen_r2": 0.3803
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.05,
+      "n_rounds": 60,
+      "screen_r2": 0.3787
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.05,
+      "n_rounds": 100,
+      "screen_r2": 0.359
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.05,
+      "n_rounds": 60,
+      "screen_r2": 0.3585
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.1,
+      "n_rounds": 30,
+      "screen_r2": 0.3578
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.1,
+      "n_rounds": 60,
+      "screen_r2": 0.3555
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.2,
+      "n_rounds": 30,
+      "screen_r2": 0.3547
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 10,
+      "lr": 0.05,
+      "n_rounds": 30,
+      "screen_r2": 0.3519
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.05,
+      "n_rounds": 30,
+      "screen_r2": 0.3483
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.1,
+      "n_rounds": 100,
+      "screen_r2": 0.326
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.2,
+      "n_rounds": 60,
+      "screen_r2": 0.3201
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 10,
+      "lr": 0.2,
+      "n_rounds": 100,
+      "screen_r2": 0.2789
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.05,
+      "n_rounds": 100,
+      "screen_r2": 0.255
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.1,
+      "n_rounds": 30,
+      "screen_r2": 0.254
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.05,
+      "n_rounds": 60,
+      "screen_r2": 0.2533
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.1,
+      "n_rounds": 60,
+      "screen_r2": 0.2519
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.2,
+      "n_rounds": 30,
+      "screen_r2": 0.2504
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.1,
+      "n_rounds": 100,
+      "screen_r2": 0.2493
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.2,
+      "n_rounds": 60,
+      "screen_r2": 0.2472
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.05,
+      "n_rounds": 60,
+      "screen_r2": 0.246
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.1,
+      "n_rounds": 30,
+      "screen_r2": 0.2453
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.2,
+      "n_rounds": 100,
+      "screen_r2": 0.2403
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.05,
+      "n_rounds": 30,
+      "screen_r2": 0.2386
+    },
+    {
+      "max_depth": 1,
+      "min_leaf": 15,
+      "lr": 0.05,
+      "n_rounds": 30,
+      "screen_r2": 0.2272
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.05,
+      "n_rounds": 100,
+      "screen_r2": 0.2271
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.1,
+      "n_rounds": 60,
+      "screen_r2": 0.2206
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.2,
+      "n_rounds": 30,
+      "screen_r2": 0.213
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.1,
+      "n_rounds": 100,
+      "screen_r2": 0.2019
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.2,
+      "n_rounds": 60,
+      "screen_r2": 0.1932
+    },
+    {
+      "max_depth": 2,
+      "min_leaf": 15,
+      "lr": 0.2,
+      "n_rounds": 100,
+      "screen_r2": 0.1593
+    }
+  ],
+  "boost_best_combo": {
+    "max_depth": 1,
+    "min_leaf": 10,
+    "lr": 0.2,
+    "n_rounds": 100,
+    "screen_r2": 0.3918
+  },
+  "boost_final_cv_by_seed": {
+    "42": {
+      "cvR2": 0.4041,
+      "cvMSE": 2.40183,
+      "cvMAE": 1.03915
+    },
+    "1": {
+      "cvR2": 0.2865,
+      "cvMSE": 2.87601,
+      "cvMAE": 1.0848
+    },
+    "7": {
+      "cvR2": 0.2999,
+      "cvMSE": 2.82173,
+      "cvMAE": 1.11732
+    },
+    "13": {
+      "cvR2": 0.3349,
+      "cvMSE": 2.68069,
+      "cvMAE": 1.09424
+    },
+    "99": {
+      "cvR2": 0.3701,
+      "cvMSE": 2.53906,
+      "cvMAE": 1.0632
+    },
+    "2024": {
+      "cvR2": 0.3122,
+      "cvMSE": 2.77228,
+      "cvMAE": 1.08931
+    }
+  },
+  "ensemble_cv_by_seed": {
+    "42": {
+      "ols_only": {
+        "cvR2": 0.4563,
+        "cvMSE": 2.19146,
+        "cvMAE": 1.02146
+      },
+      "ensemble_all4": {
+        "cvR2": 0.4566,
+        "cvMSE": 2.19021,
+        "cvMAE": 1.01204
+      },
+      "ensemble_ols_pls": {
+        "cvR2": 0.4641,
+        "cvMSE": 2.15988,
+        "cvMAE": 1.03104
+      }
+    },
+    "1": {
+      "ols_only": {
+        "cvR2": 0.4736,
+        "cvMSE": 2.12156,
+        "cvMAE": 1.01273
+      },
+      "ensemble_all4": {
+        "cvR2": 0.4332,
+        "cvMSE": 2.28434,
+        "cvMAE": 1.02078
+      },
+      "ensemble_ols_pls": {
+        "cvR2": 0.4587,
+        "cvMSE": 2.18179,
+        "cvMAE": 1.04069
+      }
+    },
+    "7": {
+      "ols_only": {
+        "cvR2": 0.4567,
+        "cvMSE": 2.18993,
+        "cvMAE": 1.02509
+      },
+      "ensemble_all4": {
+        "cvR2": 0.4082,
+        "cvMSE": 2.38543,
+        "cvMAE": 1.03897
+      },
+      "ensemble_ols_pls": {
+        "cvR2": 0.4422,
+        "cvMSE": 2.24815,
+        "cvMAE": 1.04091
+      }
+    },
+    "13": {
+      "ols_only": {
+        "cvR2": 0.4478,
+        "cvMSE": 2.22578,
+        "cvMAE": 1.01886
+      },
+      "ensemble_all4": {
+        "cvR2": 0.4035,
+        "cvMSE": 2.40442,
+        "cvMAE": 1.04786
+      },
+      "ensemble_ols_pls": {
+        "cvR2": 0.412,
+        "cvMSE": 2.37016,
+        "cvMAE": 1.06914
+      }
+    },
+    "99": {
+      "ols_only": {
+        "cvR2": 0.488,
+        "cvMSE": 2.0638,
+        "cvMAE": 1.00958
+      },
+      "ensemble_all4": {
+        "cvR2": 0.4589,
+        "cvMSE": 2.18109,
+        "cvMAE": 1.02045
+      },
+      "ensemble_ols_pls": {
+        "cvR2": 0.4762,
+        "cvMSE": 2.11111,
+        "cvMAE": 1.02482
+      }
+    },
+    "2024": {
+      "ols_only": {
+        "cvR2": 0.4724,
+        "cvMSE": 2.12655,
+        "cvMAE": 1.04057
+      },
+      "ensemble_all4": {
+        "cvR2": 0.4273,
+        "cvMSE": 2.30827,
+        "cvMAE": 1.04679
+      },
+      "ensemble_ols_pls": {
+        "cvR2": 0.4054,
+        "cvMSE": 2.39678,
+        "cvMAE": 1.07604
+      }
+    }
+  },
+  "ensemble_pls_ncomp_used": 6,
+  "ensemble_omp_k_used": 2
+}

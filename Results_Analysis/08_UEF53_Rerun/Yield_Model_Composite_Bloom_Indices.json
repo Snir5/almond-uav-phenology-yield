@@ -1,0 +1,292 @@
+{
+  "note": "Domain-motivated composite bloom indices (canopy remote-sensing expert framing), not a blind search: TBL, ICBI, TICBL, UBI, CCAB, SBS. Algebra check performed first: the user's literal 'size x threshold% x density' collapses to just intensity x threshold% since section-38 'EBI_density' = EBI/area, so area cancels; composites here are checked to combine genuinely independent axes instead.",
+  "composite_definitions": {
+    "TBL": "CanopyArea_m2 x HighEBI_frac_065 (total m^2 of high-intensity bloom)",
+    "ICBI": "EBI_Norm x (1-ShadowFraction) (shadow-corrected mean intensity)",
+    "TICBL": "CanopyArea_m2 x EBI_Norm x (1-ShadowFraction) (3-way: size x intensity x illumination)",
+    "UBI": "EBI_Norm x (1-EBI_Norm_CV) (uniform bloom intensity)",
+    "CCAB": "HighEBI_frac_065 x CanopyCoverFraction (bloom fraction adjusted for canopy completeness)",
+    "SBS": "z(CanopyArea)+z(HighEBI_frac_065)+z(EBI_Norm_std)+z(1-ShadowFraction) (additive composite score)"
+  },
+  "n_2023_standalone": 151,
+  "standalone_correlations_2023": {
+    "TBL": {
+      "pooled": {
+        "r": 0.0315,
+        "p": 0.7012
+      },
+      "UEF": {
+        "r": 0.1965,
+        "p": 0.0681
+      },
+      "cv53": {
+        "r": -0.2793,
+        "p": 0.0254
+      }
+    },
+    "ICBI": {
+      "pooled": {
+        "r": 0.0068,
+        "p": 0.9344
+      },
+      "UEF": {
+        "r": -0.02,
+        "p": 0.8544
+      },
+      "cv53": {
+        "r": -0.188,
+        "p": 0.1368
+      }
+    },
+    "TICBL": {
+      "pooled": {
+        "r": -0.0654,
+        "p": 0.4249
+      },
+      "UEF": {
+        "r": 0.0006,
+        "p": 0.9953
+      },
+      "cv53": {
+        "r": -0.2476,
+        "p": 0.0485
+      }
+    },
+    "UBI": {
+      "pooled": {
+        "r": 0.0711,
+        "p": 0.3855
+      },
+      "UEF": {
+        "r": 0.2362,
+        "p": 0.0276
+      },
+      "cv53": {
+        "r": -0.2332,
+        "p": 0.0637
+      }
+    },
+    "CCAB": {
+      "pooled": {
+        "r": 0.1298,
+        "p": 0.1122
+      },
+      "UEF": {
+        "r": 0.3094,
+        "p": 0.0035
+      },
+      "cv53": {
+        "r": -0.2556,
+        "p": 0.0415
+      }
+    },
+    "SBS": {
+      "pooled": {
+        "r": 0.0482,
+        "p": 0.557
+      },
+      "UEF": {
+        "r": 0.0876,
+        "p": 0.4196
+      },
+      "cv53": {
+        "r": -0.2639,
+        "p": 0.0351
+      }
+    }
+  },
+  "standalone_fdr": {
+    "ICBI": 0.9344,
+    "TBL": 0.8414,
+    "SBS": 0.8355,
+    "TICBL": 0.8355,
+    "UBI": 0.8355,
+    "CCAB": 0.6732
+  },
+  "n_survive_standalone_FDR": 0,
+  "pca_on_raw_feature_bank": {
+    "features_used": [
+      "CanopyArea",
+      "HighEBI_frac_065",
+      "EBI_Norm",
+      "ShadowFraction",
+      "CanopyCoverFraction",
+      "EBI_Norm_std"
+    ],
+    "explained_variance_ratio": [
+      0.3874,
+      0.2684,
+      0.1523
+    ],
+    "PC1_loadings": {
+      "CanopyArea": -0.331,
+      "HighEBI_frac_065": -0.608,
+      "EBI_Norm": -0.562,
+      "ShadowFraction": 0.164,
+      "CanopyCoverFraction": -0.252,
+      "EBI_Norm_std": -0.339
+    },
+    "PC1_vs_yield": {
+      "r": -0.1021,
+      "p": 0.2122
+    },
+    "PC2_vs_yield": {
+      "r": -0.1567,
+      "p": 0.0547
+    }
+  },
+  "combined_with_full_model": {
+    "n": 167,
+    "baseline_cvR2": 0.4563,
+    "partial_F_FDR_corrected": {
+      "TBL": {
+        "F": 1.719,
+        "p": 0.1916,
+        "coef": 0.2946,
+        "cvR2_with_term": 0.4611,
+        "p_fdr": 0.2555
+      },
+      "TBL_x_cultivar": {
+        "F": 3.295,
+        "p": 0.0714,
+        "coef": 0.533,
+        "cvR2_with_term": 0.4693,
+        "p_fdr": 0.1714
+      },
+      "ICBI": {
+        "F": 7.049,
+        "p": 0.0087,
+        "coef": -0.3196,
+        "cvR2_with_term": 0.4679,
+        "p_fdr": 0.1044
+      },
+      "ICBI_x_cultivar": {
+        "F": 4.049,
+        "p": 0.0459,
+        "coef": -0.3044,
+        "cvR2_with_term": 0.4665,
+        "p_fdr": 0.1377
+      },
+      "TICBL": {
+        "F": 5.305,
+        "p": 0.0226,
+        "coef": -0.274,
+        "cvR2_with_term": 0.461,
+        "p_fdr": 0.128
+      },
+      "TICBL_x_cultivar": {
+        "F": 1.866,
+        "p": 0.1739,
+        "coef": -0.2201,
+        "cvR2_with_term": 0.4582,
+        "p_fdr": 0.2555
+      },
+      "UBI": {
+        "F": 2.411,
+        "p": 0.1225,
+        "coef": -0.4524,
+        "cvR2_with_term": 0.453,
+        "p_fdr": 0.2184
+      },
+      "UBI_x_cultivar": {
+        "F": 4.679,
+        "p": 0.032,
+        "coef": -0.8419,
+        "cvR2_with_term": 0.4713,
+        "p_fdr": 0.128
+      },
+      "CCAB": {
+        "F": 0.556,
+        "p": 0.4571,
+        "coef": 0.2032,
+        "cvR2_with_term": 0.4453,
+        "p_fdr": 0.5216
+      },
+      "CCAB_x_cultivar": {
+        "F": 2.349,
+        "p": 0.1274,
+        "coef": 0.5656,
+        "cvR2_with_term": 0.456,
+        "p_fdr": 0.2184
+      },
+      "SBS": {
+        "F": 0.066,
+        "p": 0.7978,
+        "coef": -0.038,
+        "cvR2_with_term": 0.4445,
+        "p_fdr": 0.7978
+      },
+      "SBS_x_cultivar": {
+        "F": 0.506,
+        "p": 0.4781,
+        "coef": 0.141,
+        "cvR2_with_term": 0.4528,
+        "p_fdr": 0.5216
+      }
+    },
+    "n_survive_FDR": 0,
+    "forward_selection_main_seed42": {
+      "selected": [
+        "UBI_x_cultivar",
+        "ICBI_x_cultivar"
+      ],
+      "final_cvR2": 0.4796,
+      "gain": 0.0233
+    },
+    "robustness_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "UBI_x_cultivar",
+          "ICBI"
+        ],
+        "final_cvR2": 0.4889
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "ICBI",
+          "SBS_x_cultivar"
+        ],
+        "final_cvR2": 0.4828
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "UBI_x_cultivar",
+          "TICBL",
+          "TBL_x_cultivar"
+        ],
+        "final_cvR2": 0.4608
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "ICBI",
+          "UBI_x_cultivar"
+        ],
+        "final_cvR2": 0.5208
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "ICBI",
+          "UBI_x_cultivar",
+          "SBS",
+          "TBL"
+        ],
+        "final_cvR2": 0.5005
+      }
+    ],
+    "how_often_selected_of_6": {
+      "UBI_x_cultivar": 5,
+      "ICBI_x_cultivar": 1,
+      "ICBI": 4,
+      "SBS_x_cultivar": 1,
+      "TICBL": 1,
+      "TBL_x_cultivar": 1,
+      "SBS": 1,
+      "TBL": 1
+    }
+  }
+}

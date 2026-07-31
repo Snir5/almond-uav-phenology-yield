@@ -1,0 +1,657 @@
+
+## STEP 1 — Convert Reference Raster to RGB
+
+Read bands 3, 2, 1 from the multispectral raster, stretch them to uint8, and save a clean RGB file that will serve as the registration reference for Step 2.
+
+```python
+from osgeo import gdal
+import numpy as np
+
+input_raster  = r"C:\Users\snirt\kdm_29_02_24\Mosaic_Reference.tif"
+output_raster = r"C:\Users\snirt\kdm_29_02_24\Mosaic_Reference_RGB_Fixed.tif"
+
+ds = gdal.Open(input_raster)
+
+print("Reading R(3), G(2), B(1)...")
+red   = ds.GetRasterBand(3).ReadAsArray().astype(np.float32)
+green = ds.GetRasterBand(2).ReadAsArray().astype(np.float32)
+blue  = ds.GetRasterBand(1).ReadAsArray().astype(np.float32)
+
+geo  = ds.GetGeoTransform()
+proj = ds.GetProjection()
+ds = None
+
+def stretch_to_uint8(band_data, name="band", low_pct=2, high_pct=98):
+    valid = band_data[band_data > 0]
+    if len(valid) == 0:
+        return np.zeros_like(band_data, dtype=np.uint8)
+    lo = np.percentile(valid, low_pct)
+    hi = np.percentile(valid, high_pct)
+    print(f"  {name}: {lo:.4f} -> {hi:.4f}")
+    return np.clip((band_data - lo) / (hi - lo) * 255, 0, 255).astype(np.uint8)
+
+print("Stretching to uint8...")
+red_u8   = stretch_to_uint8(red,   "Red  (band3)")
+green_u8 = stretch_to_uint8(green, "Green(band2)")
+blue_u8  = stretch_to_uint8(blue,  "Blue (band1)")
+
+print("Writing RGB Fixed...")
+driver = gdal.GetDriverByName('GTiff')
+out_ds = driver.Create(
+    output_raster, red_u8.shape[1], red_u8.shape[0], 3, gdal.GDT_Byte,
+    options=['COMPRESS=LZW', 'TILED=YES', 'BIGTIFF=YES']
+)
+out_ds.SetGeoTransform(geo)
+out_ds.SetProjection(proj)
+out_ds.GetRasterBand(1).WriteArray(red_u8)
+out_ds.GetRasterBand(2).WriteArray(green_u8)
+out_ds.GetRasterBand(3).WriteArray(blue_u8)
+out_ds.GetRasterBand(1).SetColorInterpretation(gdal.GCI_RedBand)
+out_ds.GetRasterBand(2).SetColorInterpretation(gdal.GCI_GreenBand)
+out_ds.GetRasterBand(3).SetColorInterpretation(gdal.GCI_BlueBand)
+out_ds.FlushCache()
+out_ds = None
+
+print(f"Done! -> {output_raster}")
+```
+
+***
+
+## STEP 2 — Georeference All Drone Images
+
+Register every TIF image to the reference raster. For each image, extract a temporary RGB file (without band 4), register it, and copy the resulting .aux.xml back to the original file. The process uses three phases: Direct → GPS Offset → Histogram.
+
+```python
+import arcpy
+import os
+import numpy as np
+from osgeo import gdal
+import json
+from collections import deque
+
+input_folder     = r"C:\Users\snirt\kdm_29_02_24\rasters_all"
+output_folder    = r"C:\Users\snirt\kdm_29_02_24\Output_Work_Final"
+temp_folder      = r"C:\Users\snirt\kdm_29_02_24\Temp_Work"
+reference_raster = r"C:\Users\snirt\kdm_29_02_24\Mosaic_Reference_RGB_Fixed.tif"
+log_file         = r"C:\Users\snirt\kdm_29_02_24\georef_log_final.json"
+
+MAX_RMS_STRICT  = 2.0
+MAX_RMS_NORMAL  = 5.0
+MAX_RMS_RELAXED = 10.0
+MAX_RMS_LAST    = 15.0
+HIST_THRESHOLD  = 30
+
+arcpy.env.overwriteOutput = True
+for folder in [output_folder, temp_folder]:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+def extract_rgb_temp(input_path, temp_path):
+    try:
+        ds = gdal.Open(input_path)
+        r  = ds.GetRasterBand(1).ReadAsArray().astype(np.uint8)
+        g  = ds.GetRasterBand(2).ReadAsArray().astype(np.uint8)
+        b  = ds.GetRasterBand(3).ReadAsArray().astype(np.uint8)
+        geo  = ds.GetGeoTransform()
+        proj = ds.GetProjection()
+        ds = None
+        driver = gdal.GetDriverByName('GTiff')
+        out = driver.Create(temp_path, r.shape[1], r.shape[0], 3,
+                            gdal.GDT_Byte, options=['COMPRESS=LZW'])
+        out.SetGeoTransform(geo)
+        out.SetProjection(proj)
+        out.GetRasterBand(1).WriteArray(r)
+        out.GetRasterBand(2).WriteArray(g)
+        out.GetRasterBand(3).WriteArray(b)
+        out.GetRasterBand(1).SetColorInterpretation(gdal.GCI_RedBand)
+        out.GetRasterBand(2).SetColorInterpretation(gdal.GCI_GreenBand)
+        out.GetRasterBand(3).SetColorInterpretation(gdal.GCI_BlueBand)
+        out.FlushCache()
+        out = None
+        return True
+    except:
+        return False
+
+def copy_aux_to_original(temp_rgb_path, out_path):
+    import shutil
+    aux_src = temp_rgb_path + ".aux.xml"
+    aux_dst = out_path + ".aux.xml"
+    if os.path.exists(aux_src):
+        shutil.copy2(aux_src, aux_dst)
+        return True
+    return False
+
+def needs_histogram_matching(input_raster, reference_raster, threshold=HIST_THRESHOLD):
+    try:
+        in_ds    = gdal.Open(input_raster)
+        in_array = in_ds.ReadAsArray()
+        ref_ds   = gdal.Open(reference_raster)
+        sz = min(500, ref_ds.RasterXSize, ref_ds.RasterYSize)
+        xo = (ref_ds.RasterXSize - sz) // 2
+        yo = (ref_ds.RasterYSize - sz) // 2
+        ref_array = ref_ds.ReadAsArray(xo, yo, sz, sz)
+        diffs = []
+        bands = range(min(3, in_array.shape[0])) if in_array.ndim == 3 else [0]
+        for band in bands:
+            in_band  = in_array[band] if in_array.ndim == 3 else in_array
+            ref_band = ref_array[band] if ref_array.ndim == 3 else ref_array
+            diffs.append(abs(np.mean(in_band[in_band > 0]) -
+                             np.mean(ref_band[ref_band > 0])))
+        in_ds = None; ref_ds = None
+        return np.mean(diffs) > threshold, np.mean(diffs)
+    except:
+        return True, 999
+
+def match_histogram_1d(src, ref):
+    src_data = src[src > 0]; ref_data = ref[ref > 0]
+    if len(src_data) == 0 or len(ref_data) == 0:
+        return src
+    src_values, src_counts = np.unique(src_data, return_counts=True)
+    ref_values, ref_counts = np.unique(ref_data, return_counts=True)
+    src_cdf = np.cumsum(src_counts).astype(np.float64) / src_counts.sum()
+    ref_cdf = np.cumsum(ref_counts).astype(np.float64) / ref_counts.sum()
+    interp_values = np.interp(src_cdf, ref_cdf, ref_values)
+    lookup = np.arange(256, dtype=np.uint8)
+    for j, val in enumerate(src_values):
+        if 0 < val < 256:
+            lookup[int(val)] = int(np.clip(interp_values[j], 0, 255))
+    return lookup[src]
+
+def apply_histogram_matching(input_path, reference_raster, output_path):
+    try:
+        in_ds     = gdal.Open(input_path)
+        in_array  = in_ds.ReadAsArray()
+        geo       = in_ds.GetGeoTransform()
+        proj      = in_ds.GetProjection()
+        num_bands = in_ds.RasterCount
+        ref_ds    = gdal.Open(reference_raster)
+        sz = min(2000, ref_ds.RasterXSize, ref_ds.RasterYSize)
+        xo = (ref_ds.RasterXSize - sz) // 2
+        yo = (ref_ds.RasterYSize - sz) // 2
+        ref_array = ref_ds.ReadAsArray(xo, yo, sz, sz)
+        matched = np.copy(in_array)
+        if in_array.ndim == 3:
+            for b in range(min(3, in_array.shape[0])):
+                if ref_array.ndim == 3 and ref_array.shape[0] > b:
+                    matched[b] = match_histogram_1d(in_array[b], ref_array[b])
+        driver = gdal.GetDriverByName('GTiff')
+        out = driver.Create(output_path, in_ds.RasterXSize, in_ds.RasterYSize,
+                            num_bands, gdal.GDT_Byte, options=['COMPRESS=LZW'])
+        out.SetGeoTransform(geo); out.SetProjection(proj)
+        if matched.ndim == 2:
+            out.GetRasterBand(1).WriteArray(matched)
+        else:
+            for b in range(matched.shape[0]):
+                out.GetRasterBand(b + 1).WriteArray(matched[b])
+        out.FlushCache(); out = None; in_ds = None; ref_ds = None
+        return True
+    except:
+        return False
+
+class OffsetTracker:
+    def __init__(self, window=10):
+        self.offsets = deque(maxlen=window)
+    def add_offset(self, orig, reg):
+        self.offsets.append((reg[0] - orig[0], reg[1] - orig[1]))
+    def get_average_offset(self):
+        if len(self.offsets) < 3:
+            return None
+        return (np.mean([o[0] for o in self.offsets]),
+                np.mean([o[1] for o in self.offsets]))
+    def apply_offset_to_file(self, path, dx, dy):
+        try:
+            ds  = gdal.Open(path, gdal.GA_Update)
+            geo = list(ds.GetGeoTransform())
+            geo[0] += dx; geo[3] += dy
+            ds.SetGeoTransform(tuple(geo))
+            ds.FlushCache(); ds = None
+            return True
+        except:
+            return False
+
+tracker = OffsetTracker(window=10)
+
+def try_register(original_input, out_path, reference_raster, rms,
+                 method_name="direct", use_histogram=False, pre_offset=None):
+    temp_rgb  = os.path.join(temp_folder, f"rgb_{os.path.basename(original_input)}")
+    temp_hist = os.path.join(temp_folder, f"hist_{os.path.basename(original_input)}")
+    try:
+        if not arcpy.Exists(out_path):
+            arcpy.management.CopyRaster(original_input, out_path)
+        source_for_reg = original_input
+        if use_histogram:
+            if not apply_histogram_matching(original_input, reference_raster, temp_hist):
+                return None
+            source_for_reg = temp_hist
+        if not extract_rgb_temp(source_for_reg, temp_rgb):
+            return None
+        if pre_offset:
+            tracker.apply_offset_to_file(temp_rgb, pre_offset[0], pre_offset[1])
+        arcpy.management.RegisterRaster(
+            in_raster=temp_rgb, register_mode="REGISTER",
+            reference_raster=reference_raster,
+            transformation_type="POLYORDER1", maximum_rms_value=rms
+        )
+        copy_aux_to_original(temp_rgb, out_path)
+        return method_name
+    except:
+        return None
+    finally:
+        for f in [temp_rgb, temp_hist]:
+            for ext in ["", ".aux.xml", ".ovr", ".rrd"]:
+                p = f + ext
+                if os.path.exists(p):
+                    try: os.remove(p)
+                    except: pass
+
+if os.path.exists(log_file):
+    with open(log_file, 'r') as f:
+        log = json.load(f)
+    log['failed'] = []
+    print(f"Resuming: {len(log.get('success', []))} already done")
+else:
+    log = {"success": [], "failed": [], "methods": {}}
+    print("Starting fresh")
+
+def save_log():
+    with open(log_file, 'w') as f:
+        json.dump(log, f, indent=2)
+
+print("Preparing reference...")
+try:
+    arcpy.management.BuildPyramids(reference_raster, pyramid_level=-1)
+except:
+    pass
+
+arcpy.env.workspace = input_folder
+raster_list = arcpy.ListRasters("*.tif", "TIF")
+
+print(f"Processing {len(raster_list)} images...")
+success_this_run = 0
+failed_this_run  = 0
+hist_applied     = 0
+
+for i, raster_name in enumerate(raster_list, 1):
+    in_path  = os.path.join(input_folder,  raster_name)
+    out_path = os.path.join(output_folder, raster_name)
+
+    if raster_name in log.get('success', []):
+        print(f"[{i}] SKIP {raster_name[:40]}")
+        continue
+
+    print(f"[{i}/{len(raster_list)}] {raster_name[:38]:38s} ", end="", flush=True)
+    used_method = None
+
+    try:
+        if arcpy.Exists(out_path):
+            arcpy.management.Delete(out_path)
+
+        for rms in [MAX_RMS_STRICT, MAX_RMS_NORMAL, MAX_RMS_RELAXED]:
+            result = try_register(in_path, out_path, reference_raster,
+                                  rms, method_name="direct")
+            if result:
+                try:
+                    orig = arcpy.Describe(in_path).extent
+                    reg  = arcpy.Describe(out_path).extent
+                    tracker.add_offset(
+                        ((orig.XMin+orig.XMax)/2, (orig.YMin+orig.YMax)/2),
+                        ((reg.XMin+reg.XMax)/2,   (reg.YMin+reg.YMax)/2))
+                except:
+                    pass
+                print(f"Direct (RMS<{rms:.0f}m)")
+                used_method = "direct"
+                break
+
+        if not used_method:
+            avg = tracker.get_average_offset()
+            if avg:
+                if arcpy.Exists(out_path): arcpy.management.Delete(out_path)
+                for rms in [MAX_RMS_STRICT, MAX_RMS_NORMAL, MAX_RMS_RELAXED]:
+                    result = try_register(in_path, out_path, reference_raster,
+                                          rms, method_name="offset", pre_offset=avg)
+                    if result:
+                        print(f"Offset (dx={avg[0]:.1f}m, RMS<{rms:.0f}m)")
+                        used_method = "offset"
+                        break
+
+        if not used_method:
+            if arcpy.Exists(out_path): arcpy.management.Delete(out_path)
+            need_hist, diff = needs_histogram_matching(in_path, reference_raster)
+            if not need_hist:
+                result = try_register(in_path, out_path, reference_raster,
+                                      MAX_RMS_LAST, method_name="relaxed")
+                if result:
+                    print(f"Relaxed RMS<{MAX_RMS_LAST:.0f}m (diff={diff:.1f})")
+                    used_method = "relaxed"
+            else:
+                hist_applied += 1
+                for rms in [MAX_RMS_STRICT, MAX_RMS_NORMAL, MAX_RMS_RELAXED, MAX_RMS_LAST]:
+                    result = try_register(in_path, out_path, reference_raster,
+                                          rms, method_name="hist", use_histogram=True)
+                    if result:
+                        print(f"Hist (diff={diff:.1f}, RMS<{rms:.0f}m)")
+                        used_method = "hist"
+                        break
+
+        if used_method:
+            success_this_run += 1
+            log['success'].append(raster_name)
+            log['methods'][raster_name] = used_method
+            save_log()
+        else:
+            print("FAILED")
+            failed_this_run += 1
+            log['failed'].append(raster_name)
+            save_log()
+            if arcpy.Exists(out_path):
+                arcpy.management.Delete(out_path)
+
+    except Exception as e:
+        print(f"ERROR: {str(e)[:40]}")
+        failed_this_run += 1
+        log['failed'].append(raster_name)
+        save_log()
+
+print(f"Done: {success_this_run} success | {failed_this_run} failed | {hist_applied} histogram")
+```
+
+***
+
+## STEP 3 — Visual QA in ArcGIS Pro
+
+**Manual step** —
+Drag several registered images onto the old mosaic in ArcGIS Pro and verify that they align correctly. If there is a visible shift, adjust the RMS thresholds in Step 2 and rerun the process.
+
+***
+
+## STEP 4 — Build Final Mosaics
+
+Filter out poor images using four quality criteria, then build two mosaics: **Mosaic_4Band** (4-band TIF with overviews for ML analysis) and **Mosaic_RGB** (3-band JPEG for display).
+
+```python
+import arcpy
+import os
+import shutil
+import numpy as np
+import xml.etree.ElementTree as ET
+
+output_folder     = r"C:\Users\snirt\kdm_29_02_24\Output_Work_Final"
+mosaic_folder     = r"C:\Users\snirt\kdm_29_02_24\Mosaics"
+gdb_path          = r"C:\Users\snirt\kdm_29_02_24\Mosaics\Mosaics.gdb"
+mosaic_4band_name = "Mosaic_4Band"
+mosaic_rgb_name   = "Mosaic_RGB"
+
+os.makedirs(mosaic_folder, exist_ok=True)
+
+# Confirmed: 4 bands (R,G,B,Mask), U8, band4: 1=tree / NoData=background
+MIN_GCPS        = 10
+MAX_MEAN_SHIFT  = 15.0
+MAX_MAX_SHIFT   = 40.0
+MAX_SIZE_FACTOR = 1.5
+
+for temp_dir in [os.path.join(mosaic_folder, "temp_rgb"),
+                 os.path.join(mosaic_folder, "temp_nir")]:
+    if os.path.exists(temp_dir):
+        shutil.rmtree(temp_dir)
+        print(f"Deleted temp folder: {temp_dir}")
+print("Cleanup done\n")
+
+def analyze_aux(aux_path):
+    try:
+        tree = ET.parse(aux_path)
+        root = tree.getroot()
+        src_nodes = root.findall(".//SourceGCPs/Double")
+        tgt_nodes = root.findall(".//TargetGCPs/Double")
+        if not src_nodes or not tgt_nodes:
+            return 0, 999, 999
+        src = [(float(src_nodes[j].text), float(src_nodes[j+1].text))
+               for j in range(0, len(src_nodes), 2)]
+        tgt = [(float(tgt_nodes[j].text), float(tgt_nodes[j+1].text))
+               for j in range(0, len(tgt_nodes), 2)]
+        shifts = [np.sqrt((t[0]-s[0])**2 + (t[1]-s[1])**2)
+                  for s, t in zip(src, tgt)]
+        return len(shifts), np.mean(shifts), np.max(shifts)
+    except:
+        return 0, 999, 999
+
+all_files = sorted([f for f in os.listdir(output_folder) if f.endswith(".tif")])
+sizes = {}
+print(f"Scanning {len(all_files)} images...")
+for name in all_files:
+    try:
+        ext = arcpy.Describe(os.path.join(output_folder, name)).extent
+        sizes[name] = (ext.XMax - ext.XMin, ext.YMax - ext.YMin)
+    except:
+        pass
+
+median_w = np.median([s[0] for s in sizes.values()])
+median_h = np.median([s[1] for s in sizes.values()])
+MAX_W    = median_w * MAX_SIZE_FACTOR
+MAX_H    = median_h * MAX_SIZE_FACTOR
+print(f"Median: {median_w:.1f}m x {median_h:.1f}m  |  Max: {MAX_W:.1f}m x {MAX_H:.1f}m\n")
+
+bad_images = set()
+for name in all_files:
+    tif_path = os.path.join(output_folder, name)
+    aux_path = tif_path + ".aux.xml"
+    if not os.path.exists(aux_path):
+        bad_images.add(name); continue
+    n, mean_s, max_s = analyze_aux(aux_path)
+    if n < MIN_GCPS: bad_images.add(name)
+    if mean_s > MAX_MEAN_SHIFT or max_s > MAX_MAX_SHIFT: bad_images.add(name)
+    if name in sizes:
+        w, h = sizes[name]
+        if w > MAX_W or h > MAX_H: bad_images.add(name)
+
+good_images = [f for f in all_files if f not in bad_images]
+print(f"Total:{len(all_files)}  Good:{len(good_images)}  Bad:{len(bad_images)}\n")
+
+with open(os.path.join(mosaic_folder, "bad_images.txt"), 'w') as f:
+    for name in sorted(bad_images):
+        f.write(f"{name}\n")
+
+if not arcpy.Exists(gdb_path):
+    arcpy.CreateFileGDB_management(mosaic_folder, "Mosaics.gdb")
+    print(f"Created GDB: {gdb_path}\n")
+
+spatial_ref = arcpy.SpatialReference(32636)  # WGS 1984 UTM Zone 36N
+
+def add_rasters_in_batches(mosaic_path, full_paths, batch_size=200):
+    for i in range(0, len(full_paths), batch_size):
+        batch = full_paths[i:i+batch_size]
+        arcpy.AddRastersToMosaicDataset_management(
+            in_mosaic_dataset=mosaic_path, raster_type="Raster Dataset",
+            input_path=";".join(batch), update_cellsize_ranges="UPDATE_CELL_SIZES",
+            update_boundary="UPDATE_BOUNDARY", update_overviews="NO_OVERVIEWS",
+            duplicate_items_action="ALLOW_DUPLICATES"
+        )
+        print(f"  Batch {i//batch_size + 1}: {len(batch)} images added")
+
+def build_4band_mosaic(mosaic_name, image_list, spatial_ref, gdb_path):
+    mosaic_path = os.path.join(gdb_path, mosaic_name)
+    if arcpy.Exists(mosaic_path):
+        arcpy.Delete_management(mosaic_path)
+        print(f"Deleted existing: {mosaic_name}")
+    print(f"Creating {mosaic_name} - 4 bands TIF ({len(image_list)} images)...")
+    arcpy.CreateMosaicDataset_management(
+        in_workspace=gdb_path, in_mosaicdataset_name=mosaic_name,
+        coordinate_system=spatial_ref, num_bands=4, pixel_type="8_BIT_UNSIGNED"
+    )
+    arcpy.SetMosaicDatasetProperties_management(
+        in_mosaic_dataset=mosaic_path, mosaic_operator="FIRST"
+    )
+    add_rasters_in_batches(mosaic_path, [os.path.join(output_folder, f) for f in image_list])
+    print(f"  Building boundary...")
+    arcpy.BuildBoundary_management(mosaic_path)
+    print(f"  Building overviews...")
+    arcpy.BuildOverviews_management(
+        in_mosaic_dataset=mosaic_path,
+        define_missing_tiles="DEFINE_MISSING_TILES",
+        generate_overviews="GENERATE_OVERVIEWS",
+        generate_missing_images="GENERATE_MISSING_IMAGES",
+        regenerate_stale_images="REGENERATE_STALE_IMAGES"
+    )
+    print(f"  Done: {mosaic_name}\n")
+    return mosaic_path
+
+def build_rgb_jpeg_mosaic(mosaic_name, image_list, spatial_ref, gdb_path):
+    mosaic_path = os.path.join(gdb_path, mosaic_name)
+    if arcpy.Exists(mosaic_path):
+        arcpy.Delete_management(mosaic_path)
+        print(f"Deleted existing: {mosaic_name}")
+    print(f"Creating {mosaic_name} - 3 bands JPEG ({len(image_list)} images)...")
+    arcpy.CreateMosaicDataset_management(
+        in_workspace=gdb_path, in_mosaicdataset_name=mosaic_name,
+        coordinate_system=spatial_ref, num_bands=3, pixel_type="8_BIT_UNSIGNED"
+    )
+    arcpy.SetMosaicDatasetProperties_management(
+        in_mosaic_dataset=mosaic_path, mosaic_operator="FIRST", JPEG_quality=85
+    )
+    add_rasters_in_batches(mosaic_path, [os.path.join(output_folder, f) for f in image_list])
+
+    # Save .rft.xml to file — inline XML not supported by ArcGIS
+    rft_path = os.path.join(mosaic_folder, "extract_rgb.rft.xml")
+    with open(rft_path, 'w') as f:
+        f.write("""<RasterFunctionTemplate xsi:type='typens:RasterFunctionTemplate'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:xs='http://www.w3.org/2001/XMLSchema'
+    xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0'>
+  <Name>ExtractRGB</Name>
+  <Function xsi:type='typens:ExtractBandFunction'>
+    <BandIDs>
+      <Long>0</Long>
+      <Long>1</Long>
+      <Long>2</Long>
+    </BandIDs>
+  </Function>
+</RasterFunctionTemplate>""")
+
+    print(f"  Extracting RGB bands only (dropping band 4)...")
+    arcpy.EditRasterFunction_management(
+        in_mosaic_dataset=mosaic_path,
+        edit_mosaic_dataset_item="EDIT_MOSAIC_DATASET",
+        edit_options="INSERT",
+        function_chain_definition=rft_path
+    )
+    print(f"  Building boundary...")
+    arcpy.BuildBoundary_management(mosaic_path)
+    print(f"  Done: {mosaic_name}\n")
+    return mosaic_path
+
+path_4band = build_4band_mosaic(mosaic_4band_name, good_images, spatial_ref, gdb_path)
+path_rgb   = build_rgb_jpeg_mosaic(mosaic_rgb_name, good_images, spatial_ref, gdb_path)
+
+print(f"{'='*50}")
+print(f"DONE")
+print(f"  4-Band TIF: {path_4band}  ({len(good_images)} images)")
+print(f"  RGB JPEG:   {path_rgb}   ({len(good_images)} images)")
+print(f"{'='*50}")
+```
+
+***
+
+## Output Files
+
+| File | Bands | Format | Purpose |
+|---|---|---|---|
+| Mosaic_4Band | 4 (R,G,B,Mask) | TIF + Overviews | ML / tree detection |
+| Mosaic_RGB | 3 (R,G,B) | JPEG q=85 | Display / export |
+
+Sources
+
+
+
+
+
+ ## STEP 5 — Export Final Mosaics
+
+Export the final mosaic datasets to high-resolution TIFF files: one analytical 4-band TIFF and one compressed RGB TIFF.
+
+import arcpy
+import os
+
+# ==========================================
+# CONFIGURATION
+# ==========================================
+gdb_path          = r"C:\Users\snirt\01_03_23\Mosaics\Mosaics.gdb"
+mosaic_4band_name = "Mosaic_4Band"
+mosaic_rgb_name   = "Mosaic_RGB"
+export_folder     = r"C:\Users\snirt\01_03_23\Final_Exports"
+
+os.makedirs(export_folder, exist_ok=True)
+
+# Full paths to the mosaics inside the GDB
+mosaic_4band_path = os.path.join(gdb_path, mosaic_4band_name)
+mosaic_rgb_path   = os.path.join(gdb_path, mosaic_rgb_name)
+
+# ==========================================
+# EXPORT 1: HIGH-RES 4-BAND TIFF (Target < 5GB)
+# ==========================================
+def export_4band_tiff(in_mosaic, out_folder):
+    out_name = "Final_Orthomosaic_4Band.tif"
+    out_path = os.path.join(out_folder, out_name)
+    
+    if arcpy.Exists(out_path):
+        arcpy.management.Delete(out_path)
+        
+    print(f"Exporting 4-Band TIFF with LZW Compression (Lossless)...")
+    print(f"Destination: {out_path}")
+    
+    # Enable LZW compression to significantly reduce file size without losing data
+    arcpy.env.compression = "LZW"
+    
+    arcpy.management.CopyRaster(
+        in_raster=in_mosaic,
+        out_rasterdataset=out_path,
+        format="TIFF",
+        pixel_type="8_BIT_UNSIGNED",
+        nodata_value="256" # Preserves transparency at the edges
+        # Note: If the file is still >5GB, you can force a lower resolution by adding:
+        # cell_size="0.05" (which means 5cm per pixel)
+    )
+    print("  Done exporting 4-Band TIFF.\n")
+
+# ==========================================
+# EXPORT 2: HIGH-RES RGB IMAGE (JPEG Compression)
+# ==========================================
+def export_rgb_image(in_mosaic, out_folder):
+    # We use .tif extension but with JPEG compression. 
+    # This acts exactly like a JPEG (small file size) but supports transparent backgrounds!
+    out_name = "Final_Orthomosaic_RGB.tif"
+    out_path = os.path.join(out_folder, out_name)
+    
+    if arcpy.Exists(out_path):
+        arcpy.management.Delete(out_path)
+        
+    print(f"Exporting RGB Image with JPEG Compression (High Quality, Small Size)...")
+    print(f"Destination: {out_path}")
+    
+    # Set compression to JPEG with 90% quality (excellent visual quality, tiny file size)
+    arcpy.env.compression = "JPEG 90"
+    
+    arcpy.management.CopyRaster(
+        in_raster=in_mosaic,
+        out_rasterdataset=out_path,
+        format="TIFF",
+        pixel_type="8_BIT_UNSIGNED",
+        nodata_value="256"
+    )
+    print("  Done exporting RGB Image.\n")
+
+# ==========================================
+# EXECUTION
+# ==========================================
+print("Starting Exports...\n" + "="*50)
+
+try:
+    # 1. Export the analytical 4-Band map
+    export_4band_tiff(mosaic_4band_path, export_folder)
+    
+    # 2. Export the visual RGB map
+    export_rgb_image(mosaic_rgb_path, export_folder)
+    
+    print("ALL EXPORTS COMPLETED SUCCESSFULLY.")
+    print("Check your files in:", export_folder)
+    
+except Exception as e:
+    print(f"ERROR during export: {e}")

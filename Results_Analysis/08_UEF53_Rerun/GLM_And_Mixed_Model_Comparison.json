@@ -1,0 +1,74 @@
+{
+  "n": 167,
+  "n_distinct_trees": 149,
+  "n_repeated_trees": 18,
+  "ols_baseline": {
+    "R2": 0.5285,
+    "cvR2": 0.4563,
+    "cv_seed_range": [
+      0.4478,
+      0.488
+    ]
+  },
+  "gamma_glm_log_link": {
+    "dispersion_phi": 0.176,
+    "deviance": 28.123,
+    "coefficients": {
+      "intercept": {
+        "coef": 0.9118,
+        "se": 0.0515,
+        "t": 17.699,
+        "p": 0.0
+      },
+      "cultivar": {
+        "coef": 0.2555,
+        "se": 0.0681,
+        "t": 3.752,
+        "p": 0.0002
+      },
+      "EBI": {
+        "coef": -0.0862,
+        "se": 0.0493,
+        "t": -1.748,
+        "p": 0.0824
+      },
+      "EBIxcultivar": {
+        "coef": 0.2258,
+        "se": 0.0705,
+        "t": 3.204,
+        "p": 0.0016
+      },
+      "climate": {
+        "coef": 0.4102,
+        "se": 0.0539,
+        "t": 7.614,
+        "p": 0.0
+      },
+      "Growth_April": {
+        "coef": -0.1094,
+        "se": 0.0508,
+        "t": -2.156,
+        "p": 0.0326
+      }
+    },
+    "R2_natural_scale": 0.5105,
+    "cvR2_natural_scale": 0.441,
+    "cv_seed_range": [
+      0.3633,
+      0.468
+    ]
+  },
+  "mixed_model_random_intercept": {
+    "sigma2_between_tree": 0.0,
+    "sigma2_within_residual": 4.4839,
+    "ICC": 0.0,
+    "n_tree_groups": 149,
+    "n_trees_with_gt1_obs": 18,
+    "R2_in_sample_with_BLUPs": 0.5285,
+    "cvR2": 0.4563,
+    "cv_seed_range": [
+      0.4478,
+      0.488
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+# ============================================================================
+#  Kedma almond UAV phenology - repository contents
+#  Tracked:  code, analysis pipeline, result figures and JSON, thesis document
+#  Excluded: raw imagery, third-party PDFs, grower data, secrets, scratch files
+# ============================================================================
+
+# ── Raw and derived imagery (tens of GB) ────────────────────────────────────
+4band_mosaic/
+*.tif
+*.tiff
+*.tfw
+*.ovr
+*.aux.xml
+*.tif.xml
+*.vat.dbf
+*.vat.cpg
+*.sr.lock
+*.lock
+raw_drone_sample.jpg
+
+# ── Model weights and checkpoints ───────────────────────────────────────────
+*.pth
+*.pt
+*.h5
+*.ckpt
+
+# ── Third-party material: published papers, other students' theses ──────────
+#    Not redistributable. Cite them instead.
+Thesis_Writing/References/
+Thesis_Writing/Example_Thesis/
+Thesis_Writing/Thesis_Example_Formatting_Guidelines.pdf
+
+# ── Grower / field data (third-party, commercially sensitive) ───────────────
+Trees_Data_Survey/
+Climate_Data/
+*.gpkg
+
+# ── Superseded drafts, archives and scratch ────────────────────────────────
+_Archive/
+**/archive/
+**/archive_diagnostics/
+sed*
+~$*
+*.tmp
+SESSION_HANDOFF.md
+
+# ── Secrets: never commit credentials ───────────────────────────────────────
+.env
+*.env
+secrets.*
+*credentials*
+*api_key*
+
+# ── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ── OS / editor ─────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.idea/
+.vscode/
+
+# ── Internal working documents (not for the shared repository) ──────────────
+THESIS_PROGRESS_LOG.md
+CLAUDE_PROJECT_INSTRUCTIONS.md
+push_to_github.sh
+
+# ── Training notebooks (own work, outputs stripped) ────────────────────────
+!notebooks/
+
+# ── Superseded presentation decks (kept locally, not shared) ───────────────
+Analysis_Presentation_Hebrew.html
+Analysis_Presentation_OLD_2026-07-03.html
+
+# ── Superseded thesis drafts and duplicate proposal versions ────────────────
+Thesis_Writing/Almond_Thesis_BGU.docx
+Thesis_Writing/Almond_Thesis_BGU.pdf
+Thesis_Writing/Results_Chapter_Reconciled.docx
+Thesis_Writing/progress_report.pdf
+Thesis_Writing/Mosaic_Creation_Flow.docx
+Thesis_Writing/Research_Proposal/*.docx
+Thesis_Writing/Research_Proposal/*.doc
+Thesis_Writing/Research_Proposal/Research Proposa -l Snir Tahasa .pdf
+Thesis_Writing/Research_Proposal/Research Proposal Snir Tahasa Short Version.pdf

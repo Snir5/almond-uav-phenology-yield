@@ -1,0 +1,427 @@
+{
+  "note": "Per request: creative new canopy/bloom features (all derived from the two existing pixel-level extractions on disk, CanopyStructure_v5 and BloomFraction_v3, no new rasterio extraction was possible in this sandbox; BloomFraction/BrightFraction are the already-extracted Otsu-threshold-crossing-percentage features, the closest existing analog to a literal EBI-specific pixel threshold, which would need a new rasterio extraction to build directly). Tested standalone, in same-year 2023 ANCOVA, in pairwise combination with each other, and combined with the full existing feature set.",
+  "feature_definitions": {
+    "EBI_density": "EBI_Norm / CanopyArea_m2",
+    "BloomVolume": "EBI_Norm * CanopyArea_m2",
+    "BloomPixelVolume": "BloomFraction * CanopyPixelCount (literal Otsu-classified bloom pixel count)",
+    "EBI_x_BloomFraction": "EBI_Norm * BloomFraction (two distinct bloom channels)",
+    "EBI_x_CanopyCover": "EBI_Norm * CanopyCoverFraction",
+    "BrightFraction_x_CanopyArea": "BrightFraction * CanopyArea_m2"
+  },
+  "partA_2023_all_matched_trees": {
+    "n_2023_yield_trees_matched_to_master": 161,
+    "n_with_full_feature_set": 151,
+    "standalone_correlations": {
+      "EBI": {
+        "pooled": {
+          "r": 0.1373,
+          "p": 0.0927,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.2869,
+          "p": 0.0071,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.2556,
+          "p": 0.0415,
+          "n": 64
+        }
+      },
+      "CanopyArea": {
+        "pooled": {
+          "r": -0.1744,
+          "p": 0.0322,
+          "n": 151
+        },
+        "UEF": {
+          "r": -0.0298,
+          "p": 0.784,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.2369,
+          "p": 0.0595,
+          "n": 64
+        }
+      },
+      "CanopyCover": {
+        "pooled": {
+          "r": -0.0477,
+          "p": 0.5606,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.1441,
+          "p": 0.1831,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.1114,
+          "p": 0.3806,
+          "n": 64
+        }
+      },
+      "ShadowFraction": {
+        "pooled": {
+          "r": 0.0189,
+          "p": 0.8175,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.0711,
+          "p": 0.5126,
+          "n": 87
+        },
+        "cv53": {
+          "r": 0.1409,
+          "p": 0.2669,
+          "n": 64
+        }
+      },
+      "BloomFraction": {
+        "pooled": {
+          "r": 0.1286,
+          "p": 0.1156,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.2169,
+          "p": 0.0436,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.3101,
+          "p": 0.0126,
+          "n": 64
+        }
+      },
+      "BrightFraction": {
+        "pooled": {
+          "r": 0.1075,
+          "p": 0.1891,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.1786,
+          "p": 0.0979,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.3031,
+          "p": 0.0149,
+          "n": 64
+        }
+      },
+      "EBI_density": {
+        "pooled": {
+          "r": 0.034,
+          "p": 0.6788,
+          "n": 151
+        },
+        "UEF": {
+          "r": -0.0275,
+          "p": 0.8006,
+          "n": 87
+        },
+        "cv53": {
+          "r": 0.1244,
+          "p": 0.3274,
+          "n": 64
+        }
+      },
+      "BloomVolume": {
+        "pooled": {
+          "r": -0.1168,
+          "p": 0.1532,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.0627,
+          "p": 0.5638,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.2809,
+          "p": 0.0246,
+          "n": 64
+        }
+      },
+      "BloomPixelVolume": {
+        "pooled": {
+          "r": -0.0318,
+          "p": 0.6986,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.1164,
+          "p": 0.2828,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.3134,
+          "p": 0.0117,
+          "n": 64
+        }
+      },
+      "EBI_x_BloomFraction": {
+        "pooled": {
+          "r": 0.1364,
+          "p": 0.0948,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.243,
+          "p": 0.0233,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.3029,
+          "p": 0.015,
+          "n": 64
+        }
+      },
+      "EBI_x_CanopyCover": {
+        "pooled": {
+          "r": 0.0154,
+          "p": 0.8507,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.2346,
+          "p": 0.0288,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.2059,
+          "p": 0.1027,
+          "n": 64
+        }
+      },
+      "BrightFraction_x_CanopyArea": {
+        "pooled": {
+          "r": -0.0499,
+          "p": 0.5429,
+          "n": 151
+        },
+        "UEF": {
+          "r": 0.0942,
+          "p": 0.3857,
+          "n": 87
+        },
+        "cv53": {
+          "r": -0.318,
+          "p": 0.0104,
+          "n": 64
+        }
+      }
+    },
+    "bh_fdr_pooled": {
+      "EBI": 0.3468,
+      "CanopyArea": 0.3468,
+      "CanopyCover": 0.8383,
+      "ShadowFraction": 0.8507,
+      "BloomFraction": 0.3468,
+      "BrightFraction": 0.3782,
+      "EBI_density": 0.8383,
+      "BloomVolume": 0.3677,
+      "BloomPixelVolume": 0.8383,
+      "EBI_x_BloomFraction": 0.3468,
+      "EBI_x_CanopyCover": 0.8507,
+      "BrightFraction_x_CanopyArea": 0.8383
+    },
+    "EBI_x_cultivar_interaction_2023_all_trees": {
+      "F": 5.927,
+      "p": 0.0033
+    }
+  },
+  "partB_pairwise_combos_2023": {
+    "n_candidates": 66,
+    "n_survive_FDR": 0,
+    "top10_by_raw_p": {
+      "BloomFraction_x_EBI_x_BloomFraction": {
+        "F": 2.231,
+        "p": 0.1374,
+        "p_fdr": 0.9171
+      },
+      "BloomFraction_x_BrightFraction": {
+        "F": 2.144,
+        "p": 0.1452,
+        "p_fdr": 0.9171
+      },
+      "CanopyArea_x_ShadowFraction": {
+        "F": 2.105,
+        "p": 0.149,
+        "p_fdr": 0.9171
+      },
+      "BrightFraction_x_EBI_x_BloomFraction": {
+        "F": 1.939,
+        "p": 0.1659,
+        "p_fdr": 0.9171
+      },
+      "ShadowFraction_x_BrightFraction_x_CanopyArea": {
+        "F": 1.843,
+        "p": 0.1766,
+        "p_fdr": 0.9171
+      },
+      "ShadowFraction_x_BloomPixelVolume": {
+        "F": 1.551,
+        "p": 0.2149,
+        "p_fdr": 0.9171
+      },
+      "BloomFraction_x_EBI": {
+        "F": 1.525,
+        "p": 0.2189,
+        "p_fdr": 0.9171
+      },
+      "BrightFraction_x_EBI": {
+        "F": 1.424,
+        "p": 0.2347,
+        "p_fdr": 0.9171
+      },
+      "ShadowFraction_x_BloomVolume": {
+        "F": 1.395,
+        "p": 0.2394,
+        "p_fdr": 0.9171
+      },
+      "EBI_x_BloomFraction_x_EBI": {
+        "F": 1.306,
+        "p": 0.255,
+        "p_fdr": 0.9171
+      }
+    }
+  },
+  "partC_pooled_2022_2023_vs_full_feature_set": {
+    "n": 169,
+    "baseline_cvR2": 0.4271,
+    "forward_selection_main_seed42": {
+      "selected": [
+        "EBI_x_BloomFraction",
+        "ShadowFraction"
+      ],
+      "final_cvR2": 0.4471,
+      "gain": 0.02
+    },
+    "robustness_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "ShadowFraction",
+          "BrightFraction"
+        ],
+        "final_cvR2": 0.434
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "ShadowFraction",
+          "EBI_x_BloomFraction"
+        ],
+        "final_cvR2": 0.4786
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "EBI_x_BloomFraction",
+          "ShadowFraction",
+          "BloomVolume_x_cultivar",
+          "EBI_density",
+          "CanopyArea_x_cultivar",
+          "BloomFraction"
+        ],
+        "final_cvR2": 0.4131
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "BrightFraction",
+          "ShadowFraction"
+        ],
+        "final_cvR2": 0.4693
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "ShadowFraction_x_cultivar",
+          "EBI_x_BloomFraction_x_cultivar",
+          "BloomFraction_x_cultivar"
+        ],
+        "final_cvR2": 0.4799
+      }
+    ],
+    "how_often_selected_of_6": {
+      "EBI_x_BloomFraction": 3,
+      "ShadowFraction": 5,
+      "BrightFraction": 2,
+      "BloomVolume_x_cultivar": 1,
+      "EBI_density": 1,
+      "CanopyArea_x_cultivar": 1,
+      "BloomFraction": 1,
+      "ShadowFraction_x_cultivar": 1,
+      "EBI_x_BloomFraction_x_cultivar": 1,
+      "BloomFraction_x_cultivar": 1
+    }
+  },
+  "partC2_combined_with_full_recommended_model_incl_physiology": {
+    "n": 167,
+    "baseline_cvR2": 0.4563,
+    "forward_selection_main_seed42": {
+      "selected": [
+        "BrightFraction",
+        "ShadowFraction"
+      ],
+      "final_cvR2": 0.4744,
+      "gain": 0.0181
+    },
+    "robustness_5_seeds": [
+      {
+        "seed": 1,
+        "selected": [
+          "BrightFraction",
+          "ShadowFraction"
+        ],
+        "final_cvR2": 0.4902
+      },
+      {
+        "seed": 7,
+        "selected": [
+          "BrightFraction",
+          "ShadowFraction"
+        ],
+        "final_cvR2": 0.4981
+      },
+      {
+        "seed": 13,
+        "selected": [
+          "BrightFraction",
+          "ShadowFraction"
+        ],
+        "final_cvR2": 0.4586
+      },
+      {
+        "seed": 99,
+        "selected": [
+          "EBI_x_BloomFraction",
+          "ShadowFraction",
+          "BloomVolume_x_cultivar"
+        ],
+        "final_cvR2": 0.5238
+      },
+      {
+        "seed": 2024,
+        "selected": [
+          "ShadowFraction",
+          "BrightFraction"
+        ],
+        "final_cvR2": 0.4856
+      }
+    ],
+    "how_often_selected_of_6": {
+      "BrightFraction": 5,
+      "ShadowFraction": 6,
+      "EBI_x_BloomFraction": 1,
+      "BloomVolume_x_cultivar": 1
+    }
+  }
+}

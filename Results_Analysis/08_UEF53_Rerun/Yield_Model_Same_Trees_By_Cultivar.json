@@ -1,0 +1,72 @@
+{
+  "note": "Splits the section-34 same-tree panel (18 trees, EBI in all 3 years) by cultivar, to test whether pooling UEF and cultivar 53 together dilutes the effect, given the existing ANCOVA finding that EBI-yield reverses sign by cultivar (UEF r=+0.29, cv-53 r=-0.26, full sample). If the reversal holds within this same-tree panel too, splitting should show a LARGER |r| per cultivar than the pooled +0.31/+0.33.",
+  "by_cultivar": {
+    "UEF": {
+      "n_trees": 9,
+      "n_rows": 27,
+      "within_tree_demeaned": {
+        "r": 0.0789,
+        "naive_p": 0.6957,
+        "bootstrap_95CI": [
+          -0.416,
+          0.457
+        ]
+      },
+      "pooled_not_demeaned": {
+        "r": 0.2411,
+        "p": 0.2257
+      },
+      "per_year": {
+        "2022": {
+          "n": 9,
+          "r": 0.5177,
+          "p": 0.1534
+        },
+        "2023": {
+          "n": 9,
+          "r": 0.1443,
+          "p": 0.7112
+        },
+        "2024": {
+          "n": 9,
+          "r": 0.4181,
+          "p": 0.2627
+        }
+      }
+    },
+    "53": {
+      "n_trees": 9,
+      "n_rows": 27,
+      "within_tree_demeaned": {
+        "r": 0.5318,
+        "naive_p": 0.0043,
+        "bootstrap_95CI": [
+          0.226,
+          0.787
+        ]
+      },
+      "pooled_not_demeaned": {
+        "r": 0.5303,
+        "p": 0.0044
+      },
+      "per_year": {
+        "2022": {
+          "n": 9,
+          "r": 0.17,
+          "p": 0.6618
+        },
+        "2023": {
+          "n": 9,
+          "r": -0.4676,
+          "p": 0.2044
+        },
+        "2024": {
+          "n": 9,
+          "r": -0.3873,
+          "p": 0.3031
+        }
+      }
+    }
+  },
+  "pooled_both_cultivars_reference": "r_within=+0.327, r_pooled=+0.311 (section 34, Yield_Model_Same_Trees_Panel.json)"
+}

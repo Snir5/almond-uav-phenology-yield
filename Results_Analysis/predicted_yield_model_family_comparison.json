@@ -1,0 +1,30 @@
+{
+ "RS_only": {
+  "features": [
+   "climate",
+   "Growth_April",
+   "cultivar",
+   "HighEBI_frac_055"
+  ],
+  "OLS/GLM": 0.8441,
+  "Ridge": 0.8441,
+  "Poly-2": 0.8477,
+  "RandomForest": 0.8527,
+  "kNN(k=20)": 0.8483,
+  "GLMM(re tree)": 0.8441
+ },
+ "with_physiology": {
+  "features": [
+   "CNC_June",
+   "SWP_April",
+   "cultivar",
+   "Growth_April"
+  ],
+  "OLS/GLM": 0.9313,
+  "Ridge": 0.9313,
+  "Poly-2": 0.941,
+  "RandomForest": 0.9797,
+  "kNN(k=20)": 0.9596,
+  "GLMM(re tree)": 0.9313
+ }
+}

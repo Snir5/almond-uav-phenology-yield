@@ -1,0 +1,382 @@
+{
+  "n": 1793,
+  "target": "predicted_Yield (MODELLED, not measured, per project convention)",
+  "excluded_circular_fields": [
+    "SWP_April",
+    "SWP_MayJune",
+    "SWP_June",
+    "Growth_MayJune",
+    "Growth_June",
+    "CNC_June",
+    "TG_clusters",
+    "SWP_clusters"
+  ],
+  "baseline": {
+    "features": [
+      "intercept",
+      "cultivar",
+      "EBI",
+      "EBIxcultivar",
+      "climate",
+      "Growth_April"
+    ],
+    "AIC": 2809.6,
+    "R2_in_sample": 0.8456,
+    "MAE_in_sample": 0.3739,
+    "cvR2_mean": 0.8441,
+    "cvR2_all_seeds": [
+      0.843,
+      0.8442,
+      0.8442,
+      0.8445,
+      0.8442,
+      0.8443
+    ]
+  },
+  "screen_all_34_candidates": {
+    "CanopyArea": {
+      "dAIC": 1.95,
+      "cvR2_screen": 0.8437,
+      "d_cvR2_screen": -0.0004
+    },
+    "CanopyCover": {
+      "dAIC": -11.16,
+      "cvR2_screen": 0.8448,
+      "d_cvR2_screen": 0.0007
+    },
+    "ShadowFraction": {
+      "dAIC": 1.12,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0005
+    },
+    "BloomFraction": {
+      "dAIC": 1.75,
+      "cvR2_screen": 0.8437,
+      "d_cvR2_screen": -0.0004
+    },
+    "BrightFraction": {
+      "dAIC": 0.39,
+      "cvR2_screen": 0.8437,
+      "d_cvR2_screen": -0.0004
+    },
+    "EBI_density": {
+      "dAIC": 1.84,
+      "cvR2_screen": 0.7702,
+      "d_cvR2_screen": -0.0739
+    },
+    "BloomVolume": {
+      "dAIC": 1.69,
+      "cvR2_screen": 0.8438,
+      "d_cvR2_screen": -0.0003
+    },
+    "BloomPixelVolume": {
+      "dAIC": 1.65,
+      "cvR2_screen": 0.8438,
+      "d_cvR2_screen": -0.0003
+    },
+    "EBI_x_BloomFraction": {
+      "dAIC": 1.74,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0004
+    },
+    "EBI_x_CanopyCover": {
+      "dAIC": -7.36,
+      "cvR2_screen": 0.8445,
+      "d_cvR2_screen": 0.0004
+    },
+    "BrightFraction_x_CanopyArea": {
+      "dAIC": -0.32,
+      "cvR2_screen": 0.8439,
+      "d_cvR2_screen": -0.0002
+    },
+    "EBI_Norm_std": {
+      "dAIC": 1.32,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0005
+    },
+    "EBI_Norm_var": {
+      "dAIC": 1.17,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0004
+    },
+    "EBI_Norm_median": {
+      "dAIC": 1.69,
+      "cvR2_screen": 0.8433,
+      "d_cvR2_screen": -0.0008
+    },
+    "EBI_Norm_P10": {
+      "dAIC": 1.49,
+      "cvR2_screen": 0.8438,
+      "d_cvR2_screen": -0.0003
+    },
+    "EBI_Norm_P25": {
+      "dAIC": 1.88,
+      "cvR2_screen": 0.8434,
+      "d_cvR2_screen": -0.0007
+    },
+    "EBI_Norm_P75": {
+      "dAIC": 0.46,
+      "cvR2_screen": 0.8438,
+      "d_cvR2_screen": -0.0003
+    },
+    "EBI_Norm_P90": {
+      "dAIC": 1.8,
+      "cvR2_screen": 0.8433,
+      "d_cvR2_screen": -0.0008
+    },
+    "EBI_Norm_IQR": {
+      "dAIC": 1.31,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0005
+    },
+    "EBI_Norm_skew": {
+      "dAIC": -0.37,
+      "cvR2_screen": 0.8437,
+      "d_cvR2_screen": -0.0004
+    },
+    "EBI_Norm_kurtosis": {
+      "dAIC": 2.0,
+      "cvR2_screen": 0.8435,
+      "d_cvR2_screen": -0.0005
+    },
+    "EBI_Norm_CV": {
+      "dAIC": 1.96,
+      "cvR2_screen": 0.8435,
+      "d_cvR2_screen": -0.0006
+    },
+    "EBI_OtsuFrac": {
+      "dAIC": 1.99,
+      "cvR2_screen": 0.8435,
+      "d_cvR2_screen": -0.0006
+    },
+    "HighEBI_frac_055": {
+      "dAIC": 0.88,
+      "cvR2_screen": 0.8438,
+      "d_cvR2_screen": -0.0003
+    },
+    "HighEBI_density_055": {
+      "dAIC": 1.6,
+      "cvR2_screen": 0.8437,
+      "d_cvR2_screen": -0.0003
+    },
+    "HighEBI_frac_065": {
+      "dAIC": 2.0,
+      "cvR2_screen": 0.8432,
+      "d_cvR2_screen": -0.0008
+    },
+    "HighEBI_density_065": {
+      "dAIC": 0.96,
+      "cvR2_screen": 0.8434,
+      "d_cvR2_screen": -0.0007
+    },
+    "HighEBI_frac_075": {
+      "dAIC": 1.71,
+      "cvR2_screen": 0.8433,
+      "d_cvR2_screen": -0.0008
+    },
+    "HighEBI_density_075": {
+      "dAIC": 0.68,
+      "cvR2_screen": 0.8435,
+      "d_cvR2_screen": -0.0006
+    },
+    "TBL": {
+      "dAIC": 0.95,
+      "cvR2_screen": 0.8438,
+      "d_cvR2_screen": -0.0003
+    },
+    "ICBI": {
+      "dAIC": 1.06,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0005
+    },
+    "TICBL": {
+      "dAIC": 0.78,
+      "cvR2_screen": 0.8437,
+      "d_cvR2_screen": -0.0004
+    },
+    "UBI": {
+      "dAIC": 1.32,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0005
+    },
+    "CCAB": {
+      "dAIC": 1.18,
+      "cvR2_screen": 0.8435,
+      "d_cvR2_screen": -0.0006
+    }
+  },
+  "forward_selection_history": [
+    {
+      "step": 0,
+      "added": null,
+      "cvR2_mean": 0.8441,
+      "features": [
+        "intercept",
+        "cultivar",
+        "EBI",
+        "EBIxcultivar",
+        "climate",
+        "Growth_April"
+      ]
+    }
+  ],
+  "final_model": {
+    "features": [
+      "intercept",
+      "cultivar",
+      "EBI",
+      "EBIxcultivar",
+      "climate",
+      "Growth_April"
+    ],
+    "added_features": [],
+    "AIC": 2809.6,
+    "R2_in_sample": 0.8456,
+    "MAE_in_sample": 0.3739,
+    "cvR2_mean": 0.8441,
+    "cvR2_range": [
+      0.843,
+      0.8445
+    ],
+    "cvR2_all_seeds": [
+      0.843,
+      0.8442,
+      0.8442,
+      0.8445,
+      0.8442,
+      0.8443
+    ]
+  },
+  "physiology_fields_tested": [
+    "SWP_April",
+    "SWP_May_June",
+    "SWP_June",
+    "Growth_May_June",
+    "Growth_June",
+    "CNC_June"
+  ],
+  "screen_physiology_fields_alone": {
+    "SWP_April": {
+      "dAIC": -18.71,
+      "cvR2_screen": 0.8454,
+      "d_cvR2_screen": 0.0013
+    },
+    "SWP_May_June": {
+      "dAIC": -4.31,
+      "cvR2_screen": 0.8442,
+      "d_cvR2_screen": 0.0002
+    },
+    "SWP_June": {
+      "dAIC": 0.98,
+      "cvR2_screen": 0.8436,
+      "d_cvR2_screen": -0.0005
+    },
+    "Growth_May_June": {
+      "dAIC": -219.76,
+      "cvR2_screen": 0.8621,
+      "d_cvR2_screen": 0.018
+    },
+    "Growth_June": {
+      "dAIC": -537.2,
+      "cvR2_screen": 0.8843,
+      "d_cvR2_screen": 0.0402
+    },
+    "CNC_June": {
+      "dAIC": -1477.77,
+      "cvR2_screen": 0.9316,
+      "d_cvR2_screen": 0.0875
+    }
+  },
+  "forward_selection_history_with_physiology": [
+    {
+      "step": 0,
+      "added": null,
+      "cvR2_mean": 0.8441,
+      "features": [
+        "intercept",
+        "cultivar",
+        "EBI",
+        "EBIxcultivar",
+        "climate",
+        "Growth_April"
+      ]
+    },
+    {
+      "step": 1,
+      "added": "CNC_June",
+      "cvR2_mean": 0.9316,
+      "cvR2_all_seeds": [
+        0.9314,
+        0.9317,
+        0.9318,
+        0.9319,
+        0.9317,
+        0.9311
+      ],
+      "features": [
+        "intercept",
+        "cultivar",
+        "EBI",
+        "EBIxcultivar",
+        "climate",
+        "Growth_April",
+        "CNC_June"
+      ]
+    },
+    {
+      "step": 2,
+      "added": "Growth_June",
+      "cvR2_mean": 0.9346,
+      "cvR2_all_seeds": [
+        0.9345,
+        0.9347,
+        0.9349,
+        0.9348,
+        0.9346,
+        0.9341
+      ],
+      "features": [
+        "intercept",
+        "cultivar",
+        "EBI",
+        "EBIxcultivar",
+        "climate",
+        "Growth_April",
+        "CNC_June",
+        "Growth_June"
+      ]
+    }
+  ],
+  "final_model_with_physiology": {
+    "features": [
+      "intercept",
+      "cultivar",
+      "EBI",
+      "EBIxcultivar",
+      "climate",
+      "Growth_April",
+      "CNC_June",
+      "Growth_June"
+    ],
+    "added_features": [
+      "CNC_June",
+      "Growth_June"
+    ],
+    "AIC": 1248.52,
+    "R2_in_sample": 0.9355,
+    "MAE_in_sample": 0.2577,
+    "cvR2_mean": 0.9346,
+    "cvR2_range": [
+      0.9341,
+      0.9349
+    ],
+    "cvR2_all_seeds": [
+      0.9345,
+      0.9347,
+      0.9349,
+      0.9348,
+      0.9346,
+      0.9341
+    ]
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "note": "Candidate RGB color indices (crown-mean R,G,B, v2 extraction) vs measured yield, same season, within each cultivar. Baseline EBI/NGRDI results are in section 12.1 of THESIS_PROGRESS_LOG.md (not recomputed here). FDR (Benjamini-Hochberg) applied across the 8 candidate indices within each cultivar's 2023 test (n=64/87, the inferential year); 2022/2024 (n=9) are directional only, as with EBI.",
+  "by_cultivar_same_year": {
+    "UEF": {
+      "2022": {
+        "ExG": {
+          "r": -0.409,
+          "p": 0.2402,
+          "n": 10,
+          "sig": "ns"
+        },
+        "ExGR": {
+          "r": -0.312,
+          "p": 0.3803,
+          "n": 10,
+          "sig": "ns"
+        },
+        "VARI": {
+          "r": -0.216,
+          "p": 0.5482,
+          "n": 10,
+          "sig": "ns"
+        },
+        "GLI": {
+          "r": -0.434,
+          "p": 0.2107,
+          "n": 10,
+          "sig": "ns"
+        },
+        "CIVE": {
+          "r": 0.388,
+          "p": 0.2673,
+          "n": 10,
+          "sig": "ns"
+        },
+        "RGBVI": {
+          "r": -0.448,
+          "p": 0.1944,
+          "n": 10,
+          "sig": "ns"
+        },
+        "Saturation_inv": {
+          "r": 0.851,
+          "p": 0.0018,
+          "n": 10,
+          "sig": "**"
+        },
+        "WhitenessBrightness": {
+          "r": 0.42,
+          "p": 0.2275,
+          "n": 10,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "ExG": {
+          "r": -0.14,
+          "p": 0.1927,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.2569
+        },
+        "ExGR": {
+          "r": -0.168,
+          "p": 0.1172,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.1875
+        },
+        "VARI": {
+          "r": -0.049,
+          "p": 0.649,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.649
+        },
+        "GLI": {
+          "r": -0.175,
+          "p": 0.1036,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.1875
+        },
+        "CIVE": {
+          "r": 0.068,
+          "p": 0.5313,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.6072
+        },
+        "RGBVI": {
+          "r": -0.181,
+          "p": 0.0908,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.1875
+        },
+        "Saturation_inv": {
+          "r": 0.187,
+          "p": 0.0813,
+          "n": 88,
+          "sig": "ns",
+          "p_fdr": 0.1875
+        },
+        "WhitenessBrightness": {
+          "r": 0.248,
+          "p": 0.0201,
+          "n": 88,
+          "sig": "*",
+          "p_fdr": 0.1608
+        }
+      },
+      "2024": {
+        "ExG": {
+          "r": -0.553,
+          "p": 0.0975,
+          "n": 10,
+          "sig": "ns"
+        },
+        "ExGR": {
+          "r": -0.363,
+          "p": 0.3027,
+          "n": 10,
+          "sig": "ns"
+        },
+        "VARI": {
+          "r": -0.284,
+          "p": 0.4261,
+          "n": 10,
+          "sig": "ns"
+        },
+        "GLI": {
+          "r": -0.472,
+          "p": 0.1681,
+          "n": 10,
+          "sig": "ns"
+        },
+        "CIVE": {
+          "r": 0.576,
+          "p": 0.0815,
+          "n": 10,
+          "sig": "ns"
+        },
+        "RGBVI": {
+          "r": -0.482,
+          "p": 0.1588,
+          "n": 10,
+          "sig": "ns"
+        },
+        "Saturation_inv": {
+          "r": 0.538,
+          "p": 0.1089,
+          "n": 10,
+          "sig": "ns"
+        },
+        "WhitenessBrightness": {
+          "r": 0.267,
+          "p": 0.4562,
+          "n": 10,
+          "sig": "ns"
+        }
+      }
+    },
+    "53": {
+      "2022": {
+        "ExG": {
+          "r": -0.189,
+          "p": 0.6254,
+          "n": 9,
+          "sig": "ns"
+        },
+        "ExGR": {
+          "r": -0.128,
+          "p": 0.7421,
+          "n": 9,
+          "sig": "ns"
+        },
+        "VARI": {
+          "r": -0.123,
+          "p": 0.7523,
+          "n": 9,
+          "sig": "ns"
+        },
+        "GLI": {
+          "r": -0.205,
+          "p": 0.597,
+          "n": 9,
+          "sig": "ns"
+        },
+        "CIVE": {
+          "r": 0.2,
+          "p": 0.6068,
+          "n": 9,
+          "sig": "ns"
+        },
+        "RGBVI": {
+          "r": -0.208,
+          "p": 0.5909,
+          "n": 9,
+          "sig": "ns"
+        },
+        "Saturation_inv": {
+          "r": 0.166,
+          "p": 0.6689,
+          "n": 9,
+          "sig": "ns"
+        },
+        "WhitenessBrightness": {
+          "r": 0.092,
+          "p": 0.8148,
+          "n": 9,
+          "sig": "ns"
+        }
+      },
+      "2023": {
+        "ExG": {
+          "r": 0.077,
+          "p": 0.5468,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.7291
+        },
+        "ExGR": {
+          "r": 0.18,
+          "p": 0.1542,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.6168
+        },
+        "VARI": {
+          "r": 0.022,
+          "p": 0.8659,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.975
+        },
+        "GLI": {
+          "r": 0.104,
+          "p": 0.4153,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.6645
+        },
+        "CIVE": {
+          "r": -0.004,
+          "p": 0.975,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.975
+        },
+        "RGBVI": {
+          "r": 0.11,
+          "p": 0.3874,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.6645
+        },
+        "Saturation_inv": {
+          "r": -0.149,
+          "p": 0.2398,
+          "n": 64,
+          "sig": "ns",
+          "p_fdr": 0.6395
+        },
+        "WhitenessBrightness": {
+          "r": -0.288,
+          "p": 0.0208,
+          "n": 64,
+          "sig": "*",
+          "p_fdr": 0.1664
+        }
+      },
+      "2024": {
+        "ExG": {
+          "r": 0.071,
+          "p": 0.8557,
+          "n": 9,
+          "sig": "ns"
+        },
+        "ExGR": {
+          "r": 0.171,
+          "p": 0.6605,
+          "n": 9,
+          "sig": "ns"
+        },
+        "VARI": {
+          "r": -0.104,
+          "p": 0.7893,
+          "n": 9,
+          "sig": "ns"
+        },
+        "GLI": {
+          "r": 0.093,
+          "p": 0.8116,
+          "n": 9,
+          "sig": "ns"
+        },
+        "CIVE": {
+          "r": 0.049,
+          "p": 0.9001,
+          "n": 9,
+          "sig": "ns"
+        },
+        "RGBVI": {
+          "r": 0.115,
+          "p": 0.7688,
+          "n": 9,
+          "sig": "ns"
+        },
+        "Saturation_inv": {
+          "r": -0.269,
+          "p": 0.484,
+          "n": 9,
+          "sig": "ns"
+        },
+        "WhitenessBrightness": {
+          "r": -0.422,
+          "p": 0.258,
+          "n": 9,
+          "sig": "ns"
+        }
+      }
+    }
+  },
+  "best_candidate_2023": {
+    "UEF": "WhitenessBrightness",
+    "53": "WhitenessBrightness"
+  },
+  "ANCOVA_candidates_2023": {
+    "WhitenessBrightness": {
+      "n": 152,
+      "EBIxcultivar_interaction_analog": {
+        "F": 11.27,
+        "p": 0.001,
+        "sig": "**"
+      },
+      "R2": 0.07,
+      "R2_with_interaction": 0.136
+    }
+  },
+  "ANCOVA_baseline_EBI_reference": {
+    "note": "EBIxcultivar interaction F=11.58, p=0.0009, R2 0.079->0.147 (THESIS_PROGRESS_LOG.md section 7/11), compare to ANCOVA_candidates_2023 above."
+  },
+  "does_WhitenessBrightness_add_to_EBI_2023": {
+    "n": 152,
+    "R2_EBI_only": 0.135,
+    "R2_EBI_plus_extra": 0.142,
+    "partial_F_extra_terms": 0.57,
+    "p": 0.5648,
+    "sig": "ns",
+    "df": [
+      2,
+      146
+    ]
+  }
+}
