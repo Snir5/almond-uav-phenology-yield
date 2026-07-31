@@ -109,7 +109,17 @@ def load_model(weights_path, device):
 
     ckpt = torch.load(weights_path, map_location=device, weights_only=True)
     state = ckpt["model_state_dict"] if "model_state_dict" in ckpt else ckpt
-    model.load_state_dict(state)
+
+    try:
+        model.load_state_dict(state)
+    except RuntimeError as exc:
+        raise SystemExit(
+            f"the checkpoint does not match this build of the model:\n\n{exc}\n\n"
+            "This is almost always a library version mismatch. The weights use the\n"
+            "segmentation-models-pytorch 0.3.x decoder layout. Install the pinned\n"
+            "versions with:  pip install -r requirements.txt"
+        )
+
     model.eval()
     return model
 

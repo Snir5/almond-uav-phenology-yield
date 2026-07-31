@@ -19,11 +19,16 @@ climate joins and the statistics. None of it is required to run the model.
 
 ## Install
 
-Python 3.10 or 3.11.
+Python 3.11 (3.10 also works).
 
 ```bash
 pip install -r requirements.txt
 ```
+
+Use the pinned versions. `segmentation-models-pytorch` must stay on 0.3.x, because the
+checkpoint stores the UNet++ decoder keys in that layout and later releases renamed them,
+and `albumentations` must stay on 1.x, because 2.0 changed the transform behaviour the
+model was trained with. `predict.py` reports the mismatch clearly if either drifts.
 
 A GPU is optional. The script picks CUDA if present, then Apple MPS, then CPU. Expect
 roughly 1 to 3 seconds per image on GPU and 20 to 40 seconds on CPU.
