@@ -21,6 +21,8 @@ raw_drone_sample.jpg
 # ── Model weights and checkpoints ───────────────────────────────────────────
 *.pth
 *.pt
+# except the shared inference weights (optimizer state stripped)
+!models/best_model.pth
 *.h5
 *.ckpt
 

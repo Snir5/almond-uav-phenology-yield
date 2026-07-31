@@ -8,12 +8,14 @@ For the full architecture, ArcGIS mosaic workflow and production notes, see
 
 ## 1. Get the weights
 
-The trained checkpoint is not stored in this repository because of its size.
-Download `best_model.pth` from the link in the repository description and place it
-anywhere on disk. The path is passed explicitly, so it does not need to sit next to the code.
+The weights ship with this repository at [`../models/best_model.pth`](../models/best_model.pth),
+so a clone is all you need. The file is a dictionary containing `model_state_dict` plus the
+`epoch`, `val_dice` and `loss` records.
 
-The checkpoint is a dictionary containing `model_state_dict`, `optimizer_state_dict`,
-`epoch`, `val_dice` and `loss`. Inference reads `model_state_dict` only.
+The optimizer state has been stripped, which cuts the file from about 152 MB to about 51 MB.
+That state is only needed to resume training from the exact point it stopped; it has no effect
+on inference or on fine-tuning from the weights. Use `strip_checkpoint.py` if you ever need to
+do the same to a checkpoint of your own.
 
 ---
 
