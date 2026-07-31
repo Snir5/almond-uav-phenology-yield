@@ -22,7 +22,7 @@ raw_drone_sample.jpg
 *.pth
 *.pt
 # except the shared inference weights (optimizer state stripped)
-!models/best_model.pth
+!segmentation_model/best_model.pth
 *.h5
 *.ckpt
 

@@ -8,7 +8,7 @@ yield across four seasons (2021-2024) in Plot A of the Kedma orchard, for 1,523 
 
 | Path | Contents |
 |---|---|
-| `models/` | Trained segmentation weights (`best_model.pth`) |
+| `segmentation_model/` | **Standalone segmentation model**: weights plus a self-contained `predict.py`. All you need to run detection |
 | `code/` | Detection and segmentation model: training, inference, post-processing, GeoTIFF export. Start with [`code/MODEL_USAGE.md`](code/MODEL_USAGE.md) |
 | `notebooks/` | Training and experiment notebooks behind the model and the empirical search of Chapter 3 (outputs stripped) |
 | `pipeline/01_mosaic_build` … `06_analysis` | Ordered processing stages, from mosaic assembly to the statistical analysis |
@@ -17,9 +17,18 @@ yield across four seasons (2021-2024) in Plot A of the Kedma orchard, for 1,523 
 
 ## Model weights
 
-The trained weights are included at `models/best_model.pth` (about 51 MB, optimizer state
-stripped). See [`code/MODEL_USAGE.md`](code/MODEL_USAGE.md) for how to load them and run
-inference on new imagery.
+The trained weights ship with the repository at `segmentation_model/best_model.pth`
+(52.6 MB, optimizer state stripped). To run detection on new drone imagery you need only
+that folder:
+
+```bash
+cd segmentation_model
+pip install -r requirements.txt
+python predict.py --images /path/to/drone_photos --output /path/to/results
+```
+
+See [`segmentation_model/README.md`](segmentation_model/README.md) for the options and
+outputs, and [`code/MODEL_USAGE.md`](code/MODEL_USAGE.md) for the full training-side pipeline.
 
 ## Method in brief
 
