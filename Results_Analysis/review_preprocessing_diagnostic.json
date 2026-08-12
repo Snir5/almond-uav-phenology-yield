@@ -1,0 +1,630 @@
+{
+  "per_image": [
+    {
+      "name": "DSC09262_JPG.rf.3b519ece2c76a69a86fc562569ac8b56.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.4844,
+      "raw": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6527
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6527
+      },
+      "gamma": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6527
+      },
+      "clahe": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6527
+      },
+      "full_pipeline": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6527
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6527
+      }
+    },
+    {
+      "name": "DSC04232_JPG.rf.e2eb1313170c55ea8c0fa764502ca40f.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.434,
+      "raw": {
+        "predicted_fraction": 0.9993,
+        "dice": 0.6055
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9988,
+        "dice": 0.6056
+      },
+      "gamma": {
+        "predicted_fraction": 0.9997,
+        "dice": 0.6054
+      },
+      "clahe": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6053
+      },
+      "full_pipeline": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6053
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6053
+      }
+    },
+    {
+      "name": "DJI_1980_JPG.rf.0d3d5300760cb72a6eeeaec9b374c403.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.2335,
+      "raw": {
+        "predicted_fraction": 0.3168,
+        "dice": 0.8223
+      },
+      "white_balance": {
+        "predicted_fraction": 0.3783,
+        "dice": 0.7427
+      },
+      "gamma": {
+        "predicted_fraction": 0.3233,
+        "dice": 0.816
+      },
+      "clahe": {
+        "predicted_fraction": 0.2843,
+        "dice": 0.8683
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.3455,
+        "dice": 0.7874
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.3327,
+        "dice": 0.7974
+      }
+    },
+    {
+      "name": "IMG_0760_JPG.rf.e76c83b319f6cb8d74f6e5d2b38b264d.jpg",
+      "camera": "IMG",
+      "gt_fraction": 0.499,
+      "raw": {
+        "predicted_fraction": 0.5937,
+        "dice": 0.8857
+      },
+      "white_balance": {
+        "predicted_fraction": 0.6327,
+        "dice": 0.8588
+      },
+      "gamma": {
+        "predicted_fraction": 0.5941,
+        "dice": 0.8888
+      },
+      "clahe": {
+        "predicted_fraction": 0.552,
+        "dice": 0.9097
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.5867,
+        "dice": 0.8914
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.5719,
+        "dice": 0.8949
+      }
+    },
+    {
+      "name": "IMG_0387_JPG.rf.c6fb740be1d08b538b6f1ba3b5df786c.jpg",
+      "camera": "IMG",
+      "gt_fraction": 0.6525,
+      "raw": {
+        "predicted_fraction": 0.7016,
+        "dice": 0.8981
+      },
+      "white_balance": {
+        "predicted_fraction": 0.7207,
+        "dice": 0.8925
+      },
+      "gamma": {
+        "predicted_fraction": 0.7092,
+        "dice": 0.8989
+      },
+      "clahe": {
+        "predicted_fraction": 0.6855,
+        "dice": 0.8985
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.7134,
+        "dice": 0.8959
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.7138,
+        "dice": 0.8926
+      }
+    },
+    {
+      "name": "DJI_20240508132919_0009_W_JPG.rf.48a0d5e7496d3ac292fffefbb2be2d3e.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.4937,
+      "raw": {
+        "predicted_fraction": 0.5217,
+        "dice": 0.9379
+      },
+      "white_balance": {
+        "predicted_fraction": 0.5139,
+        "dice": 0.9395
+      },
+      "gamma": {
+        "predicted_fraction": 0.5225,
+        "dice": 0.9383
+      },
+      "clahe": {
+        "predicted_fraction": 0.5299,
+        "dice": 0.9382
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.5125,
+        "dice": 0.9398
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.5295,
+        "dice": 0.9288
+      }
+    },
+    {
+      "name": "DSC03834_JPG.rf.585424df198af12f184a6b8378345295.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.4932,
+      "raw": {
+        "predicted_fraction": 0.9995,
+        "dice": 0.6608
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9994,
+        "dice": 0.6609
+      },
+      "gamma": {
+        "predicted_fraction": 0.9997,
+        "dice": 0.6607
+      },
+      "clahe": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6606
+      },
+      "full_pipeline": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6606
+      },
+      "production_stochastic": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6606
+      }
+    },
+    {
+      "name": "DSC09512_JPG.rf.3f99aca1353e81237a7794b910356f09.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.3968,
+      "raw": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.5682
+      },
+      "white_balance": {
+        "predicted_fraction": 1.0,
+        "dice": 0.5681
+      },
+      "gamma": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.5682
+      },
+      "clahe": {
+        "predicted_fraction": 1.0,
+        "dice": 0.5682
+      },
+      "full_pipeline": {
+        "predicted_fraction": 1.0,
+        "dice": 0.5682
+      },
+      "production_stochastic": {
+        "predicted_fraction": 1.0,
+        "dice": 0.5682
+      }
+    },
+    {
+      "name": "DSC04216_JPG.rf.70726d49c86f7516de5f4dc3b0ca3976.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.4584,
+      "raw": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6287
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9996,
+        "dice": 0.6288
+      },
+      "gamma": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6286
+      },
+      "clahe": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6286
+      },
+      "full_pipeline": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6286
+      },
+      "production_stochastic": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6286
+      }
+    },
+    {
+      "name": "DJI_20240229150137_0544_W_JPG.rf.0c4ebcb4dd72ec93a7635085746bd23c.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.3562,
+      "raw": {
+        "predicted_fraction": 0.3543,
+        "dice": 0.938
+      },
+      "white_balance": {
+        "predicted_fraction": 0.3757,
+        "dice": 0.9257
+      },
+      "gamma": {
+        "predicted_fraction": 0.3551,
+        "dice": 0.9381
+      },
+      "clahe": {
+        "predicted_fraction": 0.3522,
+        "dice": 0.9367
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.3776,
+        "dice": 0.9231
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.3844,
+        "dice": 0.9231
+      }
+    },
+    {
+      "name": "DJI_20240229143721_0534_W_JPG.rf.c5ae313d1f9e7e6fcfe9c3bd427bc5a6.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.4891,
+      "raw": {
+        "predicted_fraction": 0.5342,
+        "dice": 0.9107
+      },
+      "white_balance": {
+        "predicted_fraction": 0.5643,
+        "dice": 0.8986
+      },
+      "gamma": {
+        "predicted_fraction": 0.5342,
+        "dice": 0.9107
+      },
+      "clahe": {
+        "predicted_fraction": 0.5316,
+        "dice": 0.9119
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.5687,
+        "dice": 0.8955
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.5815,
+        "dice": 0.8893
+      }
+    },
+    {
+      "name": "DJI_20231116131046_0564_W_JPG.rf.28c690397fcadfef999e3a5fdcc8fe73.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.4474,
+      "raw": {
+        "predicted_fraction": 0.5128,
+        "dice": 0.837
+      },
+      "white_balance": {
+        "predicted_fraction": 0.5327,
+        "dice": 0.8273
+      },
+      "gamma": {
+        "predicted_fraction": 0.5129,
+        "dice": 0.8368
+      },
+      "clahe": {
+        "predicted_fraction": 0.5226,
+        "dice": 0.8335
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.5449,
+        "dice": 0.8243
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.5243,
+        "dice": 0.8323
+      }
+    },
+    {
+      "name": "IMG_0895_JPG.rf.53ccb1815a537c58aa91c4e93c3a154b.jpg",
+      "camera": "IMG",
+      "gt_fraction": 0.4496,
+      "raw": {
+        "predicted_fraction": 0.5132,
+        "dice": 0.8892
+      },
+      "white_balance": {
+        "predicted_fraction": 0.5283,
+        "dice": 0.8782
+      },
+      "gamma": {
+        "predicted_fraction": 0.5226,
+        "dice": 0.8861
+      },
+      "clahe": {
+        "predicted_fraction": 0.507,
+        "dice": 0.8946
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.5287,
+        "dice": 0.8811
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.5287,
+        "dice": 0.8811
+      }
+    },
+    {
+      "name": "DJI_20240508130331_0009_W_JPG.rf.4e9f8843233a5919e1b4234942038120.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.6133,
+      "raw": {
+        "predicted_fraction": 0.6372,
+        "dice": 0.9512
+      },
+      "white_balance": {
+        "predicted_fraction": 0.6319,
+        "dice": 0.9495
+      },
+      "gamma": {
+        "predicted_fraction": 0.6393,
+        "dice": 0.9509
+      },
+      "clahe": {
+        "predicted_fraction": 0.6507,
+        "dice": 0.9506
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.6363,
+        "dice": 0.9507
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.6376,
+        "dice": 0.9341
+      }
+    },
+    {
+      "name": "DSC04150_JPG.rf.7fec4027f612a16a46fc51c4f839e213.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.5225,
+      "raw": {
+        "predicted_fraction": 0.9988,
+        "dice": 0.6869
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9985,
+        "dice": 0.687
+      },
+      "gamma": {
+        "predicted_fraction": 0.9992,
+        "dice": 0.6867
+      },
+      "clahe": {
+        "predicted_fraction": 1.0,
+        "dice": 0.6864
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.6864
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.9998,
+        "dice": 0.6864
+      }
+    },
+    {
+      "name": "DJI_20231116134253_0310_W_JPG.rf.e3434f9b78c787365bb80070abb7c75d.jpg",
+      "camera": "DJI",
+      "gt_fraction": 0.5045,
+      "raw": {
+        "predicted_fraction": 0.5224,
+        "dice": 0.8672
+      },
+      "white_balance": {
+        "predicted_fraction": 0.5395,
+        "dice": 0.8583
+      },
+      "gamma": {
+        "predicted_fraction": 0.522,
+        "dice": 0.867
+      },
+      "clahe": {
+        "predicted_fraction": 0.5294,
+        "dice": 0.8655
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.5489,
+        "dice": 0.8576
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.5489,
+        "dice": 0.8576
+      }
+    },
+    {
+      "name": "DSC04167_JPG.rf.43a069bb6d34d6a6ac47d7496003802a.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.3533,
+      "raw": {
+        "predicted_fraction": 0.9997,
+        "dice": 0.5222
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9996,
+        "dice": 0.5221
+      },
+      "gamma": {
+        "predicted_fraction": 0.9998,
+        "dice": 0.5222
+      },
+      "clahe": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.5221
+      },
+      "full_pipeline": {
+        "predicted_fraction": 1.0,
+        "dice": 0.5221
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.9999,
+        "dice": 0.5222
+      }
+    },
+    {
+      "name": "DSC03869_JPG.rf.eb81976e162ccdc00af98658d00893e6.jpg",
+      "camera": "DSC",
+      "gt_fraction": 0.4526,
+      "raw": {
+        "predicted_fraction": 0.9605,
+        "dice": 0.6394
+      },
+      "white_balance": {
+        "predicted_fraction": 0.9871,
+        "dice": 0.6287
+      },
+      "gamma": {
+        "predicted_fraction": 0.9662,
+        "dice": 0.6371
+      },
+      "clahe": {
+        "predicted_fraction": 0.9993,
+        "dice": 0.6235
+      },
+      "full_pipeline": {
+        "predicted_fraction": 0.9984,
+        "dice": 0.6239
+      },
+      "production_stochastic": {
+        "predicted_fraction": 0.9953,
+        "dice": 0.6252
+      }
+    }
+  ],
+  "summary": {
+    "raw": {
+      "DSC": {
+        "mean_predicted_fraction": 0.9947,
+        "mean_dice": 0.6206,
+        "n_images": 8
+      },
+      "DJI": {
+        "mean_predicted_fraction": 0.4857,
+        "mean_dice": 0.8949,
+        "n_images": 7
+      },
+      "IMG": {
+        "mean_predicted_fraction": 0.6028,
+        "mean_dice": 0.891,
+        "n_images": 3
+      }
+    },
+    "white_balance": {
+      "DSC": {
+        "mean_predicted_fraction": 0.9978,
+        "mean_dice": 0.6192,
+        "n_images": 8
+      },
+      "DJI": {
+        "mean_predicted_fraction": 0.5052,
+        "mean_dice": 0.8774,
+        "n_images": 7
+      },
+      "IMG": {
+        "mean_predicted_fraction": 0.6272,
+        "mean_dice": 0.8765,
+        "n_images": 3
+      }
+    },
+    "gamma": {
+      "DSC": {
+        "mean_predicted_fraction": 0.9955,
+        "mean_dice": 0.6202,
+        "n_images": 8
+      },
+      "DJI": {
+        "mean_predicted_fraction": 0.487,
+        "mean_dice": 0.894,
+        "n_images": 7
+      },
+      "IMG": {
+        "mean_predicted_fraction": 0.6087,
+        "mean_dice": 0.8912,
+        "n_images": 3
+      }
+    },
+    "clahe": {
+      "DSC": {
+        "mean_predicted_fraction": 0.9999,
+        "mean_dice": 0.6184,
+        "n_images": 8
+      },
+      "DJI": {
+        "mean_predicted_fraction": 0.4858,
+        "mean_dice": 0.9007,
+        "n_images": 7
+      },
+      "IMG": {
+        "mean_predicted_fraction": 0.5815,
+        "mean_dice": 0.9009,
+        "n_images": 3
+      }
+    },
+    "full_pipeline": {
+      "DSC": {
+        "mean_predicted_fraction": 0.9998,
+        "mean_dice": 0.6185,
+        "n_images": 8
+      },
+      "DJI": {
+        "mean_predicted_fraction": 0.5049,
+        "mean_dice": 0.8826,
+        "n_images": 7
+      },
+      "IMG": {
+        "mean_predicted_fraction": 0.6096,
+        "mean_dice": 0.8895,
+        "n_images": 3
+      }
+    },
+    "production_stochastic": {
+      "DSC": {
+        "mean_predicted_fraction": 0.9993,
+        "mean_dice": 0.6186,
+        "n_images": 8
+      },
+      "DJI": {
+        "mean_predicted_fraction": 0.5056,
+        "mean_dice": 0.8804,
+        "n_images": 7
+      },
+      "IMG": {
+        "mean_predicted_fraction": 0.6048,
+        "mean_dice": 0.8895,
+        "n_images": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "2021-03-07": {
+    "n_images": 172,
+    "sensor": "Sony (DSC), no native geotags",
+    "time_window": "not recorded in metadata"
+  },
+  "2022-03-02": {
+    "n_images": 746,
+    "sensor": "IMG series",
+    "time_window": "not recorded in metadata"
+  },
+  "2023-03-01": {
+    "n_images": 386,
+    "sensor": "DJI Zenmuse",
+    "time_window": "14:12-14:41"
+  },
+  "2024-02-29": {
+    "n_images": 659,
+    "sensor": "DJI wide (W)",
+    "time_window": "14:19-15:04"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "sample_flow": [
+    {
+      "step": "Raw harvest records in kedma_plot_a_yield.csv",
+      "records": 202,
+      "trees": 162,
+      "note": "all years"
+    },
+    {
+      "step": "Restricted to the modelled seasons 2022 and 2023",
+      "records": 182,
+      "trees": 162,
+      "note": "2024 has 20 records and no matching bloom season"
+    },
+    {
+      "step": "Matched to a master tree within 8 m (greedy 1:1)",
+      "records": 181,
+      "trees": 161,
+      "note": "median match distance 0.88 m"
+    },
+    {
+      "step": "Dropped trees whose master cultivar disagrees with the crown polygon",
+      "records": 179,
+      "trees": 159,
+      "note": "join-quality flag; these sit on pollinizer-row boundaries"
+    },
+    {
+      "step": "Complete cases on EBI, Chill Portions and April growth, cultivars UEF and 53",
+      "records": 167,
+      "trees": 149,
+      "note": "modelling sample"
+    }
+  ],
+  "model": "OLS: yield ~ cultivar + EBI * cultivar + Chill_Portions + Growth_April",
+  "n_records": 167,
+  "n_trees": 149,
+  "trees_appearing_in_more_than_one_year": 18,
+  "in_sample_r2": 0.5301,
+  "cv_random_record_level": {
+    "r2": 0.4483,
+    "per_seed": [
+      0.472,
+      0.4067,
+      0.4568,
+      0.4555,
+      0.4226,
+      0.4765
+    ]
+  },
+  "cv_grouped_by_tree": {
+    "r2": 0.4403,
+    "mae": 1.0154,
+    "per_seed": [
+      0.4689,
+      0.4246,
+      0.5021,
+      0.4365,
+      0.4668,
+      0.3429
+    ]
+  },
+  "leave_one_year_out": {
+    "2022": {
+      "n_test": 18,
+      "n_train": 149,
+      "r2": -2.8338,
+      "mae": 5.4429
+    },
+    "2023": {
+      "n_test": 149,
+      "n_train": 18,
+      "r2": -28.792,
+      "mae": 6.3804
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "sensor_by_year": {
+    "2021": "Sony DSC",
+    "2022": "IMG series",
+    "2023": "DJI Zenmuse",
+    "2024": "DJI wide"
+  },
+  "indices": {
+    "EBI_Norm": {
+      "2021": {
+        "n": 1276,
+        "mean": 0.5491,
+        "sd_total": 0.1049,
+        "sd_within": 0.0589,
+        "sd_between": 0.0869,
+        "between_share_pct": 68.51,
+        "cv_pct": 19.11,
+        "sensor": "Sony DSC"
+      },
+      "2022": {
+        "n": 1236,
+        "mean": 0.5415,
+        "sd_total": 0.0792,
+        "sd_within": 0.0633,
+        "sd_between": 0.0475,
+        "between_share_pct": 36.05,
+        "cv_pct": 14.62,
+        "sensor": "IMG series"
+      },
+      "2023": {
+        "n": 1224,
+        "mean": 0.5498,
+        "sd_total": 0.0515,
+        "sd_within": 0.0445,
+        "sd_between": 0.0258,
+        "between_share_pct": 25.12,
+        "cv_pct": 9.36,
+        "sensor": "DJI Zenmuse"
+      },
+      "2024": {
+        "n": 1232,
+        "mean": 0.549,
+        "sd_total": 0.0482,
+        "sd_within": 0.0481,
+        "sd_between": 0.0039,
+        "between_share_pct": 0.67,
+        "cv_pct": 8.78,
+        "sensor": "DJI wide"
+      }
+    },
+    "EBI_Raw": {
+      "2021": {
+        "n": 1276,
+        "mean": 3.9973,
+        "sd_total": 0.4217,
+        "sd_within": 0.2365,
+        "sd_between": 0.3491,
+        "between_share_pct": 68.54,
+        "cv_pct": 10.55,
+        "sensor": "Sony DSC"
+      },
+      "2022": {
+        "n": 1236,
+        "mean": 3.9727,
+        "sd_total": 0.3232,
+        "sd_within": 0.2579,
+        "sd_between": 0.1948,
+        "between_share_pct": 36.33,
+        "cv_pct": 8.14,
+        "sensor": "IMG series"
+      },
+      "2023": {
+        "n": 1224,
+        "mean": 3.9995,
+        "sd_total": 0.2066,
+        "sd_within": 0.1788,
+        "sd_between": 0.1035,
+        "between_share_pct": 25.12,
+        "cv_pct": 5.17,
+        "sensor": "DJI Zenmuse"
+      },
+      "2024": {
+        "n": 1232,
+        "mean": 3.9962,
+        "sd_total": 0.1936,
+        "sd_within": 0.1929,
+        "sd_between": 0.0158,
+        "between_share_pct": 0.67,
+        "cv_pct": 4.84,
+        "sensor": "DJI wide"
+      }
+    },
+    "NGRDI_Norm": {
+      "2021": {
+        "n": 1276,
+        "mean": 0.417,
+        "sd_total": 0.0568,
+        "sd_within": 0.0544,
+        "sd_between": 0.0162,
+        "between_share_pct": 8.16,
+        "cv_pct": 13.62,
+        "sensor": "Sony DSC"
+      },
+      "2022": {
+        "n": 1236,
+        "mean": 0.4281,
+        "sd_total": 0.0525,
+        "sd_within": 0.0502,
+        "sd_between": 0.0153,
+        "between_share_pct": 8.54,
+        "cv_pct": 12.25,
+        "sensor": "IMG series"
+      },
+      "2023": {
+        "n": 1224,
+        "mean": 0.4044,
+        "sd_total": 0.038,
+        "sd_within": 0.0348,
+        "sd_between": 0.0151,
+        "between_share_pct": 15.92,
+        "cv_pct": 9.39,
+        "sensor": "DJI Zenmuse"
+      },
+      "2024": {
+        "n": 1232,
+        "mean": 0.4066,
+        "sd_total": 0.0475,
+        "sd_within": 0.0403,
+        "sd_between": 0.0252,
+        "between_share_pct": 28.0,
+        "cv_pct": 11.69,
+        "sensor": "DJI wide"
+      }
+    },
+    "NGRDI_Raw": {
+      "2021": {
+        "n": 1276,
+        "mean": -0.0095,
+        "sd_total": 0.028,
+        "sd_within": 0.0269,
+        "sd_between": 0.0074,
+        "between_share_pct": 7.07,
+        "cv_pct": -293.23,
+        "sensor": "Sony DSC"
+      },
+      "2022": {
+        "n": 1236,
+        "mean": -0.0061,
+        "sd_total": 0.0228,
+        "sd_within": 0.0218,
+        "sd_between": 0.0067,
+        "between_share_pct": 8.53,
+        "cv_pct": -371.84,
+        "sensor": "IMG series"
+      },
+      "2023": {
+        "n": 1224,
+        "mean": -0.0158,
+        "sd_total": 0.0179,
+        "sd_within": 0.0165,
+        "sd_between": 0.007,
+        "between_share_pct": 15.29,
+        "cv_pct": -113.46,
+        "sensor": "DJI Zenmuse"
+      },
+      "2024": {
+        "n": 1232,
+        "mean": -0.0156,
+        "sd_total": 0.0224,
+        "sd_within": 0.0192,
+        "sd_between": 0.0115,
+        "between_share_pct": 26.49,
+        "cv_pct": -144.23,
+        "sensor": "DJI wide"
+      }
+    }
+  },
+  "cross_year_rank_agreement": {
+    "EBI_Norm": {
+      "2021_vs_2022": {
+        "rho": 0.779,
+        "n": 1236
+      },
+      "2022_vs_2023": {
+        "rho": 0.179,
+        "n": 1221
+      },
+      "2023_vs_2024": {
+        "rho": 0.137,
+        "n": 1221
+      },
+      "2021_vs_2024": {
+        "rho": 0.16,
+        "n": 1232
+      }
+    },
+    "NGRDI_Norm": {
+      "2021_vs_2022": {
+        "rho": 0.631,
+        "n": 1236
+      },
+      "2022_vs_2023": {
+        "rho": 0.298,
+        "n": 1221
+      },
+      "2023_vs_2024": {
+        "rho": 0.258,
+        "n": 1221
+      },
+      "2021_vs_2024": {
+        "rho": 0.158,
+        "n": 1232
+      }
+    }
+  }
+}

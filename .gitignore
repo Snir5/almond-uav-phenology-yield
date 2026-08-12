@@ -95,3 +95,8 @@ Thesis_Writing/Research_Proposal/*.doc
 Thesis_Writing/Research_Proposal/Research Proposa -l Snir Tahasa .pdf
 Thesis_Writing/Research_Proposal/Research Proposal Snir Tahasa Short Version.pdf
 Thesis_Writing/Research_Proposal/1.0.1-*
+
+# ── Review working files and derived caches ─────────────────────────────────
+Results_Analysis/_test_prob_cache*.npz
+Thesis_Writing/Snir_Tahasa_MSc_Thesis_Draft_05082026_TPK_Tarin_Notes.docx
+Thesis_Writing/_Tarin_comments_reference.docx
