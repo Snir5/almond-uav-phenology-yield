@@ -1,0 +1,18 @@
+{
+  "n": 151,
+  "slope_UEF": 7.618,
+  "slope_53": -6.795,
+  "ci_UEF": [
+    2.13,
+    13.1
+  ],
+  "ci_53": [
+    -13.32,
+    -0.27
+  ],
+  "slope_difference": 14.413,
+  "permutation_p": 0.0006,
+  "residual_moran_I": 0.099,
+  "residual_moran_p": 0.068,
+  "note": "recomputed 2026-09-11 from the master and the measured-yield CSV; supersedes the earlier +7.4 / -6.3"
+}
