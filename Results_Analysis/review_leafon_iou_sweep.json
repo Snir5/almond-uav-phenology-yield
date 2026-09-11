@@ -1,0 +1,57 @@
+{
+  "note": "leaf-on-only instance metrics derived from the 18-image sweep; dormant images contribute at most one true positive and a fixed 20 predictions",
+  "predictions_leaf_on": 1211,
+  "gt_leaf_on": 1233,
+  "by_iou_threshold": {
+    "0.5": {
+      "precision": 0.9158,
+      "recall": 0.8994,
+      "f1": 0.9075
+    },
+    "0.55": {
+      "precision": 0.8869,
+      "recall": 0.871,
+      "f1": 0.8789
+    },
+    "0.6": {
+      "precision": 0.8538,
+      "recall": 0.8386,
+      "f1": 0.8462
+    },
+    "0.65": {
+      "precision": 0.8018,
+      "recall": 0.7875,
+      "f1": 0.7946
+    },
+    "0.7": {
+      "precision": 0.7399,
+      "recall": 0.7267,
+      "f1": 0.7332
+    },
+    "0.75": {
+      "precision": 0.6433,
+      "recall": 0.6318,
+      "f1": 0.6375
+    },
+    "0.8": {
+      "precision": 0.5037,
+      "recall": 0.4947,
+      "f1": 0.4992
+    },
+    "0.85": {
+      "precision": 0.3328,
+      "recall": 0.3268,
+      "f1": 0.3298
+    },
+    "0.9": {
+      "precision": 0.1189,
+      "recall": 0.1168,
+      "f1": 0.1178
+    },
+    "0.95": {
+      "precision": 0.0017,
+      "recall": 0.0016,
+      "f1": 0.0016
+    }
+  }
+}
