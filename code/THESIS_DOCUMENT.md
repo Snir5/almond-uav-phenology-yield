@@ -875,8 +875,8 @@ Systematic evaluation of key parameters:
 ### 5.4 Computational Performance
 
 **Training Performance**:
-- Batch size 4, single A100 GPU
-- 20 epochs: ~4.5 hours total
+- Batch size 4, Apple Silicon GPU via Metal Performance Shaders (the machine used for all training)
+- 20 epochs: roughly two to three days of wall-clock time, individual epochs 2.5 to 4.5 hours
 - Learning curve: Validation Dice plateaus around epoch 15
 
 **Inference Performance**:
